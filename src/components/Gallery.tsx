@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const GallerySection = (): JSX.Element => {
+export const GallerySection = () => {
   useEffect(() => {
     // Gallery animations
     gsap.fromTo('.gallery-item',

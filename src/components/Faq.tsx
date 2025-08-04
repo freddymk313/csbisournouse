@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+// import { ChevronDown, ChevronUp } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const FAQSection = (): JSX.Element => {
+export const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   useEffect(() => {
@@ -94,9 +95,9 @@ export const FAQSection = (): JSX.Element => {
                   {faq.question}
                 </h3>
                 {openIndex === index ? (
-                  <ChevronUp className="text-[#0073b7] flex-shrink-0" size={24} />
+                  <BiChevronUp className="text-[#0073b7] flex-shrink-0" size={24} />
                 ) : (
-                  <ChevronDown className="text-[#0073b7] flex-shrink-0" size={24} />
+                  <BiChevronDown className="text-[#0073b7] flex-shrink-0" size={24} />
                 )}
               </button>
               

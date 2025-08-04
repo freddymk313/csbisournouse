@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
+// import { Button } from './ui/button';
+// import { Input } from './ui/input';
+// import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { BiMapPin, BiPhone, BiSend } from 'react-icons/bi';
+import { RiMvAiLine } from 'react-icons/ri';
+import { CgLock } from 'react-icons/cg';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const ContactSection = (): JSX.Element => {
+export const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -75,22 +78,22 @@ export const ContactSection = (): JSX.Element => {
 
   const contactInfo = [
     {
-      icon: <MapPin className="text-[#0073b7]" size={24} />,
+      icon: <BiMapPin className="text-[#0073b7]" size={24} />,
       title: "Adresse",
       details: ["1098, Av MAMA YEMO", "C/Lubumbashi, Haut-Katanga RDC"]
     },
     {
-      icon: <Phone className="text-[#0073b7]" size={24} />,
+      icon: <BiPhone className="text-[#0073b7]" size={24} />,
       title: "Téléphone",
       details: ["+243 822266004", "+243 843387388"]
     },
     {
-      icon: <Mail className="text-[#0073b7]" size={24} />,
+      icon: <RiMvAiLine className="text-[#0073b7]" size={24} />,
       title: "Email",
       details: ["direction@cs-bisounours.com", "info@cs-bisounours.com"]
     },
     {
-      icon: <Clock className="text-[#0073b7]" size={24} />,
+      icon: <CgLock className="text-[#0073b7]" size={24} />,
       title: "Horaires",
       details: ["Lun - Ven: 7h00 - 17h00", "Sam: 8h00 - 12h00"]
     }
@@ -136,7 +139,7 @@ export const ContactSection = (): JSX.Element => {
             <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
               <div className="h-64 bg-gradient-to-br from-[#0073b7] to-[#005a8f] flex items-center justify-center">
                 <div className="text-center text-white">
-                  <MapPin size={48} className="mx-auto mb-4" />
+                  <BiMapPin size={48} className="mx-auto mb-4" />
                   <p className="text-lg font-semibold">Carte interactive</p>
                   <p className="text-sm opacity-90">Localisation de l'école</p>
                 </div>
@@ -156,7 +159,7 @@ export const ContactSection = (): JSX.Element => {
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                     Nom complet *
                   </label>
-                  <Input
+                  <input
                     id="name"
                     name="name"
                     type="text"
@@ -171,7 +174,7 @@ export const ContactSection = (): JSX.Element => {
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                     Email *
                   </label>
-                  <Input
+                  <input
                     id="email"
                     name="email"
                     type="email"
@@ -189,7 +192,7 @@ export const ContactSection = (): JSX.Element => {
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                     Téléphone
                   </label>
-                  <Input
+                  <input
                     id="phone"
                     name="phone"
                     type="tel"
@@ -203,7 +206,7 @@ export const ContactSection = (): JSX.Element => {
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                     Sujet *
                   </label>
-                  <Input
+                  <input
                     id="subject"
                     name="subject"
                     type="text"
@@ -232,13 +235,13 @@ export const ContactSection = (): JSX.Element => {
                 />
               </div>
 
-              <Button
+              <button
                 type="submit"
                 className="w-full bg-[#0073b7] hover:bg-[#005a8f] text-white py-4 rounded-xl text-lg font-semibold group"
               >
-                <Send className="mr-2 group-hover:translate-x-1 transition-transform" size={20} />
+                <BiSend className="mr-2 group-hover:translate-x-1 transition-transform" size={20} />
                 Envoyer le message
-              </Button>
+              </button>
             </form>
           </div>
         </div>

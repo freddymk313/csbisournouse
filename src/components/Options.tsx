@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import { Button } from "../../../../components/ui/button";
-import { Card, CardContent } from "../../../../components/ui/card";
+// import { Button } from "../../../../components/ui/button";
+// import { Card, CardContent } from "../../../../components/ui/card";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const OptionsSection = (): JSX.Element => {
+export const OptionsSection = () => {
   useEffect(() => {
     // About section animations
     gsap.fromTo('.about-title',
@@ -97,8 +97,8 @@ export const OptionsSection = (): JSX.Element => {
             </div>
 
             <div className="about-content lg:w-1/2">
-              <Card className="border-none shadow-none">
-                <CardContent className="p-0">
+              <div className="border-none shadow-none">
+                <div className="p-0">
                   <div className="text-lg text-[#333333] font-['Poppins',Helvetica] text-justify space-y-6 leading-relaxed">
                     {schoolInfo.paragraphs.map((paragraph, index) => (
                       <p key={index} className="text-gray-700">
@@ -108,13 +108,13 @@ export const OptionsSection = (): JSX.Element => {
                   </div>
 
                   <div className="mt-10 flex justify-start">
-                    <Button className="bg-[#0073b7] hover:bg-[#005a8f] text-white rounded-xl px-8 py-4 h-14 text-lg font-semibold group transition-all duration-300">
+                    <button className="bg-[#0073b7] hover:bg-[#005a8f] text-white rounded-xl px-8 py-4 h-14 text-lg font-semibold group transition-all duration-300">
                       {schoolInfo.buttonText}
                       <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
-                    </Button>
+                    </button>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,11 +1,15 @@
 import React, { useEffect } from 'react';
-import { BookOpen, Users, Trophy, Heart, Globe, Zap } from 'lucide-react';
+// import { BookOpen, Users, Trophy, Heart, Globe, Zap } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { MdBook } from 'react-icons/md';
+import { FaUserSecret } from 'react-icons/fa';
+import { BiGlobe, BiHeart, BiTrophy } from 'react-icons/bi';
+import { FiZap } from 'react-icons/fi';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const ServicesSection = (): JSX.Element => {
+export const ServicesSection = () => {
   useEffect(() => {
     // Services animations
     gsap.fromTo('.service-card',
@@ -28,32 +32,32 @@ export const ServicesSection = (): JSX.Element => {
 
   const services = [
     {
-      icon: <BookOpen className="text-[#0073b7]" size={40} />,
+      icon: <MdBook className="text-[#0073b7]" size={40} />,
       title: "Programme Académique Complet",
       description: "De la maternelle au secondaire, nos programmes suivent les standards internationaux tout en respectant le curriculum national congolais."
     },
     {
-      icon: <Users className="text-[#0073b7]" size={40} />,
+      icon: <FaUserSecret className="text-[#0073b7]" size={40} />,
       title: "Encadrement Personnalisé",
       description: "Classes à effectif réduit pour un suivi individualisé de chaque élève et un accompagnement adapté à ses besoins spécifiques."
     },
     {
-      icon: <Trophy className="text-[#0073b7]" size={40} />,
+      icon: <BiTrophy className="text-[#0073b7]" size={40} />,
       title: "Excellence Académique",
       description: "98% de taux de réussite aux examens d'État grâce à notre approche pédagogique innovante et notre corps enseignant qualifié."
     },
     {
-      icon: <Heart className="text-[#0073b7]" size={40} />,
+      icon: <BiHeart className="text-[#0073b7]" size={40} />,
       title: "Éducation aux Valeurs",
       description: "Formation complète intégrant les valeurs humaines, le respect, la tolérance et l'esprit de solidarité dans un cadre bienveillant."
     },
     {
-      icon: <Globe className="text-[#0073b7]" size={40} />,
+      icon: <BiGlobe className="text-[#0073b7]" size={40} />,
       title: "Ouverture Internationale",
       description: "Apprentissage des langues étrangères, échanges culturels et préparation aux certifications internationales."
     },
     {
-      icon: <Zap className="text-[#0073b7]" size={40} />,
+      icon: <FiZap className="text-[#0073b7]" size={40} />,
       title: "Innovation Pédagogique",
       description: "Utilisation des nouvelles technologies, laboratoires modernes et méthodes d'enseignement interactives pour un apprentissage dynamique."
     }
