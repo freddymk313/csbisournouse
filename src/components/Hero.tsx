@@ -50,17 +50,16 @@ const Hero = () => {
       {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+          src='/hero.jpg'
           alt="School background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0073b7]/90 to-[#0073b7]/70"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-[#0073b7]/90 to-[#0073b7]/70"></div> */}
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
           <div className="text-white">
             <h1 className="hero-title font-bold text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6">
               Excellence
@@ -77,17 +76,12 @@ const Hero = () => {
             <div className="hero-buttons flex flex-col sm:flex-row gap-4 mb-12">
               <button className="bg-yellow-400 hover:bg-yellow-500 text-[#0073b7] font-semibold px-8 py-4 rounded-full text-lg group">
                 Découvrir nos programmes
-                {/* <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} /> */}
-                icon
               </button>
               <button className="border-white text-white hover:bg-white hover:text-[#0073b7] px-8 py-4 rounded-full text-lg group">
-                
-                I{/* <Play className="mr-2 group-hover:scale-110 transition-transform" size={20} /> */}
                 Visite virtuelle
               </button>
             </div>
 
-            {/* Stats */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {stats.map((stat, index) => (
                 <div key={index} className="hero-stats text-center">
@@ -102,7 +96,6 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Image */}
           <div className="relative">
             <div className="hero-image relative">
               <img
@@ -111,7 +104,6 @@ const Hero = () => {
                 className="w-full h-[600px] object-cover rounded-3xl shadow-2xl"
               />
               
-              {/* Floating elements */}
               <div className="absolute -top-6 -left-6 w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
                 <span className="text-[#0073b7] font-bold text-lg">A+</span>
               </div>
@@ -123,14 +115,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
-        </div>
-      </div>
+      </div> 
     </section>
   );
 };
