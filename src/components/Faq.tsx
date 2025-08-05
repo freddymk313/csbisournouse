@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-// import { ChevronDown, ChevronUp } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Navbar } from './Navbar'
 import { MdFacebook, MdMail, MdPhone } from 'react-icons/md'
 import { AiFillInstagram } from 'react-icons/ai'

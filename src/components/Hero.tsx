@@ -46,7 +46,7 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-[60vh] md:min-h-[95vh] flex items-center justify-center overflow-hidden">
       {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -54,14 +54,13 @@ const Hero = () => {
           alt="School background"
           className="w-full h-full object-cover"
         />
-        {/* <div className="absolute inset-0 bg-gradient-to-r from-[#0073b7]/90 to-[#0073b7]/70"></div> */}
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="mx-auto px-6 py-20">
+        <div className="">
           <div className="text-white">
-            <h1 className="hero-title font-bold text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6">
+            {/* <h1 className="hero-title font-bold text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6">
               Excellence
               <span className="block text-yellow-400">Éducative</span>
               <span className="block">Depuis 1998</span>
@@ -80,9 +79,9 @@ const Hero = () => {
               <button className="border-white text-white hover:bg-white hover:text-[#0073b7] px-8 py-4 rounded-full text-lg group">
                 Visite virtuelle
               </button>
-            </div>
+            </div> */}
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {stats.map((stat, index) => (
                 <div key={index} className="hero-stats text-center">
                   <div className="text-3xl lg:text-4xl font-bold text-yellow-400 mb-2">
@@ -93,26 +92,7 @@ const Hero = () => {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="hero-image relative">
-              <img
-                src="https://images.pexels.com/photos/8613204/pexels-photo-8613204.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop"
-                alt="Happy students"
-                className="w-full h-[600px] object-cover rounded-3xl shadow-2xl"
-              />
-              
-              <div className="absolute -top-6 -left-6 w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-[#0073b7] font-bold text-lg">A+</span>
-              </div>
-              
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-white rounded-2xl shadow-xl p-4 flex flex-col items-center justify-center">
-                <div className="text-2xl font-bold text-[#0073b7]">98%</div>
-                <div className="text-xs text-gray-600 text-center">Taux de réussite</div>
-              </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div> 

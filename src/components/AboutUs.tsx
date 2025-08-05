@@ -1,17 +1,15 @@
 import { useEffect } from "react";
-// import { Button } from "../../../../components/ui/button";
-// import { Card, CardContent, CardFooter } from "../../../../components/ui/card";
-// import { Clock, Users, BookOpen } from "lucide-react";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { MdBook, MdLockClock, MdSupervisedUserCircle } from "react-icons/md";
+import { MdArrowRightAlt } from "react-icons/md";
+import { GoArrowBoth, GoArrowRight } from "react-icons/go";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const AboutUsSection = () => {
+export const AboutUs = () => {
   useEffect(() => {
-    // Options section animations
-    gsap.fromTo('.options-title',
+    // About section animations
+    gsap.fromTo('.about-title',
       { y: 50, opacity: 0 },
       {
         y: 0,
@@ -19,7 +17,7 @@ export const AboutUsSection = () => {
         duration: 1,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: '.options-container',
+          trigger: '.about-container',
           start: 'top 80%',
           end: 'bottom 20%',
           toggleActions: 'play none none reverse'
@@ -27,16 +25,31 @@ export const AboutUsSection = () => {
       }
     );
 
-    gsap.fromTo('.option-card',
-      { y: 100, opacity: 0 },
+    gsap.fromTo('.about-image',
+      { x: -100, opacity: 0 },
       {
-        y: 0,
+        x: 0,
         opacity: 1,
-        duration: 0.8,
-        stagger: 0.3,
+        duration: 1,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: '.options-container',
+          trigger: '.about-container',
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+
+    gsap.fromTo('.about-content',
+      { x: 100, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: '.about-container',
           start: 'top 80%',
           end: 'bottom 20%',
           toggleActions: 'play none none reverse'
@@ -45,105 +58,65 @@ export const AboutUsSection = () => {
     );
   }, []);
 
-  // Data for the education level cards
-  const educationLevels = [
-    {
-      id: 1,
-      title: "MATERNEL",
-      image: "https://images.pexels.com/photos/8613066/pexels-photo-8613066.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
-      ageRange: "3 - 5 ans",
-      hours: "8h00 - 12h50",
-      icon: <MdSupervisedUserCircle className="text-[#0073b7]" size={24} />,
-      description: "Un environnement chaleureux et sécurisé où les tout-petits découvrent le plaisir d'apprendre à travers le jeu, l'éveil artistique et les premières notions académiques."
-    },
-    {
-      id: 2,
-      title: "PRIMAIRE",
-      image: "https://images.pexels.com/photos/8613028/pexels-photo-8613028.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
-      ageRange: "6 - 11 ans",
-      hours: "7h30 - 12h50",
-      icon: <MdBook className="text-[#0073b7]" size={24} />,
-      description: "Acquisition des fondamentaux avec une pédagogie moderne et interactive. Développement de l'autonomie, de la curiosité et des compétences essentielles pour la suite du parcours."
-    },
-    {
-      id: 3,
-      title: "SECONDAIRE",
-      image: "https://images.pexels.com/photos/8613032/pexels-photo-8613032.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
-      ageRange: "12 - 18 ans",
-      hours: "7h30 - 12h50",
-      icon: <MdLockClock className="text-[#0073b7]" size={24} />,
-      description: "Préparation à l'excellence avec des programmes rigoureux, orientation personnalisée et développement des compétences nécessaires pour l'enseignement supérieur."
-    },
-  ];
+  // School information data
+  const schoolInfo = {
+    title: "Qui Sommes\u00A0\u00A0nous ?",
+    subtitle:
+      "Une école d'excellence à Lubumbashi, engagée à offrir une éducation de qualité, dans un cadre sécurisé, moderne et bienveillant.",
+    imageSrc: "/about.jpg",
+    imageAlt: "École moderne",
+    paragraphs: [
+      "Le Complexe Scolaire Les Bisounours est un établissement d'enseignement d'excellence situé à Lubumbashi. Nous offrons un encadrement pédagogique de qualité, dans un environnement sécurisé, dynamique et propice à l'épanouissement des enfants, de la maternelle au secondaire.",
+      "Notre mission est de former des élèves responsables, curieux, ouverts sur le monde et enracinés dans des valeurs humaines et chrétiennes solides.",
+      "Depuis 1998, nous nous distinguons par notre approche pédagogique innovante, nos infrastructures modernes et notre corps enseignant hautement qualifié.",
+      "Nous accompagnons chaque élève dans son parcours éducatif avec un suivi personnalisé, des programmes adaptés et un environnement stimulant qui favorise l'excellence académique et l'épanouissement personnel.",
+      "Notre établissement prépare les leaders de demain en cultivant l'esprit critique, la créativité et les valeurs citoyennes essentielles pour réussir dans un monde en constante évolution."
+    ],
+    buttonText: "Lire plus",
+  };
 
   return (
-    <section id="options" className="w-full bg-[#0073b7] py-20">
-      <div className="options-container container mx-auto px-6">
-        <h2 className="options-title text-center font-bold text-white text-4xl lg:text-5xl font-['Poppins',Helvetica] mb-6">
-          Options Organisées
-        </h2>
+    <section id="about" className="w-full bg-white py-12 md:py-20">
+      <div className="about-container container mx-auto px-6">
+        <div className="flex flex-col items-center">
+          <h2 className="about-title font-bold text-2xl md:text-3xl lg:text-4xl text-[#333333] *font-['Poppins',Helvetica] mb-6 text-center">
+            {schoolInfo.title}
+          </h2>
 
-        <p className="text-center text-white font-['Poppins',Helvetica] text-xl max-w-4xl mx-auto mb-16 leading-relaxed">
-          De la maternelle au secondaire, nous accompagnons vos enfants dans
-          leur épanouissement intellectuel et personnel avec des programmes
-          adaptés à chaque âge et des méthodes pédagogiques innovantes.
-        </p>
+          <p className="text-[#333333] *font-['Poppins',Helvetica] text-center mb-4 max-w-4xl leading-relaxed">
+            {schoolInfo.subtitle}
+          </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {educationLevels.map((level) => (
-            <div key={level.id} className="option-card flex flex-col h-full">
-              <div className="bg-white/10 backdrop-blur-sm border-white/20 shadow-2xl h-full flex flex-col hover:bg-white/20 transition-all duration-300 group">
-                <div className="p-0 flex-grow">
-                  <div className="relative overflow-hidden rounded-t-lg">
-                    <img
-                      className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                      alt={`${level.title} students`}
-                      src={level.image}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div className="flex flex-col lg:flex-row gap-5 gap-x-12 w-full max-w-6xl">
+            <div className="about-image lg:w-1/2">
+              <img
+                src={schoolInfo.imageSrc}
+                alt={schoolInfo.imageAlt}
+                className="w-full h-auto max-h-[500px] object-cover *rounded-2xl *shadow-2xl"
+              />
+            </div>
+
+            <div className="about-content lg:w-1/2">
+              <div className="border-none shadow-none">
+                <div className="p-0">
+                  <div className="text-[#333333] *font-['Poppins',Helvetica] text-justify space-y-1 leading-relaxed">
+                    {schoolInfo.paragraphs.map((paragraph, index) => (
+                      <p key={index} className="*text-gray-700">
+                        {paragraph}
+                      </p>
+                    ))}
                   </div>
-                  
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="font-['Poppins',Helvetica] font-bold text-white text-2xl">
-                        {level.title}
-                      </h3>
-                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                        {level.icon}
-                      </div>
-                    </div>
-                    
-                    <p className="text-white/90 text-justify font-['Poppins',Helvetica] text-base mb-6 leading-relaxed">
-                      {level.description}
-                    </p>
-
-                    <div className="space-y-3">
-                      <div className="flex items-center text-white/90">
-                        <MdSupervisedUserCircle className="mr-3 text-yellow-400" size={18} />
-                        <span className="font-['Poppins',Helvetica] font-normal text-base">
-                          Âges: {level.ageRange}
-                        </span>
-                      </div>
-                      <div className="flex items-center text-white/90">
-                        <MdLockClock className="mr-3 text-yellow-400" size={18} />
-                        <span className="font-['Poppins',Helvetica] font-normal text-base">
-                          Horaires: {level.hours}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="p-6 pt-0">
-                  <button className="w-full h-14 bg-white text-[#0073b7] rounded-xl hover:bg-yellow-400 hover:text-[#0073b7] font-semibold text-lg transition-all duration-300 group">
-                    <span className="group-hover:scale-105 transition-transform duration-300">
-                      En savoir plus
-                    </span>
-                  </button>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
+
+          <div className="mt-4 md:mt-8 flex justify-start">
+            <a href="#" className="flex items-center gap-2.5 border border-[#0073b7] bg-transparent hover:bg-[#0073b7] text-[#0073b7] hover:text-[#ffffff] px-8 py-3 group transition-all duration-300">
+              <span>{schoolInfo.buttonText}</span>
+              <GoArrowRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
