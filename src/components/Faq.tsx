@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { BiChevronDown, BiChevronUp, BiMinus, BiPlug, BiPlus } from 'react-icons/bi';
+import { BiMinus, BiPlus } from 'react-icons/bi';
 
 gsap.registerPlugin(ScrollTrigger);
 
