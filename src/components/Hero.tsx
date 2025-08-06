@@ -38,12 +38,12 @@ const Hero = () => {
     });
   }, []);
 
-  const stats = [
-    { number: "25+", label: "Années d'expérience" },
-    { number: "1500+", label: "Élèves diplômés" },
-    { number: "98%", label: "Taux de réussite" },
-    { number: "50+", label: "Enseignants qualifiés" }
-  ];
+  // const stats = [
+  //   { number: "25+", label: "Années d'expérience" },
+  //   { number: "1500+", label: "Élèves diplômés" },
+  //   { number: "98%", label: "Taux de réussite" },
+  //   { number: "50+", label: "Enseignants qualifiés" }
+  // ];
 
   return (
     <section id="home" className="relative h-[60vh] md:min-h-[95vh] flex items-center justify-center overflow-hidden">
