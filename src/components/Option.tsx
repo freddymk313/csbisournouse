@@ -94,7 +94,7 @@ export const OptionSection = () => {
             Options Organisées
           </h2>
 
-          <p className="text-white *w-full *font-['Poppins',Helvetica] text-center mb-4 max-w-4xl leading-relaxed">
+          <p className="text-white text-center mb-4 max-w-4xl leading-relaxed">
             De la maternelle au secondaire, nous accompagnons vos enfants dans
             leur épanouissement intellectuel et personnel avec des programmes
             adaptés à chaque âge et des méthodes pédagogiques innovantes.

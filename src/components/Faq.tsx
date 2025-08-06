@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
+import { BiChevronDown, BiChevronUp, BiMinus, BiPlug, BiPlus } from 'react-icons/bi';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,11 +70,11 @@ export const FAQSection = () => {
   return (
     <section id="faq" className="py-20 bg-white">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#333333] mb-6">
+        <div className="text-center mb-12">
+          <h2 className="about-title font-bold text-2xl md:text-3xl lg:text-4xl text-[#333333] mb-6 text-center">
             Questions <span className="text-[#0073b7]">Fréquentes</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-gray-800 text-center mb-4 *max-w-3xl leading-relaxed">
             Trouvez les réponses aux questions les plus courantes concernant 
             notre établissement et nos services.
           </p>
@@ -84,19 +84,19 @@ export const FAQSection = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="faq-item mb-4 border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="faq-item mb-4 border border-[#0073b7] *rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
             >
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full px-8 py-6 text-left flex items-center justify-between bg-white hover:bg-gray-50 transition-colors duration-300"
               >
-                <h3 className="text-lg font-semibold text-[#333333] pr-4">
+                <h3 className="*text-lg font-semibold text-[#333333] pr-4">
                   {faq.question}
                 </h3>
                 {openIndex === index ? (
-                  <BiChevronUp className="text-[#0073b7] flex-shrink-0" size={24} />
+                  <BiMinus className="text-[#0073b7] flex-shrink-0" size={18} />
                 ) : (
-                  <BiChevronDown className="text-[#0073b7] flex-shrink-0" size={24} />
+                  <BiPlus className="text-[#0073b7] flex-shrink-0" size={18} />
                 )}
               </button>
               

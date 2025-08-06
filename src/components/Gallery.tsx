@@ -27,32 +27,32 @@ export const GallerySection = () => {
 
   const galleryImages = [
     {
-      src: "https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+      src: "/gallery/bus.jpg",
       alt: "Salle de classe moderne",
       title: "Salles de classe modernes"
     },
     {
-      src: "https://images.pexels.com/photos/8613204/pexels-photo-8613204.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+      src: "/gallery/primaire.jpg",
       alt: "Élèves en activité",
       title: "Apprentissage interactif"
     },
     {
-      src: "https://images.pexels.com/photos/8613097/pexels-photo-8613097.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+      src: "/gallery/eleves_pause.jpg",
       alt: "Laboratoire de sciences",
       title: "Laboratoire de sciences"
     },
     {
-      src: "https://images.pexels.com/photos/8613028/pexels-photo-8613028.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+      src: "/gallery/eleves.jpg",
       alt: "Bibliothèque",
       title: "Bibliothèque moderne"
     },
     {
-      src: "https://images.pexels.com/photos/8613066/pexels-photo-8613066.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+      src: "/gallery/secondaire.jpg",
       alt: "Terrain de sport",
       title: "Installations sportives"
     },
     {
-      src: "https://images.pexels.com/photos/8613032/pexels-photo-8613032.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+      src: "/gallery/terrain.jpg",
       alt: "Cour de récréation",
       title: "Espaces de détente"
     }
@@ -60,12 +60,12 @@ export const GallerySection = () => {
 
   return (
     <section id="gallery" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#333333] mb-6">
+      <div className="mx-auto px-4 md:px-16 lg:px-20">
+        <div className="text-center mb-12">
+          <h2 className="about-title font-bold text-2xl md:text-3xl lg:text-4xl text-[#333333] mb-6 text-center">
             Notre <span className="text-[#0073b7]">Galerie</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-gray-800 text-center mb-4 *max-w-4xl leading-relaxed">
             Découvrez nos installations modernes et l'environnement d'apprentissage 
             exceptionnel que nous offrons à nos élèves.
           </p>
@@ -75,7 +75,7 @@ export const GallerySection = () => {
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+              className="gallery-item group relative overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
             >
               <img
                 src={image.src}

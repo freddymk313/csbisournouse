@@ -7,6 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BiMapPin, BiPhone, BiSend } from 'react-icons/bi';
 import { RiMvAiLine } from 'react-icons/ri';
 import { CgLock } from 'react-icons/cg';
+import { BsSend } from 'react-icons/bs';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -102,11 +103,11 @@ export const ContactSection = () => {
   return (
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#333333] mb-6">
+        <div className="text-center mb-12">
+          <h2 className="about-title font-bold text-2xl md:text-3xl lg:text-4xl text-[#333333] mb-6 text-center">
             Contactez-<span className="text-[#0073b7]">nous</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-gray-800 text-center mb-4 *max-w-3xl leading-relaxed">
             Nous sommes là pour répondre à toutes vos questions et vous accompagner 
             dans le parcours éducatif de votre enfant.
           </p>
@@ -115,13 +116,13 @@ export const ContactSection = () => {
         <div className="contact-container grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
           <div className="contact-info">
-            <h3 className="text-2xl font-bold text-[#333333] mb-8">
+            <h3 className="text-lg font-bold text-[#333333] mb-6">
               Informations de contact
             </h3>
             
-            <div className="space-y-6 mb-8">
+            <div className="space-y-6 mb-6">
               {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-start space-x-4 p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div key={index} className="flex items-start space-x-4 p-6 bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
                   <div className="flex-shrink-0 w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center">
                     {info.icon}
                   </div>
@@ -149,15 +150,15 @@ export const ContactSection = () => {
 
           {/* Contact Form */}
           <div className="contact-form">
-            <h3 className="text-2xl font-bold text-[#333333] mb-8">
+            <h3 className="text-lg font-bold text-[#333333] mb-6">
               Envoyez-nous un message
             </h3>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 p-6 bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Nom complet *
+                    Nom complet <span className='text-[#0073b7]'>*</span>
                   </label>
                   <input
                     id="name"
@@ -166,13 +167,13 @@ export const ContactSection = () => {
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full h-12 rounded-xl border-gray-300 focus:border-[#0073b7] focus:ring-[#0073b7]"
+                    className="w-full h-12 rounded-md bg-gray-50 border-gray-300 focus:border-[#0073b7] focus:ring-[#0073b7] outline-none px-4 text-sm"
                     placeholder="Votre nom complet"
                   />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email *
+                    Email <span className='text-[#0073b7]'>*</span>
                   </label>
                   <input
                     id="email"
@@ -181,7 +182,7 @@ export const ContactSection = () => {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full h-12 rounded-xl border-gray-300 focus:border-[#0073b7] focus:ring-[#0073b7]"
+                    className="w-full h-12 rounded-md bg-gray-50 border-gray-300 focus:border-[#0073b7] focus:ring-[#0073b7] outline-none px-4 text-sm"
                     placeholder="votre@email.com"
                   />
                 </div>
@@ -198,13 +199,13 @@ export const ContactSection = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full h-12 rounded-xl border-gray-300 focus:border-[#0073b7] focus:ring-[#0073b7]"
+                    className="w-full h-12 rounded-md bg-gray-50 border-gray-300 focus:border-[#0073b7] focus:ring-[#0073b7] outline-none px-4 text-sm"
                     placeholder="+243 XXX XXX XXX"
                   />
                 </div>
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    Sujet *
+                    Sujet <span className='text-[#0073b7]'>*</span>
                   </label>
                   <input
                     id="subject"
@@ -213,7 +214,7 @@ export const ContactSection = () => {
                     required
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="w-full h-12 rounded-xl border-gray-300 focus:border-[#0073b7] focus:ring-[#0073b7]"
+                    className="w-full h-12 rounded-md bg-gray-50 border-gray-300 focus:border-[#0073b7] focus:ring-[#0073b7] outline-none px-4 text-sm"
                     placeholder="Sujet de votre message"
                   />
                 </div>
@@ -221,7 +222,7 @@ export const ContactSection = () => {
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Message *
+                  Message <span className='text-[#0073b7]'>*</span>
                 </label>
                 <textarea
                   id="message"
@@ -230,17 +231,17 @@ export const ContactSection = () => {
                   rows={6}
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full rounded-xl border-gray-300 focus:border-[#0073b7] focus:ring-[#0073b7] resize-none"
+                  className="w-full rounded-md py-3 bg-gray-50 border-gray-300 focus:border-[#0073b7] focus:ring-[#0073b7] outline-none px-4 text-sm"
                   placeholder="Votre message..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#0073b7] hover:bg-[#005a8f] text-white py-4 rounded-xl text-lg font-semibold group"
+                className="w-full flex items-center justify-center bg-[#0073b7] hover:bg-[#005a8f] text-white py-4 *rounded-xl *text-lg font-semibold group"
               >
-                <BiSend className="mr-2 group-hover:translate-x-1 transition-transform" size={20} />
-                Envoyer le message
+                <span>Envoyer le message</span>
+                <BsSend className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
               </button>
             </form>
           </div>
