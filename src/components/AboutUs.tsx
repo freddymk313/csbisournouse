@@ -1,8 +1,7 @@
 import { useEffect } from "react";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { MdArrowRightAlt } from "react-icons/md";
-import { GoArrowBoth, GoArrowRight } from "react-icons/go";
+import { GoArrowRight } from "react-icons/go";
 
 gsap.registerPlugin(ScrollTrigger);
 
