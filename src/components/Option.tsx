@@ -1,7 +1,4 @@
 import { useEffect } from "react";
-// import { Button } from "../../../../components/ui/button";
-// import { Card, CardContent, CardFooter } from "../../../../components/ui/card";
-// import { Clock, Users, BookOpen } from "lucide-react";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MdBook, MdLockClock, MdSupervisedUserCircle } from "react-icons/md";
@@ -80,16 +77,6 @@ export const OptionSection = () => {
     <section id="options" className="w-full bg-[#0073b7] py-20">
       <div className="options-container container mx-auto px-6">
         <div className="flex flex-col items-center">
-          {/* <h2 className="options-title text-center font-bold text-white text-4xl lg:text-5xl font-['Poppins',Helvetica] mb-6">
-          
-        </h2>
-
-        <p className="text-center text-white font-['Poppins',Helvetica] text-xl max-w-4xl mx-auto mb-16 leading-relaxed">
-          De la maternelle au secondaire, nous accompagnons vos enfants dans
-          leur épanouissement intellectuel et personnel avec des programmes
-          adaptés à chaque âge et des méthodes pédagogiques innovantes.
-        </p> */}
-
           <h2 className="about-title font-bold text-2xl md:text-3xl lg:text-4xl text-white *font-['Poppins',Helvetica] mb-6 text-center">
             Options Organisées
           </h2>
@@ -103,9 +90,9 @@ export const OptionSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mt-5">
             {educationLevels.map((level) => (
               <div key={level.id} className="option-card flex flex-col h-full">
-                <div className="*bg-white/10 *backdrop-blur-sm *border-white/20 *shadow-2xl h-full flex flex-col *hover:bg-white/20 transition-all duration-300 group">
+                <div className="h-full flex flex-col *hover:bg-white/20 transition-all duration-300 group">
                   <div className="p-0 flex-grow">
-                    <div className="relative overflow-hidden rounded-t-lg">
+                    <div className="relative overflow-hidden *rounded-t-lg">
                       <img
                         className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                         alt={`${level.title} students`}
