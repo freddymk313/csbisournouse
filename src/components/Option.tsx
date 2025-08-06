@@ -130,7 +130,7 @@ export const OptionSection = () => {
                   </div>
 
                   <div className="py-6 pt-0">
-                    <button className="w-full h-12 bg-white text-[#0073b7] *rounded-xl hover:bg-white/60 hover:text-[#0073b7] font-semibold text-lg transition-all duration-300 group">
+                    <button className="w-full h-12 bg-white text-[#0073b7] *rounded-xl hover:bg-white/60 hover:text-[#0073b7] font-semibold transition-all duration-300 group">
                       <span className="group-hover:scale-105 transition-transform duration-300">
                         En savoir plus
                       </span>
