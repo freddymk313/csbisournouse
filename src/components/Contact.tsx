@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
-// import { Button } from './ui/button';
-// import { Input } from './ui/input';
-// import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { BiMapPin, BiPhone, BiSend } from 'react-icons/bi';
+import { BiMapPin, BiPhone } from 'react-icons/bi';
 import { RiMvAiLine } from 'react-icons/ri';
 import { CgLock } from 'react-icons/cg';
 import { BsSend } from 'react-icons/bs';
