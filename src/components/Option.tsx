@@ -103,7 +103,7 @@ export const OptionSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mt-5">
             {educationLevels.map((level) => (
               <div key={level.id} className="option-card flex flex-col h-full">
-                <div className="*bg-white/10 backdrop-blur-sm *border-white/20 shadow-2xl h-full flex flex-col hover:bg-white/20 transition-all duration-300 group">
+                <div className="*bg-white/10 *backdrop-blur-sm *border-white/20 *shadow-2xl h-full flex flex-col *hover:bg-white/20 transition-all duration-300 group">
                   <div className="p-0 flex-grow">
                     <div className="relative overflow-hidden rounded-t-lg">
                       <img
@@ -114,30 +114,27 @@ export const OptionSection = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     </div>
 
-                    <div className="p-6">
+                    <div className="py-6">
                       <div className="flex items-center justify-between mb-4">
                         <h3 className="font-['Poppins',Helvetica] font-bold text-white text-2xl">
                           {level.title}
                         </h3>
-                        {/* <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                          {level.icon}
-                        </div> */}
                       </div>
 
-                      <p className="text-white/90 text-justify font-['Poppins',Helvetica] text-base mb-6 leading-relaxed">
+                      <p className="text-white/90 text-justify text-base mb-4 leading-relaxed">
                         {level.description}
                       </p>
 
-                      <div className="space-y-2">
+                      <div className="space-y-1">
                         <div className="flex items-center text-white/90">
-                          <MdSupervisedUserCircle className="mr-3 text-yellow-400" size={18} />
-                          <span className="*font-['Poppins',Helvetica] font-normal text-base">
+                          <MdSupervisedUserCircle className="mr-3 text-white" size={18} />
+                          <span className="font-normal text-base">
                             Âges: {level.ageRange}
                           </span>
                         </div>
                         <div className="flex items-center text-white/90">
-                          <MdLockClock className="mr-3 text-yellow-400" size={18} />
-                          <span className="*font-['Poppins',Helvetica] *font-normal text-base">
+                          <MdLockClock className="mr-3 text-white" size={18} />
+                          <span className="font-normal text-base">
                             Horaires: {level.hours}
                           </span>
                         </div>
@@ -145,8 +142,8 @@ export const OptionSection = () => {
                     </div>
                   </div>
 
-                  <div className="p-6 pt-0">
-                    <button className="w-full h-12 bg-white text-[#0073b7] *rounded-xl hover:bg-yellow-400 hover:text-[#0073b7] font-semibold text-lg transition-all duration-300 group">
+                  <div className="py-6 pt-0">
+                    <button className="w-full h-12 bg-white text-[#0073b7] *rounded-xl hover:bg-white/60 hover:text-[#0073b7] font-semibold text-lg transition-all duration-300 group">
                       <span className="group-hover:scale-105 transition-transform duration-300">
                         En savoir plus
                       </span>
