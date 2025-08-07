@@ -72,22 +72,22 @@ export const AcademicProgramsSection = () => {
 
   return (
     <section id="programs" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#333333] mb-6">
+      <div className="container mx-auto px-4 md:px-16 lg:px-20">
+        <div className="text-center mb-12 flex flex-col items-center justify-center">
+          <h2 className="about-title font-bold text-2xl md:text-3xl lg:text-4xl text-[#333333] mb-6 text-center">
             Nos <span className="text-[#0073b7]">Programmes</span> Académiques
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-gray-800 text-center mb-4 max-w-3xl leading-relaxed">
             Découvrez notre offre éducative complète conçue pour développer 
             toutes les compétences de vos enfants et les préparer à un avenir brillant.
           </p>
         </div>
 
-        <div className="programs-container grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="programs-container grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {programs.map((program, index) => (
             <div
               key={index}
-              className="program-card group p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#0073b7]/20"
+              className="program-card group p-6 bg-white *rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#0073b7]/20"
             >
               <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#0073b7] group-hover:scale-110 transition-all duration-300">
                 <div className="group-hover:text-white transition-colors duration-300">
@@ -107,20 +107,20 @@ export const AcademicProgramsSection = () => {
         </div>
 
         {/* Additional Program Features */}
-        <div className="mt-16 bg-gradient-to-r from-[#0073b7] to-[#005a8f] rounded-3xl p-8 text-white">
+        <div className="mt-16 bg-gradient-to-r from-[#0073b7] to-[#005a8f] p-8 text-white">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-yellow-400 mb-2">3</div>
+              <div className="text-4xl font-bold not-odd:mb-2">3</div>
               <div className="text-lg font-semibold mb-2">Niveaux d'Enseignement</div>
               <div className="text-sm opacity-90">Maternel, Primaire, Secondaire</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-yellow-400 mb-2">15</div>
+              <div className="text-4xl font-bold mb-2">15</div>
               <div className="text-lg font-semibold mb-2">Matières Enseignées</div>
               <div className="text-sm opacity-90">Programme complet et équilibré</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-yellow-400 mb-2">25</div>
+              <div className="text-4xl font-bold mb-2">25</div>
               <div className="text-lg font-semibold mb-2">Élèves par Classe</div>
               <div className="text-sm opacity-90">Suivi personnalisé garanti</div>
             </div>
