@@ -6,7 +6,7 @@ import { FAQSection } from './components/Faq'
 import { GallerySection } from './components/Gallery'
 import Hero from './components/Hero'
 import { AboutUs } from './components/AboutUs'
-import { ServicesSection } from './components/Services'
+import { AcademicProgramsSection } from './components/AcademicProgram'
 
 function App() {
   return (
@@ -14,10 +14,7 @@ function App() {
       <Hero />
       <AboutUs />
       <OptionSection />
-      <ServicesSection />
-      {/*  */}
-
-
+      <AcademicProgramsSection />
       <GallerySection />
       <FAQSection />
       <ContactSection />
