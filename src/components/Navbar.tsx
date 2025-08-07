@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { navigationLinks } from '../constants';
 import { MdClose, MdMenu } from 'react-icons/md';
@@ -6,6 +6,7 @@ import { MdClose, MdMenu } from 'react-icons/md';
 export const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const mobileMenuRef = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -30,13 +31,67 @@ export const Navbar = () => {
         );
     }, []);
 
+    useEffect(() => {
+        // Empêcher le scroll du body quand le menu est ouvert
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+
+        // Animation du menu mobile
+        if (mobileMenuRef.current) {
+            if (isMenuOpen) {
+                gsap.fromTo(mobileMenuRef.current,
+                    { 
+                        height: 0,
+                        opacity: 0,
+                        display: 'none'
+                    },
+                    { 
+                        height: 'auto',
+                        opacity: 1,
+                        display: 'block',
+                        duration: 0.4,
+                        ease: "power2.out",
+                        onStart: () => {
+                            gsap.set(mobileMenuRef.current, { display: 'block' });
+                        }
+                    }
+                );
+                
+                // Animation des liens
+                gsap.from('.mobile-link', {
+                    x: -20,
+                    opacity: 0,
+                    stagger: 0.1,
+                    duration: 0.3,
+                    delay: 0.2
+                });
+            } else {
+                gsap.to(mobileMenuRef.current, {
+                    height: 0,
+                    opacity: 0,
+                    duration: 0.3,
+                    ease: "power2.in",
+                    onComplete: () => {
+                        gsap.set(mobileMenuRef.current, { display: 'none' });
+                    }
+                });
+            }
+        }
+
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [isMenuOpen]);
+
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
     return (
-        <nav className={`navbar transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-            }`} >
+        <nav className={`navbar transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
             <div className="mx-auto px-4 md:px-16 lg:px-20 py-2">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
@@ -52,8 +107,7 @@ export const Navbar = () => {
                             <a
                                 key={index}
                                 href={link.href}
-                                className={`nav-link transition-colors duration-300 hover:text-[#0073b7] ${isScrolled ? 'text-gray-700' : 'text-gray-950'
-                                    }`}
+                                className={`nav-link transition-colors duration-300 hover:text-[#0073b7] ${isScrolled ? 'text-gray-700' : 'text-gray-950'}`}
                             >
                                 {link.text}
                             </a>
@@ -64,35 +118,44 @@ export const Navbar = () => {
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <button
-                        onClick={toggleMenu}
-                        className={`lg:hidden p-2 rounded-md transition-colors duration-300 ${isScrolled ? 'text-gray-700' : 'text-gray-950'
-                            }`}
-                    >
-                        {isMenuOpen ? <MdClose size={24} /> : <MdMenu size={24} />}
-                    </button>
+                    <div className="lg:hidden flex items-center">
+                        <button className="bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-2.5">
+                            Inscription
+                        </button>
+                        <button
+                            onClick={toggleMenu}
+                            className={`p-2 rounded-md transition-colors duration-300 ${isScrolled ? 'text-gray-700' : 'text-gray-950'}`}
+                            aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+                        >
+                            {isMenuOpen ? <MdClose size={24} /> : <MdMenu size={24} />}
+                        </button>
+                    </div>
                 </div>
 
                 {/* Mobile Navigation */}
-                {isMenuOpen && (
-                    <div className="lg:hidden mt-4 pb-4 border-t border-gray-200">
-                        <div className="flex flex-col space-y-4 pt-4">
+                <div 
+                    ref={mobileMenuRef}
+                    className="lg:hidden overflow-hidden bg-white/95 backdrop-blur-md fixed left-0 right-0 top-24 z-50 shadow-xl"
+                    style={{ display: 'none' }}
+                >
+                    <div className="container mx-auto px-4 md:px-16 lg:px-20 py-4">
+                        <div className="flex flex-col space-y-4">
                             {navigationLinks.map((link, index) => (
                                 <a
                                     key={index}
                                     href={link.href}
-                                    className="text-gray-700 hover:text-[#0073b7] transition-colors duration-300"
+                                    className="mobile-link text-gray-700 hover:text-[#0073b7] text-lg py-3 transition-colors duration-300"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     {link.text}
                                 </a>
                             ))}
-                            <button className="bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-2.5 w-full">
+                            <button className="mobile-link bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-3 w-full text-lg">
                                 Inscription
                             </button>
                         </div>
                     </div>
-                )}
+                </div>
             </div>
         </nav>
     );

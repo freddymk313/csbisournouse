@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 shadow-md">
       {/* Top Bar - Contact Info */}
-      <div className='bg-[#0073B7] flex items-center py-3 text-white justify-between w-full px-4 md:px-16 lg:px-20'>
+      <div className='bg-[#0073B7] flex items-center py-2 text-white justify-between w-full px-4 md:px-16 lg:px-20'>
         <div className="flex flex-col md:flex-row items-center gap-x-4 md:gap-x-6 w-full">
           <div className="flex items-center gap-2 hover:text-[#E6F0FA] transition-colors">
             <MdPhone className="h-4 w-4" />
