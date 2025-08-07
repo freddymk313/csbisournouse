@@ -114,7 +114,7 @@ const Footer = () => {
               />
               <button 
                 type="submit" 
-                className="w-full px-6 py-3 bg-white text-[#0073B7] *rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
+                className="w-full px-6 py-3 bg-white text-[#0073B7] hover:bg-gray-100 transition-colors duration-300"
               >
                 S'abonner
               </button>

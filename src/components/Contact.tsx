@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { BiMapPin, BiPhone } from 'react-icons/bi';
-import { RiMvAiLine } from 'react-icons/ri';
-import { CgLock } from 'react-icons/cg';
 import { BsSend } from 'react-icons/bs';
+import { FiPhone } from 'react-icons/fi';
+import { IoMailOutline } from 'react-icons/io5';
+import { FaRegClock } from 'react-icons/fa';
+import { MdOutlineLocationOn } from 'react-icons/md';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -76,22 +77,22 @@ export const ContactSection = () => {
 
   const contactInfo = [
     {
-      icon: <BiMapPin className="text-[#0073b7]" size={24} />,
+      icon: <MdOutlineLocationOn className="text-[#0073b7]" size={26} />,
       title: "Adresse",
       details: ["1098, Av MAMA YEMO", "C/Lubumbashi, Haut-Katanga RDC"]
     },
     {
-      icon: <BiPhone className="text-[#0073b7]" size={24} />,
+      icon: <FiPhone className="text-[#0073b7]" size={24} />,
       title: "Téléphone",
       details: ["+243 822266004", "+243 843387388"]
     },
     {
-      icon: <RiMvAiLine className="text-[#0073b7]" size={24} />,
+      icon: <IoMailOutline className="text-[#0073b7]" size={24} />,
       title: "Email",
       details: ["direction@cs-bisounours.com", "info@cs-bisounours.com"]
     },
     {
-      icon: <CgLock className="text-[#0073b7]" size={24} />,
+      icon: <FaRegClock className="text-[#0073b7]" size={24} />,
       title: "Horaires",
       details: ["Lun - Ven: 7h00 - 17h00", "Sam: 8h00 - 12h00"]
     }
@@ -105,7 +106,7 @@ export const ContactSection = () => {
             Contactez-<span className="text-[#0073b7]">nous</span>
           </h2>
           <p className="text-gray-800 text-center mb-4 *max-w-3xl leading-relaxed">
-            Nous sommes là pour répondre à toutes vos questions et vous accompagner 
+            Nous sommes là pour répondre à toutes vos questions et vous accompagner
             dans le parcours éducatif de votre enfant.
           </p>
         </div>
@@ -116,7 +117,7 @@ export const ContactSection = () => {
             <h3 className="text-lg font-bold text-[#333333] mb-6">
               Informations de contact
             </h3>
-            
+
             <div className="space-y-6 mb-6">
               {contactInfo.map((info, index) => (
                 <div key={index} className="flex items-start space-x-4 p-6 bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
@@ -133,15 +134,18 @@ export const ContactSection = () => {
               ))}
             </div>
 
-            {/* Map placeholder */}
+            {/* Map */}
             <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
-              <div className="h-64 bg-gradient-to-br from-[#0073b7] to-[#005a8f] flex items-center justify-center">
-                <div className="text-center text-white">
-                  <BiMapPin size={48} className="mx-auto mb-4" />
-                  <p className="text-lg font-semibold">Carte interactive</p>
-                  <p className="text-sm opacity-90">Localisation de l'école</p>
-                </div>
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2966.1841609656462!2d27.481204699999996!3d-11.6641824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19723ec0cdb98177%3A0xc6af1c88bd7b317b!2scs%20bisounours!5e1!3m2!1sfr!2scd!4v1754569684344!5m2!1sfr!2scd"
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                // allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localisation de l'école"
+              ></iframe>
             </div>
           </div>
 
@@ -150,7 +154,7 @@ export const ContactSection = () => {
             <h3 className="text-lg font-bold text-[#333333] mb-6">
               Envoyez-nous un message
             </h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-4 p-6 bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -164,7 +168,7 @@ export const ContactSection = () => {
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full h-12 rounded-md bg-gray-50 border-gray-300 focus:border-[#0073b7] focus:ring-[#0073b7] outline-none px-4 text-sm"
+                    className="w-full h-12 rounded-md px-4 text-sm bg-gray-50 focus:border-[#0073B7] focus:ring-2 focus:ring-[#0073B7]/50 outline-none transition"
                     placeholder="Votre nom complet"
                   />
                 </div>
@@ -179,7 +183,7 @@ export const ContactSection = () => {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full h-12 rounded-md bg-gray-50 border-gray-300 focus:border-[#0073b7] focus:ring-[#0073b7] outline-none px-4 text-sm"
+                    className="w-full h-12 rounded-md px-4 text-sm bg-gray-50 focus:border-[#0073B7] focus:ring-2 focus:ring-[#0073B7]/50 outline-none transition"
                     placeholder="votre@email.com"
                   />
                 </div>
@@ -196,7 +200,7 @@ export const ContactSection = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full h-12 rounded-md bg-gray-50 border-gray-300 focus:border-[#0073b7] focus:ring-[#0073b7] outline-none px-4 text-sm"
+                    className="w-full h-12 rounded-md px-4 text-sm bg-gray-50 focus:border-[#0073B7] focus:ring-2 focus:ring-[#0073B7]/50 outline-none transition"
                     placeholder="+243 XXX XXX XXX"
                   />
                 </div>
@@ -211,7 +215,7 @@ export const ContactSection = () => {
                     required
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="w-full h-12 rounded-md bg-gray-50 border-gray-300 focus:border-[#0073b7] focus:ring-[#0073b7] outline-none px-4 text-sm"
+                    className="w-full h-12 rounded-md px-4 text-sm bg-gray-50 focus:border-[#0073B7] focus:ring-2 focus:ring-[#0073B7]/50 outline-none transition"
                     placeholder="Sujet de votre message"
                   />
                 </div>
@@ -228,14 +232,14 @@ export const ContactSection = () => {
                   rows={6}
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full rounded-md py-3 bg-gray-50 border-gray-300 focus:border-[#0073b7] focus:ring-[#0073b7] outline-none px-4 text-sm"
+                  className="w-full px-4 py-3 rounded-md text-sm bg-gray-50 focus:border-[#0073B7] focus:ring-2 focus:ring-[#0073B7]/50 outline-none transition"
                   placeholder="Votre message..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center bg-[#0073b7] hover:bg-[#005a8f] text-white py-4 *rounded-xl *text-lg font-semibold group"
+                className="w-full flex items-center justify-center bg-[#0073b7] hover:bg-[#005a8f] text-white py-4  group"
               >
                 <span>Envoyer le message</span>
                 <BsSend className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
