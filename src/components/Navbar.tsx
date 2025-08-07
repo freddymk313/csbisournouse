@@ -92,7 +92,7 @@ export const Navbar = () => {
 
     return (
         // <nav className="bg-transparent">
-         <nav className={`navbar transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}> 
+         <nav className={`navbar transition-all bg-none duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-none'}`}> 
             <div className="mx-auto px-4 md:px-16 lg:px-20 py-2">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
@@ -125,7 +125,7 @@ export const Navbar = () => {
                         </button>
                         <button
                             onClick={toggleMenu}
-                            className={`p-2 rounded-md transition-colors duration-300 ${isScrolled ? 'text-gray-700' : 'text-gray-950'}`}
+                            className={`p-2 rounded-md cursor-pointer transition-colors duration-300 ${isScrolled ? 'text-gray-700' : 'text-gray-950'}`}
                             aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
                         >
                             {isMenuOpen ? <MdClose size={24} /> : <MdMenu size={24} />}
@@ -136,22 +136,22 @@ export const Navbar = () => {
                 {/* Mobile Navigation */}
                 <div 
                     ref={mobileMenuRef}
-                    className="lg:hidden overflow-hidden bg-white/95 backdrop-blur-md fixed left-0 right-0 top-24 z-50 shadow-xl"
+                    className="lg:hidden overflow-hidden bg-white/95 backdrop-blur-md fixed left-0 right-0 top-[72px] z-50 shadow-xl"
                     style={{ display: 'none' }}
                 >
                     <div className="container mx-auto px-4 md:px-16 lg:px-20 py-4">
-                        <div className="flex flex-col space-y-4">
+                        <div className="flex flex-col space-y-2">
                             {navigationLinks.map((link, index) => (
                                 <a
                                     key={index}
                                     href={link.href}
-                                    className="mobile-link text-gray-700 hover:text-[#0073b7] text-lg py-3 transition-colors duration-300"
+                                    className="mobile-link text-gray-700 hover:text-[#0073b7] *text-lg py-3 transition-colors duration-300"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     {link.text}
                                 </a>
                             ))}
-                            <button className="mobile-link bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-3 w-full text-lg">
+                            <button className="mobile-link bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-3 w-full *text-lg">
                                 Inscription
                             </button>
                         </div>

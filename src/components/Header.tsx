@@ -5,7 +5,7 @@ import { IoLogoWhatsapp } from 'react-icons/io'
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 shadow-md">
+    <header className="sticky top-0 z-50 shadow-md bg-none">
       {/* Top Bar - Contact Info */}
       <div className='bg-[#0073B7] flex items-center py-2 text-white justify-between w-full px-4 md:px-16 lg:px-20'>
         <div className="flex flex-col md:flex-row items-center gap-x-4 md:gap-x-6 w-full">
@@ -20,7 +20,7 @@ const Header = () => {
         </div>
 
         {/* Social Media */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-3">
           <a href="#" aria-label="Facebook" className="p-1 hover:text-[#E6F0FA] transition-colors">
             <MdFacebook className="h-5 w-5" />
           </a>

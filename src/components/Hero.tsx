@@ -31,14 +31,14 @@ const Hero = () => {
           alt="École maternelle CS Bisounours - Enfants heureux apprenant et jouant"
           className="hero-image w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-6 md:px-16 lg:px-20 z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="text-white">
-            <h1 className="hero-title font-bold text-3xl md:text-4xl leading-tight mb-4">
+            <h1 className="hero-title font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
               <span className="block">Bienvenue au</span>
               <span className="block">Complexe Scolaire Les Bisounours</span>
             </h1>
@@ -49,10 +49,10 @@ const Hero = () => {
             </p>
 
             <div className="hero-buttons flex flex-col sm:flex-row gap-3 justify-center">
-              <button className="bg-white hover:bg-gray-50 text-[#0073B7] px-6 py-2.5 md:py-3 text-sm md:text-base transition-colors duration-300">
+              <button className="bg-white border border-white hover:bg-gray-50 text-[#0073B7] px-6 py-3 md:text-base transition-colors duration-300">
                 Découvrir notre école
               </button>
-              <button className="border border-white text-white hover:bg-white hover:text-[#0073B7] px-6 py-2.5 md:py-3 text-sm md:text-base transition-colors duration-300">
+              <button className="border border-white text-white hover:bg-white hover:text-[#0073B7] px-6 py-3 md:text-base transition-colors duration-300">
                 Inscription en ligne
               </button>
             </div>
