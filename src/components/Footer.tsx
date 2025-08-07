@@ -1,7 +1,7 @@
 import { AiFillInstagram } from "react-icons/ai";
-import { FaAngleRight, FaChevronRight } from "react-icons/fa";
+import { FaChevronRight } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
-import { MdFacebook, MdLocationPin, MdMail, MdMap, MdPhone } from "react-icons/md";
+import { MdFacebook, MdLocationPin, MdMail, MdPhone } from "react-icons/md";
 
 const navigationLinks = [
   { text: "Accueil", icon: "/group-8.png" },

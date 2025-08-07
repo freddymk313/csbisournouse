@@ -20,15 +20,6 @@ const Hero = () => {
       { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" },
       "-=0.4"
     );
-
-    // Subtle floating animation
-    // gsap.to('.hero-image', {
-    //   y: -8,
-    //   duration: 4,
-    //   ease: "sine.inOut",
-    //   yoyo: true,
-    //   repeat: -1
-    // });
   }, []);
 
   return (
