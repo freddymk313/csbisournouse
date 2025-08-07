@@ -91,7 +91,8 @@ export const Navbar = () => {
     };
 
     return (
-        <nav className={`navbar transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
+        // <nav className="bg-transparent">
+         <nav className={`navbar transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}> 
             <div className="mx-auto px-4 md:px-16 lg:px-20 py-2">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
