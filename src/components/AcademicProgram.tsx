@@ -72,7 +72,7 @@ export const AcademicProgramsSection = () => {
 
   return (
     <section id="programs" className="py-20 bg-white">
-      <div className="container mx-auto px-4 md:px-16 lg:px-20">
+      <div className="mx-auto px-4 md:px-16 lg:px-20">
         <div className="text-center mb-12 flex flex-col items-center justify-center">
           <h2 className="about-title font-bold text-2xl md:text-3xl lg:text-4xl text-[#333333] mb-6 text-center">
             Nos <span className="text-[#0073b7]">Programmes</span> Académiques
