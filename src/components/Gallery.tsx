@@ -28,28 +28,28 @@ export const GallerySection = () => {
   const galleryImages = [
     {
       src: "/gallery/bus.jpg",
-      alt: "Salle de classe moderne",
-      title: "Salles de classe modernes"
+      alt: "Bus scolaire",
+      title: "Bus scolaire"
     },
     {
       src: "/gallery/primaire.jpg",
-      alt: "Élèves en activité",
-      title: "Apprentissage interactif"
+      alt: "Élèves en pause",
+      title: "Élèves en pause"
     },
     {
       src: "/gallery/eleves_pause.jpg",
-      alt: "Laboratoire de sciences",
-      title: "Laboratoire de sciences"
+      alt: "Élèves en pause",
+      title: "Elèves en pause"
     },
     {
       src: "/gallery/eleves.jpg",
-      alt: "Bibliothèque",
-      title: "Bibliothèque moderne"
+      alt: "Photographie de groupe d'élèves",
+      title: "Photographie de groupe d'élèves"
     },
     {
       src: "/gallery/secondaire.jpg",
-      alt: "Terrain de sport",
-      title: "Installations sportives"
+      alt: "Eleves du secondaire",
+      title: "Eleves du secondaire"
     },
     {
       src: "/gallery/terrain.jpg",
