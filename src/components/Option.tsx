@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MdBook, MdLockClock, MdSupervisedUserCircle } from "react-icons/md";
+import { FaClock, FaUsers } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -114,13 +115,13 @@ export const OptionSection = () => {
 
                       <div className="space-y-1">
                         <div className="flex items-center text-white/90">
-                          <MdSupervisedUserCircle className="mr-3 text-white" size={18} />
+                          <FaUsers className="mr-3 text-white" size={19} />
                           <span className="font-normal text-base">
                             Âges: {level.ageRange}
                           </span>
                         </div>
                         <div className="flex items-center text-white/90">
-                          <MdLockClock className="mr-3 text-white" size={18} />
+                          <FaClock className="mr-3 text-white" size={17} />
                           <span className="font-normal text-base">
                             Horaires: {level.hours}
                           </span>
@@ -130,11 +131,12 @@ export const OptionSection = () => {
                   </div>
 
                   <div className="py-6 pt-0">
-                    <button className="w-full h-12 bg-white text-[#0073b7] *rounded-xl hover:bg-white/60 hover:text-[#0073b7] font-semibold transition-all duration-300 group">
-                      <span className="group-hover:scale-105 transition-transform duration-300">
-                        En savoir plus
-                      </span>
-                    </button>
+                    <button 
+                type="submit" 
+                className="w-full px-6 py-3 bg-white text-[#0073B7] hover:bg-gray-100 transition-colors duration-300"
+              >
+                En savoir plus
+              </button>
                   </div>
                 </div>
               </div>

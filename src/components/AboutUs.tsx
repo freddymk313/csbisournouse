@@ -7,23 +7,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const AboutUs = () => {
   useEffect(() => {
-    // About section animations
-    gsap.fromTo('.about-title',
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: '.about-container',
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse'
-        }
-      }
-    );
-
     gsap.fromTo('.about-image',
       { x: -100, opacity: 0 },
       {
@@ -59,7 +42,7 @@ export const AboutUs = () => {
 
   // School information data
   const schoolInfo = {
-    title: "Qui Sommes\u00A0\u00A0nous ?",
+    title: "Qui Sommes",
     subtitle:
       "Une école d'excellence à Lubumbashi, engagée à offrir une éducation de qualité, dans un cadre sécurisé, moderne et bienveillant.",
     imageSrc: "/about.jpg",
@@ -79,7 +62,7 @@ export const AboutUs = () => {
       <div className="about-container container mx-auto px-6">
         <div className="flex flex-col items-center">
           <h2 className="about-title font-bold text-2xl md:text-3xl lg:text-4xl text-[#333333] *font-['Poppins',Helvetica] mb-6 text-center">
-            {schoolInfo.title}
+            {schoolInfo.title} <span className="text-[#0073b7]">nous</span> ?
           </h2>
 
           <p className="text-[#333333] *font-['Poppins',Helvetica] text-center mb-4 max-w-4xl leading-relaxed">
