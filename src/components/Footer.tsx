@@ -127,7 +127,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white/80">
-          <p>© 2025 CS LES BISOUNOURS — Tous droits réservés</p>
+          <p>© 2025 CS LES BISOUNOURS - Tous droits réservés</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <a href="#" className="hover:text-white transition-colors duration-300">
               Mentions légales
