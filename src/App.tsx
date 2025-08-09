@@ -1,23 +1,20 @@
 
 import './App.css'
-import { OptionSection } from './components/Option'
-import { ContactSection } from './components/Contact'
-import { FAQSection } from './components/Faq'
-import { GallerySection } from './components/Gallery'
-import Hero from './components/Hero'
-import { AboutUs } from './components/AboutUs'
-import { AcademicProgramsSection } from './components/AcademicProgram'
+import { Route, Routes } from 'react-router-dom'
+import ContactPage from './pages/ContactPage'
+import AcceuilPage from './pages/AcceuilPage'
+import GaleriePage from './pages/GaleriePage'
 
 function App() {
   return (
     <>
-      <Hero />
-      <AboutUs />
-      <OptionSection />
-      <AcademicProgramsSection />
-      <GallerySection />
-      <FAQSection />
-      <ContactSection />
+      <Routes>
+        <Route path="/" element={<AcceuilPage />} />
+
+        <Route path="/galerie" element={<GaleriePage />} />
+        
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
     </>
   )
 }

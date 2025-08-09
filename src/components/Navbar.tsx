@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { navigationLinks } from '../constants';
 import { MdClose, MdMenu } from 'react-icons/md';
+import { NavLink } from 'react-router-dom';
 
 export const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,12 +44,12 @@ export const Navbar = () => {
         if (mobileMenuRef.current) {
             if (isMenuOpen) {
                 gsap.fromTo(mobileMenuRef.current,
-                    { 
+                    {
                         height: 0,
                         opacity: 0,
                         display: 'none'
                     },
-                    { 
+                    {
                         height: 'auto',
                         opacity: 1,
                         display: 'block',
@@ -59,7 +60,7 @@ export const Navbar = () => {
                         }
                     }
                 );
-                
+
                 // Animation des liens
                 gsap.from('.mobile-link', {
                     x: -20,
@@ -92,7 +93,7 @@ export const Navbar = () => {
 
     return (
         // <nav className="bg-transparent">
-         <nav className={`navbar transition-all bg-none duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-none'}`}> 
+        <nav className={`navbar transition-all bg-none duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-none'}`}>
             <div className="mx-auto px-4 md:px-16 lg:px-20 py-2">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
@@ -105,14 +106,22 @@ export const Navbar = () => {
                     {/* Desktop Navigation */}
                     <div className="hidden lg:flex items-center space-x-6">
                         {navigationLinks.map((link, index) => (
-                            <a
+                            <NavLink
                                 key={index}
-                                href={link.href}
-                                className={`nav-link transition-colors duration-300 hover:text-[#0073b7] ${isScrolled ? 'text-gray-700' : 'text-gray-950'}`}
+                                to={link.href}
+                                className={({ isActive }) =>
+                                    `nav-link transition-colors duration-300 hover:text-[#0073b7] ${isActive
+                                        ? 'text-[#0073b7]'
+                                        : isScrolled
+                                            ? 'text-gray-700'
+                                            : 'text-gray-950'
+                                    }`
+                                }
                             >
                                 {link.text}
-                            </a>
+                            </NavLink>
                         ))}
+
                         <button className="bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-2.5">
                             Inscription
                         </button>
@@ -134,7 +143,7 @@ export const Navbar = () => {
                 </div>
 
                 {/* Mobile Navigation */}
-                <div 
+                <div
                     ref={mobileMenuRef}
                     className="lg:hidden overflow-hidden bg-white/95 backdrop-blur-md fixed left-0 right-0 top-[72px] z-50 shadow-xl"
                     style={{ display: 'none' }}
