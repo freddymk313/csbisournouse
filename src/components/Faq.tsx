@@ -51,11 +51,11 @@ export const FAQSection = () => {
       answer:
         "Oui, nous offrons diverses activités : sport, musique, arts plastiques, informatique, clubs de sciences, et bien d'autres pour l'épanouissement complet de nos élèves.",
     },
-    {
-      question: "Comment suivre les progrès de mon enfant ?",
-      answer:
-        "Nous utilisons un système de suivi en ligne permettant aux parents de consulter les notes, absences et commentaires des enseignants. Des rencontres parents-professeurs sont organisées régulièrement.",
-    },
+    // {
+    //   question: "Comment suivre les progrès de mon enfant ?",
+    //   answer:
+    //     "Nous utilisons un système de suivi en ligne permettant aux parents de consulter les notes, absences et commentaires des enseignants. Des rencontres parents-professeurs sont organisées régulièrement.",
+    // },
     {
       question: "L'école dispose-t-elle d'un service de transport ?",
       answer:

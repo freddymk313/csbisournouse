@@ -48,7 +48,7 @@ export const OptionSection = () => {
     {
       id: 1,
       title: "MATERNEL",
-      image: "/maternel.jpg",
+      image: "/gallery/9.jpg",
       ageRange: "3 - 5 ans",
       hours: "8h00 - 12h50",
       icon: <MdSupervisedUserCircle className="text-[#0073b7]" size={24} />,
@@ -66,7 +66,7 @@ export const OptionSection = () => {
     {
       id: 3,
       title: "SECONDAIRE",
-      image: "/secondaire.jpg",
+      image: "/gallery/2.jpg",
       ageRange: "12 - 18 ans",
       hours: "7h30 - 12h50",
       icon: <MdLockClock className="text-[#0073b7]" size={24} />,
