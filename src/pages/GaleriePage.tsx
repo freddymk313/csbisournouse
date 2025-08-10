@@ -11,11 +11,11 @@ const GaleriePage = () => {
 
   useEffect(() => {
     // Animations d'entrée
-    gsap.fromTo('.gallery-header', 
+    gsap.fromTo('.gallery-header',
       { y: -50, opacity: 0 },
-      { 
-        y: 0, 
-        opacity: 1, 
+      {
+        y: 0,
+        opacity: 1,
         duration: 0.8,
         scrollTrigger: {
           trigger: '.gallery-header',
@@ -24,11 +24,11 @@ const GaleriePage = () => {
       }
     );
 
-    gsap.fromTo('.gallery-item', 
+    gsap.fromTo('.gallery-item',
       { y: 50, opacity: 0 },
-      { 
-        y: 0, 
-        opacity: 1, 
+      {
+        y: 0,
+        opacity: 1,
         duration: 0.6,
         stagger: 0.1,
         scrollTrigger: {
@@ -107,8 +107,8 @@ const GaleriePage = () => {
     }
   ];
 
-  const filteredImages = activeCategory === 'Tous' 
-    ? galleryImages 
+  const filteredImages = activeCategory === 'Tous'
+    ? galleryImages
     : galleryImages.filter(img => img.category === activeCategory);
 
   const openLightbox = (index: number) => {
@@ -123,13 +123,13 @@ const GaleriePage = () => {
 
   const navigateImage = (direction: 'prev' | 'next') => {
     if (selectedImage === null) return;
-    
+
     if (direction === 'prev') {
-      setSelectedImage(prev => 
+      setSelectedImage(prev =>
         prev === 0 ? filteredImages.length - 1 : (prev as number) - 1
       );
     } else {
-      setSelectedImage(prev => 
+      setSelectedImage(prev =>
         prev === filteredImages.length - 1 ? 0 : (prev as number) + 1
       );
     }
@@ -138,12 +138,35 @@ const GaleriePage = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-[#0073B7] text-white py-20 md:py-28">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Galerie Photos</h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Explorez la vie scolaire à travers notre collection de moments capturés
-          </p>
+      <section className="relative h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Background with overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src='/gallery/eleves.jpg'
+            alt="Contactez le Complexe Scolaire Les Bisounours"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/50"></div>
+        </div>
+
+        {/* Content */}
+        <div className="container mx-auto px-6 md:px-16 lg:px-20 z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="text-white">
+              <h1 className="contact-hero-title font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
+                <span className="block">Galerie</span>
+                <span className="block">Photos</span>
+              </h1>
+
+              <p className="contact-hero-subtitle text-base md:text-lg mb-6 text-white/90 leading-relaxed max-w-2xl mx-auto">
+                Explorez la vie scolaire à travers notre collection de moments capturés
+              </p>
+
+              <div className="flex flex-col md:flex-row mt-6 justify-center items-center space-y-2 md:space-y-0 md:space-x-6">
+
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -165,11 +188,10 @@ const GaleriePage = () => {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
-                  activeCategory === category 
-                    ? 'bg-[#0073B7] text-white' 
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${activeCategory === category
+                    ? 'bg-[#0073B7] text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+                  }`}
               >
                 {category}
               </button>
@@ -202,7 +224,7 @@ const GaleriePage = () => {
       {/* Lightbox */}
       {selectedImage !== null && (
         <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-          <button 
+          <button
             onClick={closeLightbox}
             className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors"
             aria-label="Fermer"
@@ -210,7 +232,7 @@ const GaleriePage = () => {
             <FiX size={28} />
           </button>
 
-          <button 
+          <button
             onClick={() => navigateImage('prev')}
             className="absolute left-6 md:left-12 text-white hover:text-gray-300 transition-colors p-2"
             aria-label="Image précédente"
@@ -235,7 +257,7 @@ const GaleriePage = () => {
             </div>
           </div>
 
-          <button 
+          <button
             onClick={() => navigateImage('next')}
             className="absolute right-6 md:right-12 text-white hover:text-gray-300 transition-colors p-2"
             aria-label="Image suivante"
@@ -252,7 +274,7 @@ const GaleriePage = () => {
             Vous souhaitez voir plus de notre école?
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto mb-8">
-            Planifiez une visite guidée de nos installations pour découvrir 
+            Planifiez une visite guidée de nos installations pour découvrir
             personnellement notre environnement éducatif.
           </p>
           <button className="bg-[#0073B7] hover:bg-[#005a9c] text-white px-8 py-3 rounded-lg font-medium transition-colors duration-300">
