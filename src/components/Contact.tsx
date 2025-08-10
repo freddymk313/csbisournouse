@@ -111,7 +111,7 @@ export const ContactSection = () => {
           </p>
         </div>
 
-        <div className="contact-container grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="contact-container overflow-hidden grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
           <div className="contact-info">
             <h3 className="text-lg font-bold text-[#333333] mb-6">
