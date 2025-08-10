@@ -148,19 +148,19 @@ export const Navbar = () => {
                     className="lg:hidden overflow-hidden bg-white/95 backdrop-blur-md fixed left-0 right-0 top-[72px] z-50 shadow-xl"
                     style={{ display: 'none' }}
                 >
-                    <div className="container mx-auto px-4 md:px-16 lg:px-20 py-4">
+                    <div className="container mx-auto px-6 md:px-16 lg:px-20 py-4">
                         <div className="flex flex-col space-y-2">
                             {navigationLinks.map((link, index) => (
                                 <a
                                     key={index}
                                     href={link.href}
-                                    className="mobile-link text-gray-700 hover:text-[#0073b7] *text-lg py-3 transition-colors duration-300"
+                                    className="mobile-link text-gray-700 hover:text-[#0073b7] py-1 transition-colors duration-300"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     {link.text}
                                 </a>
                             ))}
-                            <button className="mobile-link bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-3 w-full *text-lg">
+                            <button className="mobile-link bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-3 w-full">
                                 Inscription
                             </button>
                         </div>
