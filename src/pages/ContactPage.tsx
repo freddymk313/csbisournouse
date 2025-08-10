@@ -130,7 +130,7 @@ export default function ContactPage() {
         {/* Background with overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src='/gallery/eleves.jpg'
+            src='/gallery/3.jpg'
             alt="Contactez le Complexe Scolaire Les Bisounours"
             className="w-full h-full object-cover object-center"
           />

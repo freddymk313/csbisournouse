@@ -59,7 +59,7 @@ export const AboutUs = () => {
   };
 
   return (
-    <section id="about" className="w-full bg-white py-12 md:py-20">
+    <section id="about" className="w-full bg-white py-12 md:py-20 overflow-hidden">
       <div className="about-container container mx-auto px-6">
         <div className="flex flex-col items-center">
           <h2 className="about-title font-bold text-2xl md:text-3xl lg:text-4xl text-[#333333] *font-['Poppins',Helvetica] mb-6 text-center">
@@ -95,9 +95,9 @@ export const AboutUs = () => {
           </div>
 
           <div className="mt-4 md:mt-8 flex justify-start">
-            <a href="#" className="flex items-center gap-2.5 border border-[#0073b7] bg-transparent hover:bg-[#0073b7] text-[#0073b7] hover:text-[#ffffff] px-8 py-3 group transition-all duration-300">
+            <a href="/apropos" className="flex items-center gap-2.5 border border-[#0073b7] bg-transparent *hover:bg-[#0073b7] text-[#0073b7] *hover:text-[#ffffff] px-8 py-3 group transition-all duration-300">
               <span>{schoolInfo.buttonText}</span>
-              <GoArrowRight className="h-4 w-4" />
+              <GoArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>
