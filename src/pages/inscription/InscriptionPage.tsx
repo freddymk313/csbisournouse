@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
 
 export default function InscriptionPage() {
@@ -8,7 +7,7 @@ export default function InscriptionPage() {
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/admissions-hero.jpg"
+            src="/gallery/2.jpg"
             alt="Admissions"
             className="w-full h-full object-cover"
           />
@@ -19,18 +18,19 @@ export default function InscriptionPage() {
           <p className="mt-4 text-lg">
             Rejoignez notre école et offrez à votre enfant un avenir prometteur.
           </p>
-          <Link
-            to="/inscription"
-            className="mt-6 inline-block bg-white text-[#007bff] font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition"
-          >
+          <div className="">
+            <a
+            href="/admissionform"
+            className="bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-3 mt-4">
             Remplir le formulaire d’inscription
-          </Link>
+          </a>
+          </div>
         </div>
       </section>
 
       {/* Contenu détaillé */}
-      <section className="max-w-4xl mx-auto px-6 py-16 space-y-8 bg-white mt-[-50px] relative z-10 shadow-lg rounded-lg">
-        <h2 className="text-2xl font-semibold text-[#007bff]">
+      <section className="max-w-4xl mx-auto px-6 py-16 space-y-8 bg-white mt-[-50px] relative z-10 shadow-lg">
+        <h2 className="text-2xl font-semibold text-[#0073b7]">
           Procédure d’admission
         </h2>
         <ul className="space-y-4">
@@ -42,14 +42,14 @@ export default function InscriptionPage() {
             "Recevoir la confirmation d’admission et l’emploi du temps."
           ].map((item, index) => (
             <li key={index} className="flex items-start">
-              <FaCheckCircle className="text-[#007bff] mt-1 mr-3" />
+              <FaCheckCircle className="text-[#0073b7] mt-1 mr-3" />
               <span>{item}</span>
             </li>
           ))}
         </ul>
 
         {/* Documents requis */}
-        <h2 className="text-2xl font-semibold text-[#007bff] mt-10">
+        <h2 className="text-2xl font-semibold text-[#0073b7] mt-10">
           Documents requis
         </h2>
         <ul className="list-disc pl-6 space-y-2">
@@ -61,7 +61,7 @@ export default function InscriptionPage() {
         </ul>
 
         {/* Informations supplémentaires */}
-        <h2 className="text-2xl font-semibold text-[#007bff] mt-10">
+        <h2 className="text-2xl font-semibold text-[#0073b7] mt-10">
           Informations supplémentaires
         </h2>
         <p>
@@ -74,8 +74,7 @@ export default function InscriptionPage() {
         <div className="text-center mt-10">
           <a
             href="/admissionform"
-            className="bg-[#007bff] hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold shadow transition"
-          >
+            className="bg-[#0073b7] hover:bg-[#005a8f] text-white ml-3 px-6 py-2.5">
             Remplir le formulaire maintenant
           </a>
         </div>
