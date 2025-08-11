@@ -130,7 +130,7 @@ export const Navbar = () => {
                     {/* Mobile Menu Button */}
                     <div className="lg:hidden flex items-center">
                         <button className="bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-2.5">
-                            Inscription
+                            Admission
                         </button>
                         <button
                             onClick={toggleMenu}

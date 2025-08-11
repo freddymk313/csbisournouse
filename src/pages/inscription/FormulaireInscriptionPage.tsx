@@ -59,7 +59,7 @@ export default function FormulaireInscriptionPage() {
       <section className="py-16 container mx-auto px-6">
         <form
           onSubmit={handleSubmit}
-          className="formulaire-inscription bg-white shadow-sm hover:shadow-md rounded-lg p-8 max-w-3xl mx-auto space-y-8 transition-shadow duration-300"
+          className="formulaire-inscription bg-white shadow-sm hover:shadow-md p-8 max-w-3xl mx-auto space-y-8 transition-shadow duration-300"
         >
           <div className="text-center mb-8 md:mb-10">
               <h1 className="text-2xl md:text-3xl font-bold">Formulaire d’inscription</h1>
@@ -224,7 +224,7 @@ export default function FormulaireInscriptionPage() {
           <div className="text-center">
             <button
               type="submit"
-              className="w-full flex items-center justify-center bg-[#0073b7] hover:bg-[#005a8f] text-white py-4 group rounded-md transition"
+              className="w-full flex items-center justify-center bg-[#0073b7] hover:bg-[#005a8f] text-white py-4 group transition"
             >
               <span>Envoyer la demande</span>
               <BsSend className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
