@@ -3,9 +3,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
   BsSend,
-  BsWhatsapp,
-  BsFacebook,
-  BsInstagram
 } from 'react-icons/bs';
 import {
   FiPhone,
@@ -14,7 +11,6 @@ import {
 } from 'react-icons/fi';
 import {
   HiOutlineMail,
-  HiCheckCircle
 } from 'react-icons/hi';
 import { IoLogoWhatsapp } from 'react-icons/io';
 import { AiFillInstagram } from 'react-icons/ai';
@@ -134,7 +130,7 @@ export default function ContactPage() {
             alt="Contactez le Complexe Scolaire Les Bisounours"
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
         {/* Content */}
