@@ -328,17 +328,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      {/* Call to Action */}
-      {/* <section className="bg-gray-50 py-16">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-6">
-            Vous préférez nous appeler directement?
-          </h2>
-
-          
-        </div>
-      </section> */}
     </div>
   );
 }

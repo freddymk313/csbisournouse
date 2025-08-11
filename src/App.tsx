@@ -7,6 +7,7 @@ import GaleriePage from './pages/GaleriePage'
 import OptionsPage from './pages/OptionsPage'
 import InscriptionPage from './pages/inscription/InscriptionPage'
 import FormulaireInscriptionPage from './pages/inscription/FormulaireInscriptionPage'
+import AproposPage from './pages/AproposPage'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/options" element={<OptionsPage />} />
         <Route path="/galerie" element={<GaleriePage />} />
 
+        <Route path="/apropos" element={<AproposPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/inscription" element={<InscriptionPage />} />
         <Route path="/admissionform" element={<FormulaireInscriptionPage />} />
