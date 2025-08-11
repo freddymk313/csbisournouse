@@ -130,9 +130,11 @@ export const Navbar = () => {
 
                     {/* Mobile Menu Button */}
                     <div className="lg:hidden flex items-center">
-                        <button className="bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-2.5">
+                        <a 
+                        href='/inscription' 
+                        className="bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-2.5">
                             Admission
-                        </button>
+                        </a>
                         <button
                             onClick={toggleMenu}
                             className={`p-2 rounded-md cursor-pointer transition-colors duration-300 ${isScrolled ? 'text-gray-700' : 'text-gray-950'}`}
