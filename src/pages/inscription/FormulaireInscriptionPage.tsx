@@ -55,35 +55,25 @@ export default function FormulaireInscriptionPage() {
 
   return (
     <div className="bg-gray-50">
-      {/* Hero */}
-      <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="/images/inscription-hero.jpg"
-            alt="Formulaire d'inscription"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40"></div>
-        </div>
-        <div className="z-10 text-center text-white">
-          <h1 className="text-4xl font-bold">Formulaire d’inscription</h1>
-          <p className="mt-4 text-lg">
-            Remplissez les informations pour finaliser la pré-inscription.
-          </p>
-        </div>
-      </section>
-
       {/* Formulaire */}
       <section className="py-16 container mx-auto px-6">
         <form
           onSubmit={handleSubmit}
           className="formulaire-inscription bg-white shadow-sm hover:shadow-md rounded-lg p-8 max-w-3xl mx-auto space-y-8 transition-shadow duration-300"
         >
+          <div className="text-center mb-8 md:mb-10">
+              <h1 className="text-2xl md:text-3xl font-bold">Formulaire d’inscription</h1>
+              <p className="mt-4 *md:text-lg">
+                Remplissez les informations pour finaliser la pré-inscription.
+              </p>
+            </div>
+          
           {/* Infos élève */}
           <div>
             <h2 className="text-xl font-semibold mb-4 text-[#333333]">
-              Informations de l’élève
+              Informations de l'élève
             </h2>
+            
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
