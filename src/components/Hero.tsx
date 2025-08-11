@@ -31,7 +31,7 @@ const Hero = () => {
           alt="École maternelle CS Bisounours - Enfants heureux apprenant et jouant"
           className="hero-image w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
       {/* Content */}
@@ -49,12 +49,12 @@ const Hero = () => {
             </p>
 
             <div className="hero-buttons flex flex-col sm:flex-row gap-3 justify-center">
-              <button className="bg-white border border-white hover:bg-gray-50 text-[#0073B7] px-6 py-3 md:text-base transition-colors duration-300">
+              <button className="bg-[#0073B7] border border-[#0073B7] hover:bg-[#0073B7]/50 text-white px-6 py-3 md:text-base transition-colors duration-300">
                 Découvrir notre école
               </button>
-              <button className="border border-white text-white hover:bg-white hover:text-[#0073B7] px-6 py-3 md:text-base transition-colors duration-300">
+              <a href='/inscription' className="border border-white text-white hover:bg-white hover:text-[#0073B7] px-6 py-3 md:text-base transition-colors duration-300">
                 Inscription en ligne
-              </button>
+              </a>
             </div>
           </div>
         </div>

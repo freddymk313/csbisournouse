@@ -45,20 +45,21 @@ export const AboutUs = () => {
     title: "Qui Sommes",
     subtitle:
       "Une école d'excellence à Lubumbashi, engagée à offrir une éducation de qualité, dans un cadre sécurisé, moderne et bienveillant.",
-    imageSrc: "/about.jpg",
+    imageSrc: "/gallery/4.jpg",
     imageAlt: "École moderne",
     paragraphs: [
       "Le Complexe Scolaire Les Bisounours est un établissement d'enseignement d'excellence situé à Lubumbashi. Nous offrons un encadrement pédagogique de qualité, dans un environnement sécurisé, dynamique et propice à l'épanouissement des enfants, de la maternelle au secondaire.",
       "Notre mission est de former des élèves responsables, curieux, ouverts sur le monde et enracinés dans des valeurs humaines et chrétiennes solides.",
       "Depuis 1998, nous nous distinguons par notre approche pédagogique innovante, nos infrastructures modernes et notre corps enseignant hautement qualifié.",
       "Nous accompagnons chaque élève dans son parcours éducatif avec un suivi personnalisé, des programmes adaptés et un environnement stimulant qui favorise l'excellence académique et l'épanouissement personnel.",
-      "Notre établissement prépare les leaders de demain en cultivant l'esprit critique, la créativité et les valeurs citoyennes essentielles pour réussir dans un monde en constante évolution."
+      "Notre établissement prépare les leaders de demain en cultivant l'esprit..."
+      // "Notre établissement prépare les leaders de demain en cultivant l'esprit critique, la créativité et les valeurs citoyennes essentielles pour réussir dans un monde en constante évolution."
     ],
     buttonText: "Lire plus",
   };
 
   return (
-    <section id="about" className="w-full bg-white py-12 md:py-20">
+    <section id="about" className="w-full bg-white py-12 md:py-20 overflow-hidden">
       <div className="about-container container mx-auto px-6">
         <div className="flex flex-col items-center">
           <h2 className="about-title font-bold text-2xl md:text-3xl lg:text-4xl text-[#333333] *font-['Poppins',Helvetica] mb-6 text-center">
@@ -74,7 +75,7 @@ export const AboutUs = () => {
               <img
                 src={schoolInfo.imageSrc}
                 alt={schoolInfo.imageAlt}
-                className="w-full h-auto max-h-[500px] object-cover *rounded-2xl *shadow-2xl"
+                className="w-full h-auto max-h-[500px] object-cover"
               />
             </div>
 
@@ -94,9 +95,9 @@ export const AboutUs = () => {
           </div>
 
           <div className="mt-4 md:mt-8 flex justify-start">
-            <a href="#" className="flex items-center gap-2.5 border border-[#0073b7] bg-transparent hover:bg-[#0073b7] text-[#0073b7] hover:text-[#ffffff] px-8 py-3 group transition-all duration-300">
+            <a href="/apropos" className="flex items-center gap-2.5 border border-[#0073b7] bg-transparent *hover:bg-[#0073b7] text-[#0073b7] *hover:text-[#ffffff] px-8 py-3 group transition-all duration-300">
               <span>{schoolInfo.buttonText}</span>
-              <GoArrowRight className="h-4 w-4" />
+              <GoArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { GoArrowRight } from 'react-icons/go';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,7 +67,7 @@ export const GallerySection = () => {
             Notre <span className="text-[#0073b7]">Galerie</span>
           </h2>
           <p className="text-gray-800 text-center mb-4 *max-w-4xl leading-relaxed">
-            Découvrez nos installations modernes et l'environnement d'apprentissage 
+            Découvrez nos installations modernes et l'environnement d'apprentissage
             exceptionnel que nous offrons à nos élèves.
           </p>
         </div>
@@ -89,6 +90,16 @@ export const GallerySection = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className='flex items-center justify-center mt-8'>
+          <a
+          href="/galerie"
+          className="flex items-center justify-center bg-[#0073b7] hover:bg-[#005a8f] text-white py-3.5 px-8 group"
+        >
+          <span>Voir Plus</span>
+          <GoArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
+        </a>
         </div>
       </div>
     </section>
