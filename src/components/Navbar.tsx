@@ -122,9 +122,9 @@ export const Navbar = () => {
                             </NavLink>
                         ))}
 
-                        <button className="bg-[#0073b7] hover:bg-[#005a8f] text-white ml-3 px-6 py-2.5">
+                        <a href='/inscription' className="bg-[#0073b7] hover:bg-[#005a8f] text-white ml-3 px-6 py-2.5">
                             Inscription
-                        </button>
+                        </a>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -160,9 +160,9 @@ export const Navbar = () => {
                                     {link.text}
                                 </a>
                             ))}
-                            <button className="mobile-link bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-3 w-full">
+                            <a href='/inscription' className="mobile-link bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-3 w-full">
                                 Inscription
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>

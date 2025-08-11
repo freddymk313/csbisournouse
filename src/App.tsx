@@ -5,6 +5,8 @@ import ContactPage from './pages/ContactPage'
 import AcceuilPage from './pages/AcceuilPage'
 import GaleriePage from './pages/GaleriePage'
 import OptionsPage from './pages/OptionsPage'
+import InscriptionPage from './pages/inscription/InscriptionPage'
+import FormulaireInscriptionPage from './pages/inscription/FormulaireInscriptionPage'
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/galerie" element={<GaleriePage />} />
 
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/inscription" element={<InscriptionPage />} />
+        <Route path="/admissionform" element={<FormulaireInscriptionPage />} />
       </Routes>
     </>
   )
