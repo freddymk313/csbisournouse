@@ -160,7 +160,7 @@ export const Navbar = () => {
                                     {link.text}
                                 </a>
                             ))}
-                            <a href='/inscription' className="mobile-link bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-3 w-full">
+                            <a href='/inscription' className="mobile-link mt-2 bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-3 w-full">
                                 Inscription
                             </a>
                         </div>
