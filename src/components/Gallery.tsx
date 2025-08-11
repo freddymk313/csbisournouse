@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { BsSend } from 'react-icons/bs';
 import { GoArrowRight } from 'react-icons/go';
 
 gsap.registerPlugin(ScrollTrigger);

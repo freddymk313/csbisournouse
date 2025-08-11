@@ -40,28 +40,28 @@ const MaternellePage = () => {
     );
   }, []);
 
-  const galleryImages = [
-    {
-      src: "/gallery/maternelle1.jpg",
-      alt: "Salle de classe maternelle",
-      title: "Notre salle de classe"
-    },
-    {
-      src: "/gallery/maternelle2.jpg",
-      alt: "Activité ludique",
-      title: "Atelier éducatif"
-    },
-    {
-      src: "/gallery/maternelle3.jpg",
-      alt: "Espace de sieste",
-      title: "Coin repos"
-    },
-    {
-      src: "/gallery/maternelle4.jpg",
-      alt: "Cour de récréation",
-      title: "Espace extérieur"
-    }
-  ];
+  // const galleryImages = [
+  //   {
+  //     src: "/gallery/maternelle1.jpg",
+  //     alt: "Salle de classe maternelle",
+  //     title: "Notre salle de classe"
+  //   },
+  //   {
+  //     src: "/gallery/maternelle2.jpg",
+  //     alt: "Activité ludique",
+  //     title: "Atelier éducatif"
+  //   },
+  //   {
+  //     src: "/gallery/maternelle3.jpg",
+  //     alt: "Espace de sieste",
+  //     title: "Coin repos"
+  //   },
+  //   {
+  //     src: "/gallery/maternelle4.jpg",
+  //     alt: "Cour de récréation",
+  //     title: "Espace extérieur"
+  //   }
+  // ];
 
   return (
     <div className="bg-white">

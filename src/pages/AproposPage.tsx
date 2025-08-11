@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { BiAward, BiBookOpen, BiHeart, BiMailSend, BiMapPin, BiPhone } from 'react-icons/bi';
+import { BiAward, BiBookOpen, BiHeart, BiMapPin, BiPhone } from 'react-icons/bi';
 import { PiUserSound } from 'react-icons/pi';
-import { FiTarget, FiClock } from 'react-icons/fi';
+import { FiTarget } from 'react-icons/fi';
 import { BsEye, BsSend } from 'react-icons/bs';
 import { HiOutlineMail } from 'react-icons/hi';
 import { IoLogoWhatsapp } from 'react-icons/io';

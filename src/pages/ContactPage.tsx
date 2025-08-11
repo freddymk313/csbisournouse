@@ -172,6 +172,11 @@ export default function ContactPage() {
       {/* Main Contact Section */}
       <section id="contact" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
+          {isSubmitted && (
+            <div className="bg-green-100 text-green-800 p-4 rounded-md mb-6">
+              <p>Merci pour votre message ! Nous vous répondrons dès que possible.</p>
+            </div>
+          )}
           <div className="contact-container grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Information */}
             <div className="contact-info">
