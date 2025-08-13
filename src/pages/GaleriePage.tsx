@@ -104,7 +104,49 @@ const GaleriePage = () => {
       title: "Remise des prix",
       category: "Événements",
       description: "Célébration de l'excellence académique"
-    }
+    },
+    {
+      src: "/gallery/12.jpg",
+      alt: "Cérémonie scolaire",
+      title: "Remise des prix",
+      category: "Événements",
+      description: "Célébration de l'excellence académique"
+    },
+    {
+      src: "/gallery/1.jpg",
+      alt: "Cérémonie scolaire",
+      title: "Remise des prix",
+      category: "Événements",
+      description: "Célébration de l'excellence académique"
+    },
+    {
+      src: "/gallery/2.jpg",
+      alt: "Cérémonie scolaire",
+      title: "Remise des prix",
+      category: "Événements",
+      description: "Célébration de l'excellence académique"
+    },
+    {
+      src: "/gallery/3.jpg",
+      alt: "Cérémonie scolaire",
+      title: "Remise des prix",
+      category: "Événements",
+      description: "Célébration de l'excellence académique"
+    },
+    {
+      src: "/gallery/4.jpg",
+      alt: "Cérémonie scolaire",
+      title: "Remise des prix",
+      category: "Événements",
+      description: "Célébration de l'excellence académique"
+    },
+    {
+      src: "/gallery/5.jpg",
+      alt: "Cérémonie scolaire",
+      title: "Remise des prix",
+      category: "Événements",
+      description: "Célébration de l'excellence académique"
+    },
   ];
 
   const filteredImages = activeCategory === 'Tous'
@@ -142,7 +184,7 @@ const GaleriePage = () => {
         {/* Background with overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src='/gallery/11.jpg'
+            src='/gallery/2.jpg'
             alt="Contactez le Complexe Scolaire Les Bisounours"
             className="w-full h-full object-cover object-center"
           />
@@ -188,7 +230,7 @@ const GaleriePage = () => {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-5 py-2 rounded-md* text-sm font-medium transition-colors ${activeCategory === category
+                className={`px-5 py-2 rounded-md text-sm font-medium transition-colors ${activeCategory === category
                     ? 'bg-[#0073B7] text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
