@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { BiAward, BiBookOpen, BiHeart, BiMapPin, BiPhone } from 'react-icons/bi';
+import { BiAward, BiBookOpen, BiHeart } from 'react-icons/bi';
 import { PiUserSound } from 'react-icons/pi';
 import { FiMapPin, FiPhone, FiTarget } from 'react-icons/fi';
 import { BsEye, BsSend } from 'react-icons/bs';
@@ -142,24 +142,6 @@ const AproposPage = () => {
       position: "Directrice Administrative",
       image: "/gallery/1.jpg",
       description: "Spécialiste en gestion éducative et relations communautaires"
-    }
-  ];
-
-  const socialLinks = [
-    {
-      icon: <IoLogoWhatsapp size={20} />,
-      name: "WhatsApp",
-      url: "https://wa.me/243822266004"
-    },
-    {
-      icon: <MdFacebook size={20} />,
-      name: "Facebook",
-      url: "https://facebook.com/cs-bisounours"
-    },
-    {
-      icon: <AiFillInstagram size={20} />,
-      name: "Instagram",
-      url: "https://instagram.com/cs-bisounours"
     }
   ];
 
