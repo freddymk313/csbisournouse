@@ -6,9 +6,6 @@ import { PiUserSound } from 'react-icons/pi';
 import { FiMapPin, FiPhone, FiTarget } from 'react-icons/fi';
 import { BsEye, BsSend } from 'react-icons/bs';
 import { HiOutlineMail } from 'react-icons/hi';
-import { IoLogoWhatsapp } from 'react-icons/io';
-import { AiFillInstagram } from 'react-icons/ai';
-import { MdFacebook } from 'react-icons/md';
 import { useRef } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
