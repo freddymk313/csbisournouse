@@ -114,19 +114,19 @@ const AproposPage = () => {
     {
       name: "Dr. Marie KABONGO",
       position: "Directrice Générale",
-      image: "/team/1.jpg",
+      image: "/gallery/12.jpg",
       description: "25 ans d'expérience en éducation, PhD en Sciences de l'Éducation"
     },
     {
       name: "Prof. Jean MUKENDI",
       position: "Directeur Pédagogique",
-      image: "/team/2.jpg",
+      image: "/gallery/13.jpg",
       description: "Expert en pédagogie moderne et développement curriculaire"
     },
     {
       name: "Mme. Grace MWAMBA",
       position: "Directrice Administrative",
-      image: "/team/3.jpg",
+      image: "/gallery/1.jpg",
       description: "Spécialiste en gestion éducative et relations communautaires"
     }
   ];
@@ -261,7 +261,6 @@ const AproposPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-[#333333] mb-4">
               Nos <span className="text-[#0073B7]">Valeurs</span>
             </h2>
-            <div className="w-20 h-1 bg-[#0073B7] mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Les principes fondamentaux qui guident notre action éducative
             </p>
@@ -292,7 +291,6 @@ const AproposPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-[#333333] mb-4">
               Notre <span className="text-[#0073B7]">Direction</span>
             </h2>
-            <div className="w-20 h-1 bg-[#0073B7] mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Une équipe de direction expérimentée et dévouée à l'excellence éducative
             </p>
@@ -300,7 +298,7 @@ const AproposPage = () => {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {leadership.map((leader, index) => (
-              <div key={index} className="bg-white shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden rounded-lg">
+              <div key={index} className="bg-white shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
                 <img
                   src={leader.image}
                   alt={leader.name}
@@ -328,32 +326,31 @@ const AproposPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Nos <span className="text-yellow-400">Chiffres</span>
+              Nos <span className="">Chiffres</span>
             </h2>
-            <div className="w-20 h-1 bg-yellow-400 mx-auto mb-6"></div>
             <p className="text-lg max-w-3xl mx-auto">
               Des résultats qui témoignent de notre engagement pour l'excellence
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            <div className="text-center p-6 bg-white/10 rounded-lg backdrop-blur-sm">
-              <div className="text-4xl font-bold text-yellow-400 mb-4">25+</div>
+            <div className="text-center p-6 bg-white/10 backdrop-blur-sm">
+              <div className="text-4xl font-bold mb-4">25+</div>
               <div className="text-lg font-semibold mb-2">Années d'expérience</div>
               <div className="text-gray-200">Depuis 1998</div>
             </div>
-            <div className="text-center p-6 bg-white/10 rounded-lg backdrop-blur-sm">
-              <div className="text-4xl font-bold text-yellow-400 mb-4">1500+</div>
+            <div className="text-center p-6 bg-white/10 backdrop-blur-sm">
+              <div className="text-4xl font-bold mb-4">1500+</div>
               <div className="text-lg font-semibold mb-2">Élèves diplômés</div>
               <div className="text-gray-200">Succès garantis</div>
             </div>
-            <div className="text-center p-6 bg-white/10 rounded-lg backdrop-blur-sm">
-              <div className="text-4xl font-bold text-yellow-400 mb-4">98%</div>
+            <div className="text-center p-6 bg-white/10 backdrop-blur-sm">
+              <div className="text-4xl font-bold mb-4">98%</div>
               <div className="text-lg font-semibold mb-2">Taux de réussite</div>
               <div className="text-gray-200">Excellence académique</div>
             </div>
             <div className="text-center p-6 bg-white/10 rounded-lg backdrop-blur-sm">
-              <div className="text-4xl font-bold text-yellow-400 mb-4">50+</div>
+              <div className="text-4xl font-bold mb-4">50+</div>
               <div className="text-lg font-semibold mb-2">Enseignants qualifiés</div>
               <div className="text-gray-200">Équipe dévouée</div>
             </div>
@@ -368,14 +365,13 @@ const AproposPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-[#333333] mb-4">
               Rejoignez Notre <span className="text-[#0073B7]">Communauté</span>
             </h2>
-            <div className="w-20 h-1 bg-[#0073B7] mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 mb-8">
               Découvrez comment nous pouvons accompagner votre enfant vers l'excellence
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div className="bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
               <div className="w-16 h-16 bg-[#0073B7] rounded-full flex items-center justify-center mb-4 mx-auto">
                 <BiMapPin className="text-white" size={24} />
               </div>
@@ -385,7 +381,7 @@ const AproposPage = () => {
                 C/Lubumbashi, Haut-Katanga RDC
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div className="bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
               <div className="w-16 h-16 bg-[#0073B7] rounded-full flex items-center justify-center mb-4 mx-auto">
                 <BiPhone className="text-white" size={24} />
               </div>
@@ -395,7 +391,7 @@ const AproposPage = () => {
                 +243 843387388
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div className="bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
               <div className="w-16 h-16 bg-[#0073B7] rounded-full flex items-center justify-center mb-4 mx-auto">
                 <HiOutlineMail className="text-white" size={24} />
               </div>
@@ -410,32 +406,11 @@ const AproposPage = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <a 
               href="/contact" 
-              className="flex items-center justify-center bg-[#0073B7] hover:bg-[#005a8f] text-white px-6 py-3 rounded-md transition-colors"
+              className="flex items-center justify-center bg-[#0073B7] hover:bg-[#005a8f] text-white px-6 py-3 transition-colors"
             >
               <span>Planifier une visite</span>
               <BsSend className="ml-2" size={16} />
             </a>
-            <a 
-              href="/brochure.pdf" 
-              className="flex items-center justify-center border border-[#0073B7] text-[#0073B7] hover:bg-[#0073B7] hover:text-white px-6 py-3 rounded-md transition-colors"
-            >
-              Télécharger la brochure
-            </a>
-          </div>
-
-          <div className="mt-8 flex justify-center space-x-4">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-white hover:bg-[#0073B7] text-gray-700 hover:text-white rounded-full flex items-center justify-center transition-colors shadow-sm"
-                aria-label={social.name}
-              >
-                {social.icon}
-              </a>
-            ))}
           </div>
         </div>
       </section>
