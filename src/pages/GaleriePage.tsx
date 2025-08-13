@@ -85,21 +85,21 @@ const GaleriePage = () => {
       description: "Nos vastes espaces extérieurs pour les activités récréatives"
     },
     {
-      src: "/gallery/bibliotheque.jpg",
+      src: "/gallery/8.jpg",
       alt: "Bibliothèque scolaire",
       title: "Centre de connaissances",
       category: "Installations",
       description: "Notre bibliothèque richement fournie pour la recherche"
     },
     {
-      src: "/gallery/sport.jpg",
+      src: "/gallery/7.jpg",
       alt: "Activités sportives",
       title: "Compétition sportive",
       category: "Activités",
       description: "Tournoi annuel de football entre les classes"
     },
     {
-      src: "/gallery/ceremonie.jpg",
+      src: "/gallery/13.jpg",
       alt: "Cérémonie scolaire",
       title: "Remise des prix",
       category: "Événements",
@@ -142,11 +142,11 @@ const GaleriePage = () => {
         {/* Background with overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src='/gallery/eleves.jpg'
+            src='/gallery/11.jpg'
             alt="Contactez le Complexe Scolaire Les Bisounours"
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
         {/* Content */}
@@ -175,9 +175,9 @@ const GaleriePage = () => {
         <div className="container mx-auto px-6">
           <div className="gallery-header text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              Notre <span className="text-[#0073B7]">Environnement</span> Éducatif
+               Environnement<span className="text-[#0073B7]"> Éducatif</span> 
             </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
+            <p className="md:text-lg text-gray-600 max-w-3xl mx-auto">
               Découvrez nos installations modernes et l'atmosphère unique de notre école
             </p>
           </div>
@@ -188,7 +188,7 @@ const GaleriePage = () => {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${activeCategory === category
+                className={`px-5 py-2 rounded-md* text-sm font-medium transition-colors ${activeCategory === category
                     ? 'bg-[#0073B7] text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
@@ -203,7 +203,7 @@ const GaleriePage = () => {
             {filteredImages.map((image, index) => (
               <div
                 key={index}
-                className="gallery-item relative group overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
+                className="gallery-item relative group overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
                 onClick={() => openLightbox(index)}
               >
                 <img
@@ -266,22 +266,6 @@ const GaleriePage = () => {
           </button>
         </div>
       )}
-
-      {/* Call to Action */}
-      <section className="bg-[#E6F0FA] py-16">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
-            Vous souhaitez voir plus de notre école?
-          </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto mb-8">
-            Planifiez une visite guidée de nos installations pour découvrir
-            personnellement notre environnement éducatif.
-          </p>
-          <button className="bg-[#0073B7] hover:bg-[#005a9c] text-white px-8 py-3 rounded-lg font-medium transition-colors duration-300">
-            Demander une visite
-          </button>
-        </div>
-      </section>
     </div>
   );
 };
