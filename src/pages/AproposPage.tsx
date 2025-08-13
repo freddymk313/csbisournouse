@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BiAward, BiBookOpen, BiHeart, BiMapPin, BiPhone } from 'react-icons/bi';
 import { PiUserSound } from 'react-icons/pi';
-import { FiTarget } from 'react-icons/fi';
+import { FiMapPin, FiPhone, FiTarget } from 'react-icons/fi';
 import { BsEye, BsSend } from 'react-icons/bs';
 import { HiOutlineMail } from 'react-icons/hi';
 import { IoLogoWhatsapp } from 'react-icons/io';
@@ -373,7 +373,7 @@ const AproposPage = () => {
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
             <div className="bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
               <div className="w-16 h-16 bg-[#0073B7] rounded-full flex items-center justify-center mb-4 mx-auto">
-                <BiMapPin className="text-white" size={24} />
+                <FiMapPin className="text-white" size={24} />
               </div>
               <h3 className="font-semibold text-[#333333] mb-2 text-center">Adresse</h3>
               <p className="text-gray-600 text-center">
@@ -383,7 +383,7 @@ const AproposPage = () => {
             </div>
             <div className="bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
               <div className="w-16 h-16 bg-[#0073B7] rounded-full flex items-center justify-center mb-4 mx-auto">
-                <BiPhone className="text-white" size={24} />
+                <FiPhone className="text-white" size={24} />
               </div>
               <h3 className="font-semibold text-[#333333] mb-2 text-center">Téléphone</h3>
               <p className="text-gray-600 text-center">
