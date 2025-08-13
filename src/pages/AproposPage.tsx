@@ -108,11 +108,6 @@ const AproposPage = () => {
       title: "Certification qualité",
       description: "Obtention de la certification qualité pour l'excellence de nos programmes éducatifs."
     },
-    {
-      year: "2023",
-      title: "Campus numérique",
-      description: "Lancement de notre plateforme d'apprentissage numérique et bibliothèque digitale."
-    }
   ];
 
   const leadership = [
@@ -160,7 +155,7 @@ const AproposPage = () => {
       <section className="relative h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src='/about-hero.jpg'
+            src='/gallery/8.jpg'
             alt="À propos du Complexe Scolaire Les Bisounours"
             className="w-full h-full object-cover object-center"
           />
@@ -224,7 +219,6 @@ const AproposPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-[#333333] mb-4">
               Notre <span className="text-[#0073B7]">Histoire</span>
             </h2>
-            <div className="w-20 h-1 bg-[#0073B7] mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Plus de 25 ans d'engagement pour l'excellence éducative
             </p>
@@ -233,16 +227,19 @@ const AproposPage = () => {
           <div className="max-w-4xl mx-auto">
             <div className="relative">
               {/* Timeline bar */}
-              <div className="absolute left-5 md:left-10 h-full w-1 bg-gray-200"></div>
+              {/* <div className="absolute *left-5 md:left-10 h-full w-1 bg-gray-200"></div> */}
               
               {milestones.map((milestone, index) => (
                 <div key={index} className="relative pl-16 md:pl-24 mb-12 last:mb-0">
                   {/* Year circle */}
-                  <div className="absolute left-0 w-10 h-10 md:w-12 md:h-12 bg-[#0073B7] rounded-full flex items-center justify-center text-white font-bold text-sm md:text-base -ml-1">
+                  {/* <div className="absolute left-0 w-10 h-10 md:w-12 md:h-12 bg-[#0073B7] rounded-full flex items-center justify-center text-white font-bold text-sm md:text-base -ml-1">
+                    {milestone.year}
+                  </div> */}
+                  
+                  <div className="bg-gray-50 p-6 *shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div className="absolute left-0 w-10 h-10 md:w-12 md:h-12 bg-[#0073B7] rounded-full flex items-center justify-center text-white font-bold text-sm md:text-base -ml-1">
                     {milestone.year}
                   </div>
-                  
-                  <div className="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
                     <h3 className="text-xl md:text-2xl font-bold text-[#333333] mb-2">
                       {milestone.title}
                     </h3>
