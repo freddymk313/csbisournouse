@@ -9,18 +9,20 @@ import { HiOutlineMail } from 'react-icons/hi';
 import { IoLogoWhatsapp } from 'react-icons/io';
 import { AiFillInstagram } from 'react-icons/ai';
 import { MdFacebook } from 'react-icons/md';
+import { useRef } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AproposPage = () => {
   useEffect(() => {
     // Hero animation
-    gsap.fromTo('.about-hero-title', 
+    gsap.fromTo('.about-hero-title',
       { y: 50, opacity: 0 },
       { y: 0, opacity: 1, duration: 1, delay: 0.3 }
     );
 
-    gsap.fromTo('.about-hero-subtitle', 
+    gsap.fromTo('.about-hero-subtitle',
       { y: 30, opacity: 0 },
       { y: 0, opacity: 1, duration: 1, delay: 0.6 }
     );
@@ -53,6 +55,18 @@ const AproposPage = () => {
       }
     );
   }, []);
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -300, behavior: "smooth" });
+    }
+  };
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
+    }
+  };
 
   const schoolValues = [
     {
@@ -171,7 +185,7 @@ const AproposPage = () => {
               </h1>
 
               <p className="about-hero-subtitle text-base md:text-lg mb-6 text-white/90 leading-relaxed max-w-2xl mx-auto">
-                Découvrez l'histoire, la mission et les valeurs qui font du Complexe Scolaire 
+                Découvrez l'histoire, la mission et les valeurs qui font du Complexe Scolaire
                 Les Bisounours un établissement d'excellence depuis plus de 25 ans.
               </p>
             </div>
@@ -189,9 +203,9 @@ const AproposPage = () => {
               </div>
               <h2 className="text-3xl font-bold text-[#333333] mb-6">Notre Mission</h2>
               <p className="text-gray-600 leading-relaxed">
-                Former des élèves responsables, curieux, ouverts sur le monde et enracinés 
-                dans des valeurs humaines et chrétiennes solides. Nous nous engageons à 
-                offrir une éducation de qualité dans un environnement bienveillant qui 
+                Former des élèves responsables, curieux, ouverts sur le monde et enracinés
+                dans des valeurs humaines et chrétiennes solides. Nous nous engageons à
+                offrir une éducation de qualité dans un environnement bienveillant qui
                 favorise l'épanouissement complet de chaque enfant.
               </p>
             </div>
@@ -202,9 +216,9 @@ const AproposPage = () => {
               </div>
               <h2 className="text-3xl font-bold text-[#333333] mb-6">Notre Vision</h2>
               <p className="text-gray-600 leading-relaxed">
-                Être l'établissement de référence en matière d'excellence éducative à 
-                Lubumbashi, reconnu pour la qualité de son enseignement, l'innovation 
-                pédagogique et la formation de citoyens exemplaires prêts à relever 
+                Être l'établissement de référence en matière d'excellence éducative à
+                Lubumbashi, reconnu pour la qualité de son enseignement, l'innovation
+                pédagogique et la formation de citoyens exemplaires prêts à relever
                 les défis du 21ème siècle.
               </p>
             </div>
@@ -228,18 +242,18 @@ const AproposPage = () => {
             <div className="relative">
               {/* Timeline bar */}
               {/* <div className="absolute *left-5 md:left-10 h-full w-1 bg-gray-200"></div> */}
-              
+
               {milestones.map((milestone, index) => (
                 <div key={index} className="relative pl-16 md:pl-24 mb-12 last:mb-0">
                   {/* Year circle */}
                   {/* <div className="absolute left-0 w-10 h-10 md:w-12 md:h-12 bg-[#0073B7] rounded-full flex items-center justify-center text-white font-bold text-sm md:text-base -ml-1">
                     {milestone.year}
                   </div> */}
-                  
+
                   <div className="bg-gray-50 p-6 *shadow-sm hover:shadow-md transition-shadow duration-300">
                     <div className="absolute left-0 w-10 h-10 md:w-12 md:h-12 bg-[#0073B7] rounded-full flex items-center justify-center text-white font-bold text-sm md:text-base -ml-1">
-                    {milestone.year}
-                  </div>
+                      {milestone.year}
+                    </div>
                     <h3 className="text-xl md:text-2xl font-bold text-[#333333] mb-2">
                       {milestone.title}
                     </h3>
@@ -266,25 +280,64 @@ const AproposPage = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {schoolValues.map((value, index) => (
-              <div key={index} className="value-card p-6 bg-white shadow-sm hover:shadow-md transition-all duration-300">
-                <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
-                  {value.icon}
+          <div className="relative max-w-6xl mx-auto">
+            <button
+              onClick={scrollLeft}
+              aria-label="Défiler à gauche"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2
+                   h-11 w-11 md:h-12 md:w-12 rounded-full text-[#0073B7]
+                   bg-white/90 backdrop-blur shadow-lg ring-1 ring-white
+                   grid place-items-center hover:bg-white z-10"
+            >
+              <FaChevronLeft />
+            </button>
+
+            <div
+              ref={scrollRef}
+              className="no-scrollbar overflow-x-auto scroll-smooth
+                   flex gap-6 px-8 py-1
+                   snap-x snap-mandatory"
+            >
+              {schoolValues.map((value, index) => (
+                <div
+                  key={index}
+                  className="value-card snap-start flex-shrink-0
+                       w-[260px] md:w-[300px] lg:w-[320px] max-w-[90vw]
+                       p-6 bg-white shadow-sm
+                       hover:shadow-md transition-all duration-300"
+                >
+                  <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                    {value.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-[#333333] mb-3">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {value.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-[#333333] mb-4">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            <button
+              onClick={scrollRight}
+              aria-label="Défiler à droite"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2
+                   h-11 w-11 md:h-12 md:w-12 rounded-full text-[#0073B7]
+                   bg-white/90 backdrop-blur shadow-lg ring-1 ring-white
+                   grid place-items-center hover:bg-white z-10"
+            >
+              <FaChevronRight />
+            </button>
           </div>
         </div>
+
+        <style>{`
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  `}</style>
       </section>
 
-      {/* Direction */}
       <section className="about-section py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -298,13 +351,13 @@ const AproposPage = () => {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {leadership.map((leader, index) => (
-              <div key={index} className="bg-white shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+              <div key={index} className="transition-all duration-300 overflow-hidden">
                 <img
                   src={leader.image}
                   alt={leader.name}
                   className="w-full h-64 object-cover"
                 />
-                <div className="p-6">
+                <div className="py-6">
                   <h3 className="text-xl font-bold text-[#333333] mb-2">
                     {leader.name}
                   </h3>
@@ -404,12 +457,12 @@ const AproposPage = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <a 
-              href="/contact" 
-              className="flex items-center justify-center bg-[#0073B7] hover:bg-[#005a8f] text-white px-6 py-3 transition-colors"
+            <a
+              href="/contact"
+              className="flex items-center justify-center bg-[#0073B7] hover:bg-[#005a8f] text-white px-6 py-3 transition-colors group"
             >
               <span>Planifier une visite</span>
-              <BsSend className="ml-2" size={16} />
+              <BsSend className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
             </a>
           </div>
         </div>
