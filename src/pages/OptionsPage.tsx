@@ -1,514 +1,518 @@
-import { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { Button } from '../components/ui/button';
+import { Card, CardContent } from '../components/ui/card';
+import { 
+  Users, 
+  Clock, 
+  BookOpen, 
+  Palette, 
+  Music, 
+  Heart,
+  Target,
+  Award,
+  Globe,
+  Calculator,
+  Microscope,
+  GraduationCap,
+  Phone,
+  Mail,
+  MapPin
+} from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FiArrowRight, FiMail, FiPhone, FiMapPin, FiClock } from 'react-icons/fi';
-import { HiOutlineAcademicCap, HiOutlineUserGroup, HiOutlineCalendar } from 'react-icons/hi';
-import { GallerySection } from '../components/Gallery';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const MaternellePage = () => {
-  const [activeTab, setActiveTab] = useState('presentation');
-
+export const OptionsPage = (): JSX.Element => {
   useEffect(() => {
-    // Animations d'entrée
-    gsap.fromTo('.section-header', 
-      { y: -50, opacity: 0 },
-      { 
-        y: 0, 
-        opacity: 1, 
+    // Page animations
+    gsap.fromTo('.options-hero',
+      { y: 100, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1.2, ease: "power2.out" }
+    );
+
+    gsap.fromTo('.section-card',
+      { y: 80, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
         duration: 0.8,
+        stagger: 0.3,
+        ease: "power2.out",
         scrollTrigger: {
-          trigger: '.section-header',
-          start: 'top 80%'
+          trigger: '.options-content',
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse'
         }
       }
     );
 
-    gsap.fromTo('.content-card', 
-      { y: 50, opacity: 0 },
-      { 
-        y: 0, 
-        opacity: 1, 
+    gsap.fromTo('.feature-card',
+      { scale: 0.8, opacity: 0 },
+      {
+        scale: 1,
+        opacity: 1,
         duration: 0.6,
-        stagger: 0.1,
+        stagger: 0.2,
+        ease: "back.out(1.7)",
         scrollTrigger: {
-          trigger: '.main-content',
-          start: 'top 85%'
+          trigger: '.features-section',
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse'
         }
       }
     );
   }, []);
 
-  // const galleryImages = [
-  //   {
-  //     src: "/gallery/maternelle1.jpg",
-  //     alt: "Salle de classe maternelle",
-  //     title: "Notre salle de classe"
-  //   },
-  //   {
-  //     src: "/gallery/maternelle2.jpg",
-  //     alt: "Activité ludique",
-  //     title: "Atelier éducatif"
-  //   },
-  //   {
-  //     src: "/gallery/maternelle3.jpg",
-  //     alt: "Espace de sieste",
-  //     title: "Coin repos"
-  //   },
-  //   {
-  //     src: "/gallery/maternelle4.jpg",
-  //     alt: "Cour de récréation",
-  //     title: "Espace extérieur"
-  //   }
-  // ];
+  const maternelleFeatures = [
+    {
+      icon: <Heart className="text-pink-600" size={24} />,
+      title: "Développement du langage",
+      description: "Communication orale et expression"
+    },
+    {
+      icon: <Palette className="text-pink-600" size={24} />,
+      title: "Éveil sensoriel",
+      description: "Motricité, affectif et cognitif"
+    },
+    {
+      icon: <Users className="text-pink-600" size={24} />,
+      title: "Autonomie et socialisation",
+      description: "Vivre ensemble et indépendance"
+    },
+    {
+      icon: <BookOpen className="text-pink-600" size={24} />,
+      title: "Premières notions",
+      description: "Formes, couleurs, chiffres, lettres"
+    }
+  ];
+
+  const primaireFeatures = [
+    {
+      icon: <BookOpen className="text-blue-600" size={24} />,
+      title: "Lecture et écriture",
+      description: "Maîtrise des fondamentaux"
+    },
+    {
+      icon: <Calculator className="text-blue-600" size={24} />,
+      title: "Bases mathématiques",
+      description: "Logique et raisonnement"
+    },
+    {
+      icon: <Globe className="text-blue-600" size={24} />,
+      title: "Culture générale",
+      description: "Sciences, histoire, géographie"
+    },
+    {
+      icon: <Target className="text-blue-600" size={24} />,
+      title: "Méthodes de travail",
+      description: "Organisation et concentration"
+    }
+  ];
+
+  const secondaireFeatures = [
+    {
+      icon: <GraduationCap className="text-purple-600" size={24} />,
+      title: "Préparation au Brevet",
+      description: "Examens officiels et certifications"
+    },
+    {
+      icon: <Microscope className="text-purple-600" size={24} />,
+      title: "Pensée critique",
+      description: "Analyse et autonomie intellectuelle"
+    },
+    {
+      icon: <Award className="text-purple-600" size={24} />,
+      title: "Orientation scolaire",
+      description: "Construction du projet d'avenir"
+    },
+    {
+      icon: <Globe className="text-purple-600" size={24} />,
+      title: "Ouverture sur le monde",
+      description: "Langues vivantes et culture"
+    }
+  ];
 
   return (
-    <div className="bg-white">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-[#0073B7] text-white py-20">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Section Maternelle</h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Un environnement chaleureux et stimulant pour les 2-5 ans
+      <section className="options-hero relative bg-gradient-to-r from-[#0073b7] to-[#005a8f] text-white py-20">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative container mx-auto px-6 text-center">
+          <h1 className="text-5xl lg:text-6xl font-bold mb-6">
+            Nos <span className="text-yellow-400">Options</span> Éducatives
+          </h1>
+          <p className="text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed">
+            De la maternelle au secondaire, découvrez nos programmes éducatifs 
+            adaptés à chaque étape du développement de votre enfant.
           </p>
         </div>
       </section>
 
-      {/* Navigation Tabs */}
-      <div className="sticky top-0 z-10 bg-white shadow-sm">
-        <div className="container mx-auto px-6">
-          <div className="flex overflow-x-auto">
-            <button
-              onClick={() => setActiveTab('presentation')}
-              className={`px-6 py-4 font-medium text-sm whitespace-nowrap border-b-2 transition-colors ${
-                activeTab === 'presentation' 
-                  ? 'border-[#0073B7] text-[#0073B7]' 
-                  : 'border-transparent text-gray-600 hover:text-[#0073B7]'
-              }`}
-            >
-              Présentation
-            </button>
-            <button
-              onClick={() => setActiveTab('pedagogie')}
-              className={`px-6 py-4 font-medium text-sm whitespace-nowrap border-b-2 transition-colors ${
-                activeTab === 'pedagogie' 
-                  ? 'border-[#0073B7] text-[#0073B7]' 
-                  : 'border-transparent text-gray-600 hover:text-[#0073B7]'
-              }`}
-            >
-              Pédagogie
-            </button>
-            <button
-              onClick={() => setActiveTab('equipe')}
-              className={`px-6 py-4 font-medium text-sm whitespace-nowrap border-b-2 transition-colors ${
-                activeTab === 'equipe' 
-                  ? 'border-[#0073B7] text-[#0073B7]' 
-                  : 'border-transparent text-gray-600 hover:text-[#0073B7]'
-              }`}
-            >
-              Équipe
-            </button>
-            <button
-              onClick={() => setActiveTab('infos')}
-              className={`px-6 py-4 font-medium text-sm whitespace-nowrap border-b-2 transition-colors ${
-                activeTab === 'infos' 
-                  ? 'border-[#0073B7] text-[#0073B7]' 
-                  : 'border-transparent text-gray-600 hover:text-[#0073B7]'
-              }`}
-            >
-              Infos pratiques
-            </button>
-            <button
-              onClick={() => setActiveTab('galerie')}
-              className={`px-6 py-4 font-medium text-sm whitespace-nowrap border-b-2 transition-colors ${
-                activeTab === 'galerie' 
-                  ? 'border-[#0073B7] text-[#0073B7]' 
-                  : 'border-transparent text-gray-600 hover:text-[#0073B7]'
-              }`}
-            >
-              Galerie
-            </button>
-          </div>
-        </div>
-      </div>
+      <div className="options-content">
+        {/* Maternelle Section */}
+        <section className="section-card py-20 bg-gradient-to-br from-pink-50 to-rose-100">
+          <div className="container mx-auto px-6">
+            <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto items-center">
+              <div className="order-2 lg:order-1">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mr-4">
+                    <Heart className="text-white" size={32} />
+                  </div>
+                  <div>
+                    <h2 className="text-4xl lg:text-5xl font-bold text-gray-800">Maternelle</h2>
+                    <p className="text-pink-600 font-semibold text-lg">2 à 5 ans</p>
+                  </div>
+                </div>
 
-      {/* Main Content */}
-      <main className="main-content py-16">
-        <div className="container mx-auto px-6">
-          {/* Présentation Section */}
-          {activeTab === 'presentation' && (
-            <section>
-              <div className="section-header text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                  Bienvenue en <span className="text-[#0073B7]">Maternelle</span>
-                </h2>
-                <div className="w-24 h-1 bg-[#0073B7] mx-auto mb-6"></div>
-                <p className="text-gray-600 max-w-3xl mx-auto">
-                  Un espace conçu pour l'épanouissement des tout-petits
+                <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                  La section Maternelle accueille les enfants de 2 à 5 ans dans un environnement 
+                  chaleureux, sécurisé et stimulant. Notre mission est de favoriser le développement 
+                  global de chaque enfant, en respectant son rythme, sa curiosité naturelle et sa personnalité.
                 </p>
-              </div>
 
-              <div className="grid md:grid-cols-2 gap-12">
-                <div className="content-card">
-                  <div className="bg-[#E6F0FA] p-8 rounded-xl h-full">
-                    <h3 className="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
-                      <HiOutlineAcademicCap className="text-[#0073B7] mr-3" size={28} />
-                      Notre Mission
-                    </h3>
-                    <p className="text-gray-600 mb-6">
-                      La section Maternelle de notre établissement accueille les enfants de 2 à 5 ans dans un environnement chaleureux, sécurisé et stimulant. Notre mission est de favoriser le développement global de chaque enfant, en respectant son rythme, sa curiosité naturelle et sa personnalité.
-                    </p>
-                    <p className="text-gray-600">
-                      Nos enseignants spécialisés mettent en œuvre une pédagogie active, axée sur le jeu, la découverte, et le vivre-ensemble, afin de préparer en douceur l'entrée en primaire.
-                    </p>
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center">
+                    <Users className="text-pink-600 mr-3" size={20} />
+                    <span className="font-semibold">Petite Section (PS) :</span>
+                    <span className="ml-2">dès 2-3 ans</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Users className="text-pink-600 mr-3" size={20} />
+                    <span className="font-semibold">Moyenne Section (MS) :</span>
+                    <span className="ml-2">4 ans</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Users className="text-pink-600 mr-3" size={20} />
+                    <span className="font-semibold">Grande Section (GS) :</span>
+                    <span className="ml-2">5 ans</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Clock className="text-pink-600 mr-3" size={20} />
+                    <span className="font-semibold">Horaires :</span>
+                    <span className="ml-2">7h30 – 16h30 (garderie jusqu'à 18h)</span>
                   </div>
                 </div>
 
-                <div className="content-card">
-                  <div className="bg-[#E6F0FA] p-8 rounded-xl h-full">
-                    <h3 className="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
-                      <HiOutlineUserGroup className="text-[#0073B7] mr-3" size={28} />
-                      Niveaux Accueillis
-                    </h3>
-                    <ul className="space-y-4 text-gray-600">
-                      <li className="flex items-start">
-                        <span className="bg-[#0073B7] text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">1</span>
-                        <div>
-                          <h4 className="font-medium text-gray-800">Petite Section (PS)</h4>
-                          <p>Dès 2-3 ans - Première socialisation</p>
-                        </div>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="bg-[#0073B7] text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">2</span>
-                        <div>
-                          <h4 className="font-medium text-gray-800">Moyenne Section (MS)</h4>
-                          <p>4 ans - Développement de l'autonomie</p>
-                        </div>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="bg-[#0073B7] text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">3</span>
-                        <div>
-                          <h4 className="font-medium text-gray-800">Grande Section (GS)</h4>
-                          <p>5 ans - Préparation au CP</p>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </section>
-          )}
-
-          {/* Pédagogie Section */}
-          {activeTab === 'pedagogie' && (
-            <section>
-              <div className="section-header text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                  Notre <span className="text-[#0073B7]">Approche</span> Pédagogique
-                </h2>
-                <div className="w-24 h-1 bg-[#0073B7] mx-auto mb-6"></div>
-                <p className="text-gray-600 max-w-3xl mx-auto">
-                  Une méthodologie adaptée au développement des tout-petits
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div className="content-card bg-white p-6 rounded-xl border border-gray-200 hover:border-[#0073B7]/30 transition-colors">
-                  <div className="w-12 h-12 bg-[#E6F0FA] rounded-lg flex items-center justify-center mb-4">
-                    <span className="text-[#0073B7] text-xl font-bold">1</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3">Objectifs Pédagogiques</h3>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex items-start">
-                      <span className="text-[#0073B7] mr-2">•</span>
-                      Développement du langage oral
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#0073B7] mr-2">•</span>
-                      Éveil sensoriel et moteur
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#0073B7] mr-2">•</span>
-                      Autonomie et socialisation
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#0073B7] mr-2">•</span>
-                      Découverte des premières notions
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="content-card bg-white p-6 rounded-xl border border-gray-200 hover:border-[#0073B7]/30 transition-colors">
-                  <div className="w-12 h-12 bg-[#E6F0FA] rounded-lg flex items-center justify-center mb-4">
-                    <span className="text-[#0073B7] text-xl font-bold">2</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3">Méthodologie</h3>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex items-start">
-                      <span className="text-[#0073B7] mr-2">•</span>
-                      Approche ludique et interactive
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#0073B7] mr-2">•</span>
-                      Ateliers par petits groupes
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#0073B7] mr-2">•</span>
-                      Projets thématiques mensuels
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#0073B7] mr-2">•</span>
-                      Suivi individualisé
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="content-card bg-white p-6 rounded-xl border border-gray-200 hover:border-[#0073B7]/30 transition-colors">
-                  <div className="w-12 h-12 bg-[#E6F0FA] rounded-lg flex items-center justify-center mb-4">
-                    <span className="text-[#0073B7] text-xl font-bold">3</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3">Activités & Services</h3>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex items-start">
-                      <span className="text-[#0073B7] mr-2">•</span>
-                      Espace motricité sécurisé
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#0073B7] mr-2">•</span>
-                      Salle de sieste équipée
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#0073B7] mr-2">•</span>
-                      Cantine adaptée
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#0073B7] mr-2">•</span>
-                      Activités extrascolaires
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-          )}
-
-          {/* Equipe Section */}
-          {activeTab === 'equipe' && (
-            <section>
-              <div className="section-header text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                  Notre <span className="text-[#0073B7]">Équipe</span> Pédagogique
-                </h2>
-                <div className="w-24 h-1 bg-[#0073B7] mx-auto mb-6"></div>
-                <p className="text-gray-600 max-w-3xl mx-auto">
-                  Des professionnels dévoués à l'épanouissement de votre enfant
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-12">
-                <div className="content-card bg-white p-8 rounded-xl border border-gray-200">
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-6">
-                    Enseignants & Personnel
-                  </h3>
-                  <ul className="space-y-4 text-gray-600">
-                    <li className="flex items-start">
-                      <span className="bg-[#0073B7] text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">1</span>
-                      <div>
-                        <h4 className="font-medium text-gray-800">Enseignants diplômés</h4>
-                        <p>Spécialisés en pédagogie de la petite enfance</p>
+                <div className="grid md:grid-cols-2 gap-4 mb-8">
+                  {maternelleFeatures.map((feature, index) => (
+                    <div key={index} className="feature-card bg-white p-4 rounded-xl shadow-sm">
+                      <div className="flex items-center mb-2">
+                        {feature.icon}
+                        <h4 className="font-semibold text-gray-800 ml-2">{feature.title}</h4>
                       </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="bg-[#0073B7] text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">2</span>
-                      <div>
-                        <h4 className="font-medium text-gray-800">Assistantes maternelles</h4>
-                        <p>Pour un accompagnement personnalisé</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="bg-[#0073B7] text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">3</span>
-                      <div>
-                        <h4 className="font-medium text-gray-800">Psychologue scolaire</h4>
-                        <p>Disponible pour un suivi si nécessaire</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="content-card bg-white p-8 rounded-xl border border-gray-200">
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-6">
-                    Engagement Qualité
-                  </h3>
-                  <ul className="space-y-4 text-gray-600">
-                    <li className="flex items-start">
-                      <span className="bg-[#0073B7] text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">1</span>
-                      <div>
-                        <h4 className="font-medium text-gray-800">Formation continue</h4>
-                        <p>Mise à jour régulière des compétences</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="bg-[#0073B7] text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">2</span>
-                      <div>
-                        <h4 className="font-medium text-gray-800">Approche bienveillante</h4>
-                        <p>Respect du rythme de chaque enfant</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="bg-[#0073B7] text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">3</span>
-                      <div>
-                        <h4 className="font-medium text-gray-800">Communication régulière</h4>
-                        <p>Échanges quotidiens avec les parents</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-          )}
-
-          {/* Infos Pratiques Section */}
-          {activeTab === 'infos' && (
-            <section>
-              <div className="section-header text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                  Informations <span className="text-[#0073B7]">Pratiques</span>
-                </h2>
-                <div className="w-24 h-1 bg-[#0073B7] mx-auto mb-6"></div>
-                <p className="text-gray-600 max-w-3xl mx-auto">
-                  Tout ce que vous devez savoir pour l'inscription de votre enfant
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-12">
-                <div className="content-card">
-                  <div className="bg-[#E6F0FA] p-8 rounded-xl h-full">
-                    <h3 className="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
-                      <HiOutlineCalendar className="text-[#0073B7] mr-3" size={28} />
-                      Horaires & Inscription
-                    </h3>
-                    <ul className="space-y-4 text-gray-600">
-                      <li className="flex items-start">
-                        <span className="bg-[#0073B7] text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">1</span>
-                        <div>
-                          <h4 className="font-medium text-gray-800">Âge requis</h4>
-                          <p>À partir de 2 ans révolus</p>
-                        </div>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="bg-[#0073B7] text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">2</span>
-                        <div>
-                          <h4 className="font-medium text-gray-800">Horaires</h4>
-                          <p>7h30 - 16h30 (garderie jusqu'à 18h)</p>
-                        </div>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="bg-[#0073B7] text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">3</span>
-                        <div>
-                          <h4 className="font-medium text-gray-800">Documents à fournir</h4>
-                          <p>Extrait de naissance, carnet de vaccination, etc.</p>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="content-card">
-                  <div className="bg-white p-8 rounded-xl border border-gray-200 h-full">
-                    <h3 className="text-2xl font-semibold text-gray-800 mb-6">
-                      Contact & Visite
-                    </h3>
-                    <div className="space-y-4">
-                      <div className="flex items-start">
-                        <FiMail className="text-[#0073B7] mt-1 mr-3" size={20} />
-                        <div>
-                          <p className="text-gray-600">Email</p>
-                          <a href="mailto:maternelle@cs-bisounours.com" className="text-[#0073B7] hover:underline">
-                            maternelle@cs-bisounours.com
-                          </a>
-                        </div>
-                      </div>
-                      <div className="flex items-start">
-                        <FiPhone className="text-[#0073B7] mt-1 mr-3" size={20} />
-                        <div>
-                          <p className="text-gray-600">Téléphone</p>
-                          <a href="tel:+243822266004" className="text-[#0073B7] hover:underline">
-                            +243 822 266 004
-                          </a>
-                        </div>
-                      </div>
-                      <div className="flex items-start">
-                        <FiMapPin className="text-[#0073B7] mt-1 mr-3" size={20} />
-                        <div>
-                          <p className="text-gray-600">Adresse</p>
-                          <p>1098, Av MAMA YEMO, Lubumbashi</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start">
-                        <FiClock className="text-[#0073B7] mt-1 mr-3" size={20} />
-                        <div>
-                          <p className="text-gray-600">Heures de visite</p>
-                          <p>Lundi - Vendredi, 9h-11h et 14h-16h</p>
-                        </div>
-                      </div>
+                      <p className="text-gray-600 text-sm">{feature.description}</p>
                     </div>
-                    <button className="mt-6 flex items-center bg-[#0073B7] hover:bg-[#005a9c] text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300">
-                      Demander une visite
-                      <FiArrowRight className="ml-2" />
-                    </button>
-                  </div>
+                  ))}
+                </div>
+
+                <div className="bg-white p-6 rounded-2xl shadow-lg">
+                  <h4 className="font-bold text-gray-800 mb-4 flex items-center">
+                    <Palette className="text-pink-600 mr-2" size={20} />
+                    Activités et Services
+                  </h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li>• Espace motricité et cour extérieure sécurisée</li>
+                    <li>• Salle de sieste équipée</li>
+                    <li>• Cantine adaptée aux jeunes enfants</li>
+                    <li>• Activités extrascolaires : éveil musical, théâtre, jardinage</li>
+                    <li>• Sorties pédagogiques et animations</li>
+                  </ul>
                 </div>
               </div>
-            </section>
-          )}
 
-          {/* Galerie Section */}
-          {activeTab === 'galerie' && (
-            <section>
-              <div className="section-header text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                  Galerie <span className="text-[#0073B7]">Maternelle</span>
-                </h2>
-                <div className="w-24 h-1 bg-[#0073B7] mx-auto mb-6"></div>
-                <p className="text-gray-600 max-w-3xl mx-auto">
-                  Découvrez notre espace dédié aux tout-petits en images
-                </p>
+              <div className="order-1 lg:order-2">
+                <img
+                  src="https://images.pexels.com/photos/8613066/pexels-photo-8613066.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop"
+                  alt="Section Maternelle"
+                  className="w-full h-[600px] object-cover rounded-3xl shadow-2xl"
+                />
               </div>
-              <GallerySection />
-            </section>
-          )}
-        </div>
-      </main>
-
-      {/* Call to Action */}
-      <section className="bg-[#E6F0FA] py-16">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
-            Prêt à inscrire votre enfant en Maternelle?
-          </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto mb-8">
-            Notre équipe est disponible pour répondre à toutes vos questions et vous guider dans le processus d'inscription.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a 
-              href="tel:+243822266004" 
-              className="flex items-center justify-center bg-white text-[#0073B7] hover:bg-[#0073B7] hover:text-white px-8 py-3 rounded-lg font-medium transition-colors duration-300 shadow-md"
-            >
-              <FiPhone className="mr-2" />
-              Nous appeler
-            </a>
-            <a 
-              href="#contact" 
-              className="flex items-center justify-center bg-[#0073B7] hover:bg-[#005a9c] text-white px-8 py-3 rounded-lg font-medium transition-colors duration-300 shadow-md"
-            >
-              <FiMail className="mr-2" />
-              Nous écrire
-            </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Primaire Section */}
+        <section className="section-card py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+          <div className="container mx-auto px-6">
+            <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto items-center">
+              <div>
+                <img
+                  src="https://images.pexels.com/photos/8613028/pexels-photo-8613028.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop"
+                  alt="Section Primaire"
+                  className="w-full h-[600px] object-cover rounded-3xl shadow-2xl"
+                />
+              </div>
+
+              <div>
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                    <BookOpen className="text-white" size={32} />
+                  </div>
+                  <div>
+                    <h2 className="text-4xl lg:text-5xl font-bold text-gray-800">Primaire</h2>
+                    <p className="text-blue-600 font-semibold text-lg">6 à 11 ans</p>
+                  </div>
+                </div>
+
+                <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                  La section Primaire accueille les enfants de 6 à 11 ans, correspondant aux classes 
+                  du Cours Préparatoire (CP) jusqu'au Cours Moyen 2ᵉ année (CM2). L'objectif principal 
+                  est de consolider les fondations scolaires et développer l'esprit critique.
+                </p>
+
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center">
+                    <GraduationCap className="text-blue-600 mr-3" size={20} />
+                    <span className="font-semibold">CP (Cours Préparatoire) :</span>
+                    <span className="ml-2">6 ans</span>
+                  </div>
+                  <div className="flex items-center">
+                    <GraduationCap className="text-blue-600 mr-3" size={20} />
+                    <span className="font-semibold">CE1-CE2 (Cours Élémentaire) :</span>
+                    <span className="ml-2">7-8 ans</span>
+                  </div>
+                  <div className="flex items-center">
+                    <GraduationCap className="text-blue-600 mr-3" size={20} />
+                    <span className="font-semibold">CM1-CM2 (Cours Moyen) :</span>
+                    <span className="ml-2">9-11 ans</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Clock className="text-blue-600 mr-3" size={20} />
+                    <span className="font-semibold">Horaires :</span>
+                    <span className="ml-2">7h30 – 16h30 (études jusqu'à 18h)</span>
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4 mb-8">
+                  {primaireFeatures.map((feature, index) => (
+                    <div key={index} className="feature-card bg-white p-4 rounded-xl shadow-sm">
+                      <div className="flex items-center mb-2">
+                        {feature.icon}
+                        <h4 className="font-semibold text-gray-800 ml-2">{feature.title}</h4>
+                      </div>
+                      <p className="text-gray-600 text-sm">{feature.description}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="bg-white p-6 rounded-2xl shadow-lg">
+                  <h4 className="font-bold text-gray-800 mb-4 flex items-center">
+                    <Music className="text-blue-600 mr-2" size={20} />
+                    Activités Complémentaires
+                  </h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li>• Cours d'éducation physique et sportive</li>
+                    <li>• Ateliers artistiques : musique, théâtre, dessin</li>
+                    <li>• Sorties pédagogiques (musées, fermes pédagogiques)</li>
+                    <li>• Clubs extrascolaires : lecture, informatique, échecs</li>
+                    <li>• Soutien scolaire personnalisé</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Secondaire Section */}
+        <section className="section-card py-20 bg-gradient-to-br from-purple-50 to-violet-100">
+          <div className="container mx-auto px-6">
+            <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto items-center">
+              <div className="order-2 lg:order-1">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mr-4">
+                    <GraduationCap className="text-white" size={32} />
+                  </div>
+                  <div>
+                    <h2 className="text-4xl lg:text-5xl font-bold text-gray-800">Secondaire</h2>
+                    <p className="text-purple-600 font-semibold text-lg">11 à 15 ans</p>
+                  </div>
+                </div>
+
+                <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                  La section Secondaire regroupe les classes de la 6e à la 3e, soit le collège, 
+                  une étape charnière dans la scolarité. Notre mission est d'accompagner chaque 
+                  adolescent dans son développement intellectuel, personnel et social.
+                </p>
+
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center">
+                    <Award className="text-purple-600 mr-3" size={20} />
+                    <span className="font-semibold">6ème (11-12 ans) :</span>
+                    <span className="ml-2">Transition primaire-secondaire</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Award className="text-purple-600 mr-3" size={20} />
+                    <span className="font-semibold">5ème (12-13 ans) :</span>
+                    <span className="ml-2">Approfondissements scientifiques</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Award className="text-purple-600 mr-3" size={20} />
+                    <span className="font-semibold">4ème-3ème (13-15 ans) :</span>
+                    <span className="ml-2">Préparation Brevet et orientation</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Clock className="text-purple-600 mr-3" size={20} />
+                    <span className="font-semibold">Horaires :</span>
+                    <span className="ml-2">7h30 – 16h45 (clubs jusqu'à 18h)</span>
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4 mb-8">
+                  {secondaireFeatures.map((feature, index) => (
+                    <div key={index} className="feature-card bg-white p-4 rounded-xl shadow-sm">
+                      <div className="flex items-center mb-2">
+                        {feature.icon}
+                        <h4 className="font-semibold text-gray-800 ml-2">{feature.title}</h4>
+                      </div>
+                      <p className="text-gray-600 text-sm">{feature.description}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="bg-white p-6 rounded-2xl shadow-lg">
+                  <h4 className="font-bold text-gray-800 mb-4 flex items-center">
+                    <Globe className="text-purple-600 mr-2" size={20} />
+                    Ouverture et Vie Scolaire
+                  </h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li>• Langues vivantes (Anglais, Espagnol)</li>
+                    <li>• Initiation informatique et citoyenneté</li>
+                    <li>• Clubs sciences, débats, culture générale</li>
+                    <li>• Sorties pédagogiques et visites d'entreprises</li>
+                    <li>• Participation aux concours académiques</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="order-1 lg:order-2">
+                <img
+                  src="https://images.pexels.com/photos/8613032/pexels-photo-8613032.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop"
+                  alt="Section Secondaire"
+                  className="w-full h-600px] object-cover rounded-3xl shadow-2xl"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Examens et Certifications */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                Examens et <span className="text-[#0073b7]">Certifications</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Préparation rigoureuse aux examens officiels et certifications reconnues
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-0 text-center">
+                  <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Heart className="text-pink-600" size={32} />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-4">Maternelle</h3>
+                  <ul className="text-gray-600 space-y-2">
+                    <li>• Évaluations développementales</li>
+                    <li>• Bilans de compétences</li>
+                    <li>• Préparation à l'entrée en CP</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-0 text-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <BookOpen className="text-blue-600" size={32} />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-4">Primaire</h3>
+                  <ul className="text-gray-600 space-y-2">
+                    <li>• Évaluations nationales CE1</li>
+                    <li>• Contrôles continus</li>
+                    <li>• Préparation à l'entrée en 6ème</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-0 text-center">
+                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <GraduationCap className="text-purple-600" size={32} />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-4">Secondaire</h3>
+                  <ul className="text-gray-600 space-y-2">
+                    <li>• Diplôme National du Brevet</li>
+                    <li>• Évaluations nationales 6ème</li>
+                    <li>• Attestations numériques</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="py-20 bg-[#0073b7] text-white">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                Inscrivez Votre <span className="text-yellow-400">Enfant</span>
+              </h2>
+              <p className="text-xl mb-12">
+                Rejoignez notre communauté éducative d'excellence et offrez à votre enfant 
+                le meilleur départ dans la vie.
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-8 mb-12">
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-4">
+                    <MapPin className="text-[#0073b7]" size={24} />
+                  </div>
+                  <h3 className="font-semibold mb-2">Adresse</h3>
+                  <p className="text-center">
+                    1098, Av MAMA YEMO<br />
+                    C/Lubumbashi, Haut-Katanga RDC
+                  </p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-4">
+                    <Phone className="text-[#0073b7]" size={24} />
+                  </div>
+                  <h3 className="font-semibold mb-2">Téléphone</h3>
+                  <p className="text-center">
+                    +243 822266004<br />
+                    +243 843387388
+                  </p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-4">
+                    <Mail className="text-[#0073b7]" size={24} />
+                  </div>
+                  <h3 className="font-semibold mb-2">Email</h3>
+                  <p className="text-center">
+                    direction@cs-bisounours.com<br />
+                    info@cs-bisounours.com
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button className="bg-yellow-400 hover:bg-yellow-500 text-[#0073b7] px-8 py-4 rounded-full text-lg font-semibold">
+                  Demander une inscription
+                </Button>
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#0073b7] px-8 py-4 rounded-full text-lg">
+                  Planifier une visite
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };
-
-export default MaternellePage;
