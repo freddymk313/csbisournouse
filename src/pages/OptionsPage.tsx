@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { BiAward, BiBookOpen, BiCalculator, BiGlobe, BiHeart, BiMailSend, BiMapPin, BiMusic, BiPalette, BiPhone } from 'react-icons/bi';
+import { BiAward, BiBook, BiBookOpen, BiCalculator, BiGlobe, BiHeart, BiMailSend, BiMapPin, BiMusic, BiPalette, BiPhone } from 'react-icons/bi';
 import { FiTarget } from 'react-icons/fi';
 import { FaGraduationCap, FaMicroscope } from 'react-icons/fa';
-import { FaUserSecret } from 'react-icons/fa6';
+import { FaBook, FaHeart, FaUserSecret } from 'react-icons/fa6';
 import { CgLock } from 'react-icons/cg';
 import { BsAward } from 'react-icons/bs';
 
@@ -125,7 +125,7 @@ const OptionsPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="options-hero relative bg-gradient-to-r from-[#0073b7] to-[#005a8f] text-white py-20">
+      {/* <section className="options-hero relative bg-gradient-to-r from-[#0073b7] to-[#005a8f] text-white py-20">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative container mx-auto px-6 text-center">
           <h1 className="text-5xl lg:text-6xl font-bold mb-6">
@@ -136,7 +136,40 @@ const OptionsPage = () => {
             adaptés à chaque étape du développement de votre enfant.
           </p>
         </div>
-      </section>
+      </section> */}
+
+      <section className="relative h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
+                {/* Background with overlay */}
+                <div className="absolute inset-0 z-0">
+                    <img
+                        src='/gallery/6.jpg'
+                        alt="Contactez le Complexe Scolaire Les Bisounours"
+                        className="w-full h-full object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-black/40"></div>
+                </div>
+
+                {/* Content */}
+                <div className="container mx-auto px-6 md:px-16 lg:px-20 z-10">
+                    <div className="max-w-4xl mx-auto text-center">
+                        <div className="text-white">
+                            <h1 className="contact-hero-title font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
+                                <span className="block">Nos Options</span>
+                                <span className="block">Éducatives</span>
+                            </h1>
+
+                            <p className="contact-hero-subtitle text-base md:text-lg mb-6 text-white/90 leading-relaxed max-w-2xl mx-auto">
+                                De la maternelle au secondaire, découvrez nos programmes éducatifs 
+            
+                            </p>
+
+                            <div className="flex flex-col md:flex-row mt-6 justify-center items-center space-y-2 md:space-y-0 md:space-x-6">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
       <div className="options-content">
         {/* Maternelle Section */}
@@ -389,10 +422,10 @@ const OptionsPage = () => {
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-6">
                 Examens et <span className="text-[#0073b7]">Certifications</span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="md:text-lg text-gray-600 max-w-3xl mx-auto">
                 Préparation rigoureuse aux examens officiels et certifications reconnues
               </p>
             </div>
@@ -400,101 +433,44 @@ const OptionsPage = () => {
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <div className="p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="p-0 text-center">
-                  <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <BiHeart className="text-pink-600" size={32} />
+                  <div className="w-16 h-16 bg-[#0073b7]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <FaHeart className="text-[#0073b7]" size={26} />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-4">Maternelle</h3>
-                  <ul className="text-gray-600 space-y-2">
-                    <li>• Évaluations développementales</li>
-                    <li>• Bilans de compétences</li>
-                    <li>• Préparation à l'entrée en CP</li>
+                  <h3 className="text-lg font-bold text-gray-800 mb-4">Maternelle</h3>
+                  <ul className="text-gray-600 space-y-1">
+                    <li>Évaluations développementales</li>
+                    <li>Bilans de compétences</li>
+                    <li>Préparation à l'entrée en CP</li>
                   </ul>
                 </div>
               </div>
 
               <div className="p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="p-0 text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <BiBookOpen className="text-blue-600" size={32} />
+                  <div className="w-16 h-16 bg-[#0073b7]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <FaBook className="text-[#0073b7]" size={26} />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-4">Primaire</h3>
-                  <ul className="text-gray-600 space-y-2">
-                    <li>• Évaluations nationales CE1</li>
-                    <li>• Contrôles continus</li>
-                    <li>• Préparation à l'entrée en 6ème</li>
+                  <h3 className="text-lg font-bold text-gray-800 mb-4">Primaire</h3>
+                  <ul className="text-gray-600 space-y-1">
+                    <li>Évaluations nationales CE1</li>
+                    <li>Contrôles continus</li>
+                    <li>Préparation à l'entrée en 6ème</li>
                   </ul>
                 </div>
               </div>
 
               <div className="p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="p-0 text-center">
-                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <FaGraduationCap className="text-purple-600" size={32} />
+                  <div className="w-16 h-16 bg-[#0073b7]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <FaGraduationCap className="text-[#0073b7]" size={32} />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-4">Secondaire</h3>
-                  <ul className="text-gray-600 space-y-2">
-                    <li>• Diplôme National du Brevet</li>
-                    <li>• Évaluations nationales 6ème</li>
-                    <li>• Attestations numériques</li>
+                  <h3 className="text-lg font-bold text-gray-800 mb-4">Secondaire</h3>
+                  <ul className="text-gray-600 space-y-1">
+                    <li>Diplôme National du Brevet</li>
+                    <li>Évaluations nationales 6ème</li>
+                    <li>Attestations numériques</li>
                   </ul>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section className="py-20 bg-[#0073b7] text-white">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                Inscrivez Votre <span className="text-yellow-400">Enfant</span>
-              </h2>
-              <p className="text-xl mb-12">
-                Rejoignez notre communauté éducative d'excellence et offrez à votre enfant 
-                le meilleur départ dans la vie.
-              </p>
-
-              <div className="grid md:grid-cols-3 gap-8 mb-12">
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-4">
-                    <BiMapPin className="text-[#0073b7]" size={24} />
-                  </div>
-                  <h3 className="font-semibold mb-2">Adresse</h3>
-                  <p className="text-center">
-                    1098, Av MAMA YEMO<br />
-                    C/Lubumbashi, Haut-Katanga RDC
-                  </p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-4">
-                    <BiPhone className="text-[#0073b7]" size={24} />
-                  </div>
-                  <h3 className="font-semibold mb-2">Téléphone</h3>
-                  <p className="text-center">
-                    +243 822266004<br />
-                    +243 843387388
-                  </p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-4">
-                    <BiMailSend className="text-[#0073b7]" size={24} />
-                  </div>
-                  <h3 className="font-semibold mb-2">Email</h3>
-                  <p className="text-center">
-                    direction@cs-bisounours.com<br />
-                    info@cs-bisounours.com
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-yellow-400 hover:bg-yellow-500 text-[#0073b7] px-8 py-4 rounded-full text-lg font-semibold">
-                  Demander une inscription
-                </button>
-                <button className="border-white text-white hover:bg-white hover:text-[#0073b7] px-8 py-4 rounded-full text-lg">
-                  Planifier une visite
-                </button>
               </div>
             </div>
           </div>
