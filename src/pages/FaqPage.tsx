@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronDown, ChevronUp, HelpCircle, Phone, Mail, MapPin, Clock } from 'lucide-react';
-import { Button } from '../components/ui/button';
+import { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { CgLock } from 'react-icons/cg';
+import { BiChevronDown, BiChevronUp, BiHelpCircle, BiMailSend, BiPhone } from 'react-icons/bi';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const FAQPage = (): JSX.Element => {
+const FAQPage = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   useEffect(() => {
@@ -199,7 +199,7 @@ export const FAQPage = (): JSX.Element => {
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative container mx-auto px-6 text-center">
           <div className="w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6">
-            <HelpCircle className="text-[#0073b7]" size={40} />
+            <BiHelpCircle className="text-[#0073b7]" size={40} />
           </div>
           <h1 className="text-5xl lg:text-6xl font-bold mb-6">
             Questions <span className="text-yellow-400">Fréquentes</span>
@@ -239,9 +239,9 @@ export const FAQPage = (): JSX.Element => {
                           {faq.question}
                         </h3>
                         {openIndex === currentIndex ? (
-                          <ChevronUp className="text-[#0073b7] flex-shrink-0" size={24} />
+                          <BiChevronUp className="text-[#0073b7] flex-shrink-0" size={24} />
                         ) : (
-                          <ChevronDown className="text-[#0073b7] flex-shrink-0" size={24} />
+                          <BiChevronDown className="text-[#0073b7] flex-shrink-0" size={24} />
                         )}
                       </button>
                       
@@ -275,7 +275,7 @@ export const FAQPage = (): JSX.Element => {
               <div className="grid md:grid-cols-3 gap-8 mb-12">
                 <div className="flex flex-col items-center">
                   <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-4">
-                    <Phone className="text-[#0073b7]" size={24} />
+                    <BiPhone className="text-[#0073b7]" size={24} />
                   </div>
                   <h3 className="font-semibold mb-2">Téléphone</h3>
                   <p className="text-center">
@@ -285,7 +285,7 @@ export const FAQPage = (): JSX.Element => {
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-4">
-                    <Mail className="text-[#0073b7]" size={24} />
+                    <BiMailSend className="text-[#0073b7]" size={24} />
                   </div>
                   <h3 className="font-semibold mb-2">Email</h3>
                   <p className="text-center">
@@ -295,7 +295,7 @@ export const FAQPage = (): JSX.Element => {
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-4">
-                    <Clock className="text-[#0073b7]" size={24} />
+                    <CgLock className="text-[#0073b7]" size={24} />
                   </div>
                   <h3 className="font-semibold mb-2">Horaires d'accueil</h3>
                   <p className="text-center">
@@ -306,12 +306,12 @@ export const FAQPage = (): JSX.Element => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-yellow-400 hover:bg-yellow-500 text-[#0073b7] px-8 py-4 rounded-full text-lg font-semibold">
+                <button className="bg-yellow-400 hover:bg-yellow-500 text-[#0073b7] px-8 py-4 rounded-full text-lg font-semibold">
                   Nous contacter
-                </Button>
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#0073b7] px-8 py-4 rounded-full text-lg">
+                </button>
+                <button className="border-white text-white hover:bg-white hover:text-[#0073b7] px-8 py-4 rounded-full text-lg">
                   Prendre rendez-vous
-                </Button>
+                </button>
               </div>
             </div>
           </div>
@@ -320,3 +320,5 @@ export const FAQPage = (): JSX.Element => {
     </div>
   );
 };
+
+export default FAQPage;

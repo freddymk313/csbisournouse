@@ -1,29 +1,16 @@
-import React, { useEffect } from 'react';
-import { Button } from '../components/ui/button';
-import { Card, CardContent } from '../components/ui/card';
-import { 
-  Users, 
-  Clock, 
-  BookOpen, 
-  Palette, 
-  Music, 
-  Heart,
-  Target,
-  Award,
-  Globe,
-  Calculator,
-  Microscope,
-  GraduationCap,
-  Phone,
-  Mail,
-  MapPin
-} from 'lucide-react';
+import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { BiAward, BiBookOpen, BiCalculator, BiGlobe, BiHeart, BiMailSend, BiMapPin, BiMusic, BiPalette, BiPhone } from 'react-icons/bi';
+import { FiTarget } from 'react-icons/fi';
+import { FaGraduationCap, FaMicroscope } from 'react-icons/fa';
+import { FaUserSecret } from 'react-icons/fa6';
+import { CgLock } from 'react-icons/cg';
+import { BsAward } from 'react-icons/bs';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const OptionsPage = (): JSX.Element => {
+const OptionsPage = () => {
   useEffect(() => {
     // Page animations
     gsap.fromTo('.options-hero',
@@ -68,22 +55,22 @@ export const OptionsPage = (): JSX.Element => {
 
   const maternelleFeatures = [
     {
-      icon: <Heart className="text-pink-600" size={24} />,
+      icon: <BiHeart className="text-pink-600" size={24} />,
       title: "Développement du langage",
       description: "Communication orale et expression"
     },
     {
-      icon: <Palette className="text-pink-600" size={24} />,
+      icon: <BiPalette className="text-pink-600" size={24} />,
       title: "Éveil sensoriel",
       description: "Motricité, affectif et cognitif"
     },
     {
-      icon: <Users className="text-pink-600" size={24} />,
+      icon: <FaUserSecret className="text-pink-600" size={24} />,
       title: "Autonomie et socialisation",
       description: "Vivre ensemble et indépendance"
     },
     {
-      icon: <BookOpen className="text-pink-600" size={24} />,
+      icon: <BiBookOpen className="text-pink-600" size={24} />,
       title: "Premières notions",
       description: "Formes, couleurs, chiffres, lettres"
     }
@@ -91,22 +78,22 @@ export const OptionsPage = (): JSX.Element => {
 
   const primaireFeatures = [
     {
-      icon: <BookOpen className="text-blue-600" size={24} />,
+      icon: <BiBookOpen className="text-blue-600" size={24} />,
       title: "Lecture et écriture",
       description: "Maîtrise des fondamentaux"
     },
     {
-      icon: <Calculator className="text-blue-600" size={24} />,
+      icon: <BiCalculator className="text-blue-600" size={24} />,
       title: "Bases mathématiques",
       description: "Logique et raisonnement"
     },
     {
-      icon: <Globe className="text-blue-600" size={24} />,
+      icon: <BiGlobe className="text-blue-600" size={24} />,
       title: "Culture générale",
       description: "Sciences, histoire, géographie"
     },
     {
-      icon: <Target className="text-blue-600" size={24} />,
+      icon: <FiTarget className="text-blue-600" size={24} />,
       title: "Méthodes de travail",
       description: "Organisation et concentration"
     }
@@ -114,22 +101,22 @@ export const OptionsPage = (): JSX.Element => {
 
   const secondaireFeatures = [
     {
-      icon: <GraduationCap className="text-purple-600" size={24} />,
+      icon: <FaGraduationCap className="text-purple-600" size={24} />,
       title: "Préparation au Brevet",
       description: "Examens officiels et certifications"
     },
     {
-      icon: <Microscope className="text-purple-600" size={24} />,
+      icon: <FaMicroscope className="text-purple-600" size={24} />,
       title: "Pensée critique",
       description: "Analyse et autonomie intellectuelle"
     },
     {
-      icon: <Award className="text-purple-600" size={24} />,
+      icon: <BiAward className="text-purple-600" size={24} />,
       title: "Orientation scolaire",
       description: "Construction du projet d'avenir"
     },
     {
-      icon: <Globe className="text-purple-600" size={24} />,
+      icon: <BiGlobe className="text-purple-600" size={24} />,
       title: "Ouverture sur le monde",
       description: "Langues vivantes et culture"
     }
@@ -159,7 +146,7 @@ export const OptionsPage = (): JSX.Element => {
               <div className="order-2 lg:order-1">
                 <div className="flex items-center mb-6">
                   <div className="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mr-4">
-                    <Heart className="text-white" size={32} />
+                    <BiHeart className="text-white" size={32} />
                   </div>
                   <div>
                     <h2 className="text-4xl lg:text-5xl font-bold text-gray-800">Maternelle</h2>
@@ -175,22 +162,22 @@ export const OptionsPage = (): JSX.Element => {
 
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center">
-                    <Users className="text-pink-600 mr-3" size={20} />
+                    <FaUserSecret className="text-pink-600 mr-3" size={20} />
                     <span className="font-semibold">Petite Section (PS) :</span>
                     <span className="ml-2">dès 2-3 ans</span>
                   </div>
                   <div className="flex items-center">
-                    <Users className="text-pink-600 mr-3" size={20} />
+                    <FaUserSecret className="text-pink-600 mr-3" size={20} />
                     <span className="font-semibold">Moyenne Section (MS) :</span>
                     <span className="ml-2">4 ans</span>
                   </div>
                   <div className="flex items-center">
-                    <Users className="text-pink-600 mr-3" size={20} />
+                    <FaUserSecret className="text-pink-600 mr-3" size={20} />
                     <span className="font-semibold">Grande Section (GS) :</span>
                     <span className="ml-2">5 ans</span>
                   </div>
                   <div className="flex items-center">
-                    <Clock className="text-pink-600 mr-3" size={20} />
+                    <CgLock className="text-pink-600 mr-3" size={20} />
                     <span className="font-semibold">Horaires :</span>
                     <span className="ml-2">7h30 – 16h30 (garderie jusqu'à 18h)</span>
                   </div>
@@ -210,7 +197,7 @@ export const OptionsPage = (): JSX.Element => {
 
                 <div className="bg-white p-6 rounded-2xl shadow-lg">
                   <h4 className="font-bold text-gray-800 mb-4 flex items-center">
-                    <Palette className="text-pink-600 mr-2" size={20} />
+                    <BiPalette className="text-pink-600 mr-2" size={20} />
                     Activités et Services
                   </h4>
                   <ul className="space-y-2 text-gray-700">
@@ -249,7 +236,7 @@ export const OptionsPage = (): JSX.Element => {
               <div>
                 <div className="flex items-center mb-6">
                   <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4">
-                    <BookOpen className="text-white" size={32} />
+                    <BiBookOpen className="text-white" size={32} />
                   </div>
                   <div>
                     <h2 className="text-4xl lg:text-5xl font-bold text-gray-800">Primaire</h2>
@@ -265,22 +252,22 @@ export const OptionsPage = (): JSX.Element => {
 
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center">
-                    <GraduationCap className="text-blue-600 mr-3" size={20} />
+                    <FaGraduationCap className="text-blue-600 mr-3" size={20} />
                     <span className="font-semibold">CP (Cours Préparatoire) :</span>
                     <span className="ml-2">6 ans</span>
                   </div>
                   <div className="flex items-center">
-                    <GraduationCap className="text-blue-600 mr-3" size={20} />
+                    <FaGraduationCap className="text-blue-600 mr-3" size={20} />
                     <span className="font-semibold">CE1-CE2 (Cours Élémentaire) :</span>
                     <span className="ml-2">7-8 ans</span>
                   </div>
                   <div className="flex items-center">
-                    <GraduationCap className="text-blue-600 mr-3" size={20} />
+                    <FaGraduationCap className="text-blue-600 mr-3" size={20} />
                     <span className="font-semibold">CM1-CM2 (Cours Moyen) :</span>
                     <span className="ml-2">9-11 ans</span>
                   </div>
                   <div className="flex items-center">
-                    <Clock className="text-blue-600 mr-3" size={20} />
+                    <CgLock className="text-blue-600 mr-3" size={20} />
                     <span className="font-semibold">Horaires :</span>
                     <span className="ml-2">7h30 – 16h30 (études jusqu'à 18h)</span>
                   </div>
@@ -300,7 +287,7 @@ export const OptionsPage = (): JSX.Element => {
 
                 <div className="bg-white p-6 rounded-2xl shadow-lg">
                   <h4 className="font-bold text-gray-800 mb-4 flex items-center">
-                    <Music className="text-blue-600 mr-2" size={20} />
+                    <BiMusic className="text-blue-600 mr-2" size={20} />
                     Activités Complémentaires
                   </h4>
                   <ul className="space-y-2 text-gray-700">
@@ -323,7 +310,7 @@ export const OptionsPage = (): JSX.Element => {
               <div className="order-2 lg:order-1">
                 <div className="flex items-center mb-6">
                   <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mr-4">
-                    <GraduationCap className="text-white" size={32} />
+                    <FaGraduationCap className="text-white" size={32} />
                   </div>
                   <div>
                     <h2 className="text-4xl lg:text-5xl font-bold text-gray-800">Secondaire</h2>
@@ -339,22 +326,22 @@ export const OptionsPage = (): JSX.Element => {
 
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center">
-                    <Award className="text-purple-600 mr-3" size={20} />
+                    <BiAward className="text-purple-600 mr-3" size={20} />
                     <span className="font-semibold">6ème (11-12 ans) :</span>
                     <span className="ml-2">Transition primaire-secondaire</span>
                   </div>
                   <div className="flex items-center">
-                    <Award className="text-purple-600 mr-3" size={20} />
+                    <BiAward className="text-purple-600 mr-3" size={20} />
                     <span className="font-semibold">5ème (12-13 ans) :</span>
                     <span className="ml-2">Approfondissements scientifiques</span>
                   </div>
                   <div className="flex items-center">
-                    <Award className="text-purple-600 mr-3" size={20} />
+                    <BsAward className="text-purple-600 mr-3" size={20} />
                     <span className="font-semibold">4ème-3ème (13-15 ans) :</span>
                     <span className="ml-2">Préparation Brevet et orientation</span>
                   </div>
                   <div className="flex items-center">
-                    <Clock className="text-purple-600 mr-3" size={20} />
+                    <CgLock className="text-purple-600 mr-3" size={20} />
                     <span className="font-semibold">Horaires :</span>
                     <span className="ml-2">7h30 – 16h45 (clubs jusqu'à 18h)</span>
                   </div>
@@ -374,7 +361,7 @@ export const OptionsPage = (): JSX.Element => {
 
                 <div className="bg-white p-6 rounded-2xl shadow-lg">
                   <h4 className="font-bold text-gray-800 mb-4 flex items-center">
-                    <Globe className="text-purple-600 mr-2" size={20} />
+                    <BiGlobe className="text-purple-600 mr-2" size={20} />
                     Ouverture et Vie Scolaire
                   </h4>
                   <ul className="space-y-2 text-gray-700">
@@ -411,10 +398,10 @@ export const OptionsPage = (): JSX.Element => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                <CardContent className="p-0 text-center">
+              <div className="p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="p-0 text-center">
                   <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Heart className="text-pink-600" size={32} />
+                    <BiHeart className="text-pink-600" size={32} />
                   </div>
                   <h3 className="text-xl font-bold text-gray-800 mb-4">Maternelle</h3>
                   <ul className="text-gray-600 space-y-2">
@@ -422,13 +409,13 @@ export const OptionsPage = (): JSX.Element => {
                     <li>• Bilans de compétences</li>
                     <li>• Préparation à l'entrée en CP</li>
                   </ul>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
 
-              <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                <CardContent className="p-0 text-center">
+              <div className="p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="p-0 text-center">
                   <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <BookOpen className="text-blue-600" size={32} />
+                    <BiBookOpen className="text-blue-600" size={32} />
                   </div>
                   <h3 className="text-xl font-bold text-gray-800 mb-4">Primaire</h3>
                   <ul className="text-gray-600 space-y-2">
@@ -436,13 +423,13 @@ export const OptionsPage = (): JSX.Element => {
                     <li>• Contrôles continus</li>
                     <li>• Préparation à l'entrée en 6ème</li>
                   </ul>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
 
-              <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                <CardContent className="p-0 text-center">
+              <div className="p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="p-0 text-center">
                   <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <GraduationCap className="text-purple-600" size={32} />
+                    <FaGraduationCap className="text-purple-600" size={32} />
                   </div>
                   <h3 className="text-xl font-bold text-gray-800 mb-4">Secondaire</h3>
                   <ul className="text-gray-600 space-y-2">
@@ -450,8 +437,8 @@ export const OptionsPage = (): JSX.Element => {
                     <li>• Évaluations nationales 6ème</li>
                     <li>• Attestations numériques</li>
                   </ul>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -471,7 +458,7 @@ export const OptionsPage = (): JSX.Element => {
               <div className="grid md:grid-cols-3 gap-8 mb-12">
                 <div className="flex flex-col items-center">
                   <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-4">
-                    <MapPin className="text-[#0073b7]" size={24} />
+                    <BiMapPin className="text-[#0073b7]" size={24} />
                   </div>
                   <h3 className="font-semibold mb-2">Adresse</h3>
                   <p className="text-center">
@@ -481,7 +468,7 @@ export const OptionsPage = (): JSX.Element => {
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-4">
-                    <Phone className="text-[#0073b7]" size={24} />
+                    <BiPhone className="text-[#0073b7]" size={24} />
                   </div>
                   <h3 className="font-semibold mb-2">Téléphone</h3>
                   <p className="text-center">
@@ -491,7 +478,7 @@ export const OptionsPage = (): JSX.Element => {
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mb-4">
-                    <Mail className="text-[#0073b7]" size={24} />
+                    <BiMailSend className="text-[#0073b7]" size={24} />
                   </div>
                   <h3 className="font-semibold mb-2">Email</h3>
                   <p className="text-center">
@@ -502,12 +489,12 @@ export const OptionsPage = (): JSX.Element => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-yellow-400 hover:bg-yellow-500 text-[#0073b7] px-8 py-4 rounded-full text-lg font-semibold">
+                <button className="bg-yellow-400 hover:bg-yellow-500 text-[#0073b7] px-8 py-4 rounded-full text-lg font-semibold">
                   Demander une inscription
-                </Button>
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#0073b7] px-8 py-4 rounded-full text-lg">
+                </button>
+                <button className="border-white text-white hover:bg-white hover:text-[#0073b7] px-8 py-4 rounded-full text-lg">
                   Planifier une visite
-                </Button>
+                </button>
               </div>
             </div>
           </div>
@@ -516,3 +503,5 @@ export const OptionsPage = (): JSX.Element => {
     </div>
   );
 };
+
+export default OptionsPage;
