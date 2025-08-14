@@ -226,29 +226,14 @@ const FAQPage = () => {
                     </div>
                 </div>
             </section>
-            {/* <section className="faq-hero relative bg-gradient-to-r from-[#0073b7] to-[#005a8f] text-white py-20">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative container mx-auto px-6 text-center">
-          <div className="w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6">
-            <BiHelpCircle className="text-[#0073b7]" size={40} />
-          </div>
-          <h1 className="text-5xl lg:text-6xl font-bold mb-6">
-            Questions <span className="text-yellow-400">Fréquentes</span>
-          </h1>
-          <p className="text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed">
-            Trouvez toutes les réponses aux questions que vous vous posez sur 
-            notre établissement, nos programmes et nos services.
-          </p>
-        </div>
-      </section> */}
-
+        
             <div className="faq-content">
                 {/* FAQ Categories */}
                 {faqCategories.map((category, categoryIndex) => (
                     <section key={categoryIndex} className="category-section py-16 bg-white">
                         <div className="container mx-auto px-6">
                             <div className="text-center mb-12">
-                                <h2 className="text-3xl lg:text-4xl font-bold text-[#333333] mb-4">
+                                <h2 className="text-2xl lg:text-3xl font-bold text-[#333333] mb-4">
                                     {category.title}
                                 </h2>
                             </div>
