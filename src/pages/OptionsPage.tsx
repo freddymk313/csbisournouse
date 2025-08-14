@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BiAward, BiBook, BiBookOpen, BiCalculator, BiGlobe, BiHeart, BiMailSend, BiMapPin, BiMusic, BiPalette, BiPhone } from 'react-icons/bi';
 import { FiTarget } from 'react-icons/fi';
 import { FaGraduationCap, FaMicroscope } from 'react-icons/fa';
-import { FaBook, FaHeart, FaUserSecret } from 'react-icons/fa6';
+import { FaBook, FaHeart, FaUser, FaUserSecret } from 'react-icons/fa6';
 import { CgLock } from 'react-icons/cg';
 import { BsAward } from 'react-icons/bs';
 
@@ -173,21 +173,21 @@ const OptionsPage = () => {
 
       <div className="options-content">
         {/* Maternelle Section */}
-        <section className="section-card py-20 bg-gradient-to-br from-pink-50 to-rose-100">
+        <section className="section-card py-20 bg-gradient-to-br bg-white">
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto items-center">
               <div className="order-2 lg:order-1">
                 <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mr-4">
-                    <BiHeart className="text-white" size={32} />
+                  <div className="w-16 h-16 bg-[#0073b7] rounded-full flex items-center justify-center mr-4">
+                    <FaHeart className="text-white" size={32} />
                   </div>
                   <div>
-                    <h2 className="text-4xl lg:text-5xl font-bold text-gray-800">Maternelle</h2>
-                    <p className="text-pink-600 font-semibold text-lg">2 à 5 ans</p>
+                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-800">Maternelle</h2>
+                    <p className="text-[#0073b7] font-semibold md:text-lg">2 à 5 ans</p>
                   </div>
                 </div>
 
-                <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                <p className="*text-lg text-gray-700 mb-8 leading-relaxed">
                   La section Maternelle accueille les enfants de 2 à 5 ans dans un environnement 
                   chaleureux, sécurisé et stimulant. Notre mission est de favoriser le développement 
                   global de chaque enfant, en respectant son rythme, sa curiosité naturelle et sa personnalité.
@@ -195,22 +195,22 @@ const OptionsPage = () => {
 
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center">
-                    <FaUserSecret className="text-pink-600 mr-3" size={20} />
+                    <FaUser className="text-[#0073b7] mr-3" size={18} />
                     <span className="font-semibold">Petite Section (PS) :</span>
                     <span className="ml-2">dès 2-3 ans</span>
                   </div>
                   <div className="flex items-center">
-                    <FaUserSecret className="text-pink-600 mr-3" size={20} />
+                    <FaUser className="text-[#0073b7] mr-3" size={18} />
                     <span className="font-semibold">Moyenne Section (MS) :</span>
                     <span className="ml-2">4 ans</span>
                   </div>
                   <div className="flex items-center">
-                    <FaUserSecret className="text-pink-600 mr-3" size={20} />
+                    <FaUser className="text-[#0073b7] mr-3" size={18} />
                     <span className="font-semibold">Grande Section (GS) :</span>
                     <span className="ml-2">5 ans</span>
                   </div>
                   <div className="flex items-center">
-                    <CgLock className="text-pink-600 mr-3" size={20} />
+                    <CgLock className="text-[#0073b7] mr-3" size={20} />
                     <span className="font-semibold">Horaires :</span>
                     <span className="ml-2">7h30 – 16h30 (garderie jusqu'à 18h)</span>
                   </div>
@@ -245,9 +245,9 @@ const OptionsPage = () => {
 
               <div className="order-1 lg:order-2">
                 <img
-                  src="https://images.pexels.com/photos/8613066/pexels-photo-8613066.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop"
+                        src='/gallery/8.jpg'
                   alt="Section Maternelle"
-                  className="w-full h-[600px] object-cover rounded-3xl shadow-2xl"
+                  className="w-full h-[600px] object-cover *rounded-3xl shadow-2xl"
                 />
               </div>
             </div>
