@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { BiAward, BiBook, BiBookOpen, BiCalculator, BiGlobe, BiHeart, BiMailSend, BiMapPin, BiMusic, BiPalette, BiPhone } from 'react-icons/bi';
+import { BiAward, BiBookOpen, BiCalculator, BiGlobe, BiHeart, BiMusic, BiPalette } from 'react-icons/bi';
 import { FiTarget } from 'react-icons/fi';
 import { FaGraduationCap, FaMicroscope } from 'react-icons/fa';
 import { FaBook, FaHeart, FaUser, FaUserSecret } from 'react-icons/fa6';
