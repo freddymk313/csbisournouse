@@ -98,9 +98,9 @@ export const Navbar = () => {
                 <div className="flex items-center justify-between">
                     {/* Logo */}
                     <div className="flex items-center space-x-2">
-                        <a href="/">
+                        <Link to="/">
                             <img src="/logo.jpg" alt="logo" className="h-14 w-14 md:h-16 md:w-16" />
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Desktop Navigation */}

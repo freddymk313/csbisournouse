@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   useEffect(() => {
@@ -49,12 +50,12 @@ const Hero = () => {
             </p>
 
             <div className="hero-buttons flex flex-col sm:flex-row gap-3 justify-center">
-              <button className="bg-[#0073B7] border border-[#0073B7] hover:bg-[#0073B7]/50 text-white px-6 py-3 md:text-base transition-colors duration-300">
+              <Link to="/galerie" className="bg-[#0073B7] border border-[#0073B7] hover:bg-[#0073B7]/50 text-white px-6 py-3 md:text-base transition-colors duration-300">
                 Découvrir notre école
-              </button>
-              <a href='/inscription' className="border border-white text-white hover:bg-white hover:text-[#0073B7] px-6 py-3 md:text-base transition-colors duration-300">
+              </Link>
+              <Link href='/inscription' className="border border-white text-white hover:bg-white hover:text-[#0073B7] px-6 py-3 md:text-base transition-colors duration-300">
                 Inscription en ligne
-              </a>
+              </Link>
             </div>
           </div>
         </div>
