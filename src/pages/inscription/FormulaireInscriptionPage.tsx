@@ -105,7 +105,7 @@ export default function FormulaireInscriptionPage() {
   return (
     <div className="bg-gray-50">
       {/* Formulaire */}
-      <section className="py-16 container mx-auto px-6">
+      <section className="py-16 container mx-auto px-4">
         <form
           onSubmit={handleSubmit}
           className="formulaire-inscription bg-white shadow-sm hover:shadow-md p-8 max-w-3xl mx-auto space-y-8 transition-shadow duration-300"
