@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { navigationLinks } from '../constants';
 import { MdClose, MdMenu } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -154,14 +155,14 @@ export const Navbar = () => {
                     <div className="container mx-auto px-6 md:px-16 lg:px-20 py-4">
                         <div className="flex flex-col space-y-2">
                             {navigationLinks.map((link, index) => (
-                                <a
+                                <Link
                                     key={index}
-                                    href={link.href}
+                                    to={link.href}
                                     className="mobile-link text-gray-700 hover:text-[#0073b7] py-1 transition-colors duration-300"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     {link.text}
-                                </a>
+                                </Link>
                             ))}
                             <a href='/inscription' className="mobile-link mt-2 bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-3 w-full">
                                 Admission
