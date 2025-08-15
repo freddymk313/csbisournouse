@@ -17,6 +17,8 @@ export default function FormulaireInscriptionPage() {
     niveauScolaire: '',
     piecesJointes: null as FileList | null,
   });
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
   useEffect(() => {
     gsap.fromTo(
@@ -47,11 +49,58 @@ export default function FormulaireInscriptionPage() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Formulaire soumis:', formData);
-    // TODO : envoyer au backend
-  };
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setLoading(true);
+  setMessage(null);
+
+  try {
+    const data = new FormData();
+    data.append('nom_complet_etudiant', formData.nomEleve);
+    data.append('date_de_naissance', formData.dateNaissance);
+    data.append('lieu_de_naissance', formData.lieuNaissance);
+    data.append('nationalite', formData.nationalite);
+    data.append('nom_complet_parent', formData.nomParent);
+    data.append('contact_parent', formData.telephone);
+    data.append('email_parent', formData.email);
+    data.append('niveau_etude', formData.niveauScolaire);
+    data.append('classe', '5'); 
+
+    if (formData.piecesJointes) {
+      for (let i = 0; i < formData.piecesJointes.length; i++) {
+        data.append('fichier', formData.piecesJointes[i]);
+      }
+    }
+
+    const res = await fetch('http://localhost:3000/admission', {
+      method: 'POST',
+      body: data,
+    });
+
+    const result = await res.json();
+
+    if (!res.ok) {
+      throw new Error(result.error || 'Erreur lors de l’envoi');
+    }
+
+    setMessage({ type: 'success', text: 'Inscription envoyée avec succès' });
+    setFormData({
+      nomEleve: '',
+      dateNaissance: '',
+      lieuNaissance: '',
+      nationalite: '',
+      nomParent: '',
+      telephone: '',
+      email: '',
+      niveauScolaire: '',
+      piecesJointes: null
+    });
+  } catch (error: any) {
+    setMessage({ type: 'error', text: error.message });
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="bg-gray-50">
@@ -62,11 +111,20 @@ export default function FormulaireInscriptionPage() {
           className="formulaire-inscription bg-white shadow-sm hover:shadow-md p-8 max-w-3xl mx-auto space-y-8 transition-shadow duration-300"
         >
           <div className="text-center mb-8 md:mb-10">
-              <h1 className="text-2xl md:text-3xl font-bold">Formulaire d’inscription</h1>
-              <p className="mt-4 *md:text-lg">
-                Remplissez les informations pour finaliser la pré-inscription.
-              </p>
-            </div>
+            <h1 className="text-2xl md:text-3xl font-bold">Formulaire d’inscription</h1>
+            <p className="mt-4 *md:text-lg">
+              Remplissez les informations pour finaliser la pré-inscription.
+            </p>
+          </div>
+
+          <div className="text-center mt-4">
+            {loading && <p className="text-blue-600">⏳ Envoi en cours...</p>}
+            {message && (
+            <p className={message.type === 'success' ? 'text-green-600' : 'text-red-600'}>
+            {message.text}
+            </p>
+            )}
+          </div>
           
           {/* Infos élève */}
           <div>
@@ -226,8 +284,8 @@ export default function FormulaireInscriptionPage() {
               type="submit"
               className="w-full flex items-center justify-center bg-[#0073b7] hover:bg-[#005a8f] text-white py-4 group transition"
             >
-              <span>Envoyer la demande</span>
-              <BsSend className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
+              {loading ? 'Envoi...' : 'Envoyer la demande'}
+              {!loading && <BsSend className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />}
             </button>
           </div>
         </form>

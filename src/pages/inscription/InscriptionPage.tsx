@@ -1,4 +1,5 @@
 import { FaCheckCircle } from "react-icons/fa";
+import {Link} from "react-router-dom"
 
 export default function InscriptionPage() {
   return (
@@ -82,11 +83,11 @@ export default function InscriptionPage() {
 
         {/* Bouton bas de page */}
         <div className="mt-10 flex items-end *justify-self-end *w-full">
-          <a
-            href="/admissionform"
+          <Link
+            to="/admissionform"
             className="bg-[#0073b7] flex items-center justify-center w-full hover:bg-[#005a8f] text-white px-6 py-3">
             <span className="">Remplir le formulaire maintenant</span>
-          </a>
+          </Link>
         </div>
       </section>
     </div>
