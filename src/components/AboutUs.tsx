@@ -96,7 +96,7 @@ export const AboutUs = () => {
           </div>
 
           <div className="mt-4 md:mt-8 flex justify-start">
-            <Link href="/apropos" className="flex items-center gap-2.5 border border-[#0073b7] bg-transparent *hover:bg-[#0073b7] text-[#0073b7] *hover:text-[#ffffff] px-8 py-3 group transition-all duration-300">
+            <Link to="/apropos" className="flex items-center gap-2.5 border border-[#0073b7] bg-transparent *hover:bg-[#0073b7] text-[#0073b7] *hover:text-[#ffffff] px-8 py-3 group transition-all duration-300">
               <span>{schoolInfo.buttonText}</span>
               <GoArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>

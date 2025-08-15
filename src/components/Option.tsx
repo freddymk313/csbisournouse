@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MdBook, MdLockClock, MdSupervisedUserCircle } from "react-icons/md";
 import { FaClock, FaUsers } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { navigationLinks } from '../constants';
 import { MdClose, MdMenu } from 'react-icons/md';
+import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
@@ -106,7 +107,7 @@ export const Navbar = () => {
                     {/* Desktop Navigation */}
                     <div className="hidden lg:flex items-center space-x-6">
                         {navigationLinks.map((link, index) => (
-                            <Link
+                            <NavLink
                                 key={index}
                                 to={link.href}
                                 className={({ isActive }) =>
@@ -119,7 +120,7 @@ export const Navbar = () => {
                                 }
                             >
                                 {link.text}
-                            </Link>
+                            </NavLink>
                         ))}
 
                         <Link to='/inscription' 

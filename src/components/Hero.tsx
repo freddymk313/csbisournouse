@@ -53,7 +53,7 @@ const Hero = () => {
               <Link to="/galerie" className="bg-[#0073B7] border border-[#0073B7] hover:bg-[#0073B7]/50 text-white px-6 py-3 md:text-base transition-colors duration-300">
                 Découvrir notre école
               </Link>
-              <Link href='/inscription' className="border border-white text-white hover:bg-white hover:text-[#0073B7] px-6 py-3 md:text-base transition-colors duration-300">
+              <Link to='/inscription' className="border border-white text-white hover:bg-white hover:text-[#0073B7] px-6 py-3 md:text-base transition-colors duration-300">
                 Inscription en ligne
               </Link>
             </div>
