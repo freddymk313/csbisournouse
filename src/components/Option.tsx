@@ -131,12 +131,12 @@ export const OptionSection = () => {
                   </div>
 
                   <div className="py-6 pt-0">
-                    <button 
-                type="submit" 
+                    <Link 
+                to="/options"
                 className="w-full px-6 py-3 bg-white text-[#0073B7] hover:bg-gray-100 transition-colors duration-300"
               >
                 En savoir plus
-              </button>
+              </Link>
                   </div>
                 </div>
               </div>

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { GoArrowRight } from 'react-icons/go';
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -93,13 +94,13 @@ export const GallerySection = () => {
         </div>
 
         <div className='flex items-center justify-center mt-8'>
-          <a
-          href="/galerie"
+          <Link
+          to="/galerie"
           className="flex items-center justify-center bg-[#0073b7] hover:bg-[#005a8f] text-white py-3.5 px-8 group"
         >
           <span>Voir Plus</span>
           <GoArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
-        </a>
+        </Link>
         </div>
       </div>
     </section>
