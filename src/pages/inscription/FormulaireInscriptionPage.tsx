@@ -118,9 +118,8 @@ export default function FormulaireInscriptionPage() {
           </div>
 
           <div className="text-center mt-4">
-            {loading && <p className="text-blue-600">⏳ Envoi en cours...</p>}
             {message && (
-            <p className={message.type === 'success' ? 'text-green-600' : 'text-red-600'}>
+            <p className={message.type === 'success' ? 'text-green-600 p-2 bg-green-600/20' : 'text-red-600 p-2 bg-red-600/20'}>
             {message.text}
             </p>
             )}
