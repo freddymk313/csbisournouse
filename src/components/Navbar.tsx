@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { navigationLinks } from '../constants';
 import { MdClose, MdMenu } from 'react-icons/md';
-import { NavLink } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
@@ -107,7 +106,7 @@ export const Navbar = () => {
                     {/* Desktop Navigation */}
                     <div className="hidden lg:flex items-center space-x-6">
                         {navigationLinks.map((link, index) => (
-                            <NavLink
+                            <Link
                                 key={index}
                                 to={link.href}
                                 className={({ isActive }) =>
@@ -120,22 +119,22 @@ export const Navbar = () => {
                                 }
                             >
                                 {link.text}
-                            </NavLink>
+                            </Link>
                         ))}
 
-                        <a href='/inscription' 
+                        <Link to='/inscription' 
                         className="bg-[#0073b7] hover:bg-[#005a8f] text-white ml-3 px-6 py-2.5">
                             Admission
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
                     <div className="lg:hidden flex items-center">
-                        <a 
-                        href='/inscription' 
+                        <Link 
+                        to='/inscription' 
                         className="bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-2.5">
                             Admission
-                        </a>
+                        </Link>
                         <button
                             onClick={toggleMenu}
                             className={`p-2 rounded-md cursor-pointer transition-colors duration-300 ${isScrolled ? 'text-gray-700' : 'text-gray-950'}`}
@@ -164,9 +163,9 @@ export const Navbar = () => {
                                     {link.text}
                                 </Link>
                             ))}
-                            <a href='/inscription' className="mobile-link mt-2 bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-3 w-full">
+                            <Link to='/inscription' className="mobile-link mt-2 bg-[#0073b7] hover:bg-[#005a8f] text-white px-6 py-3 w-full">
                                 Admission
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
