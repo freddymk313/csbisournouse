@@ -131,13 +131,13 @@ export const OptionSection = () => {
                     </div>
                   </div>
 
-                  <div className="py-6 pt-0">
-                    <Link 
-                to="/options"
-                className="w-full px-6 py-3 bg-white text-[#0073B7] hover:bg-gray-100 transition-colors duration-300"
-              >
-                En savoir plus
-              </Link>
+                  <div className="py-6 pt-0 w-full">
+                    <Link
+                      to="/options"
+                      className="flex w-full text-center px-6 py-3 bg-white text-[#0073B7] hover:bg-gray-100 transition-colors duration-300"
+                    >
+                     <span className="text-center w-full">En savoir plus</span>
+                    </Link>
                   </div>
                 </div>
               </div>
