@@ -15,6 +15,7 @@ export default function FormulaireInscriptionPage() {
     telephone: '',
     email: '',
     niveauScolaire: '',
+    classe: '',
     piecesJointes: null as FileList | null,
   });
   const [loading, setLoading] = useState(false);
@@ -50,57 +51,79 @@ export default function FormulaireInscriptionPage() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setLoading(true);
-  setMessage(null);
+    e.preventDefault();
+    setLoading(true);
+    setMessage(null);
 
-  try {
-    const data = new FormData();
-    data.append('nom_complet_etudiant', formData.nomEleve);
-    data.append('date_de_naissance', formData.dateNaissance);
-    data.append('lieu_de_naissance', formData.lieuNaissance);
-    data.append('nationalite', formData.nationalite);
-    data.append('nom_complet_parent', formData.nomParent);
-    data.append('contact_parent', formData.telephone);
-    data.append('email_parent', formData.email);
-    data.append('niveau_etude', formData.niveauScolaire);
-    data.append('classe', '5'); 
+    try {
+      const data = new FormData();
+      data.append('nom_complet_etudiant', formData.nomEleve);
+      data.append('date_de_naissance', formData.dateNaissance);
+      data.append('lieu_de_naissance', formData.lieuNaissance);
+      data.append('nationalite', formData.nationalite);
+      data.append('nom_complet_parent', formData.nomParent);
+      data.append('contact_parent', formData.telephone);
+      data.append('email_parent', formData.email);
+      data.append('niveau_etude', formData.niveauScolaire);
+      data.append('classe', formData.classe);
 
-    if (formData.piecesJointes) {
-      for (let i = 0; i < formData.piecesJointes.length; i++) {
-        data.append('fichier', formData.piecesJointes[i]);
+      if (formData.piecesJointes) {
+        for (let i = 0; i < formData.piecesJointes.length; i++) {
+          data.append('fichier', formData.piecesJointes[i]);
+        }
       }
+
+      const res = await fetch('http://localhost:3000/admission', {
+        method: 'POST',
+        body: data,
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.error || 'Erreur lors de l’envoi');
+      }
+
+      setMessage({ type: 'success', text: 'Inscription envoyée avec succès' });
+      setFormData({
+        nomEleve: '',
+        dateNaissance: '',
+        lieuNaissance: '',
+        nationalite: '',
+        nomParent: '',
+        telephone: '',
+        email: '',
+        niveauScolaire: '',
+        classe: '',
+        piecesJointes: null
+      });
+    } catch (error: any) {
+      setMessage({ type: 'error', text: error.message });
+    } finally {
+      setLoading(false);
     }
+  };
 
-    const res = await fetch('http://localhost:3000/admission', {
-      method: 'POST',
-      body: data,
-    });
-
-    const result = await res.json();
-
-    if (!res.ok) {
-      throw new Error(result.error || 'Erreur lors de l’envoi');
+  // Options des classes selon le niveau
+  const getClasseOptions = () => {
+    switch (formData.niveauScolaire) {
+      case 'maternelle':
+        return ['1ère maternelle', '2ème maternelle', '3ème maternelle'];
+      case 'primaire':
+        return [
+          '1ère primaire', '2ème primaire', '3ème primaire',
+          '4ème primaire', '5ème primaire', '6ème primaire'
+        ];
+      case 'secondaire':
+        return [
+          '7ème secondaire', '8ème secondaire',
+          '1ère secondaire', '2ème secondaire',
+          '3ème secondaire', '4ème secondaire'
+        ];
+      default:
+        return [];
     }
-
-    setMessage({ type: 'success', text: 'Inscription envoyée avec succès' });
-    setFormData({
-      nomEleve: '',
-      dateNaissance: '',
-      lieuNaissance: '',
-      nationalite: '',
-      nomParent: '',
-      telephone: '',
-      email: '',
-      niveauScolaire: '',
-      piecesJointes: null
-    });
-  } catch (error: any) {
-    setMessage({ type: 'error', text: error.message });
-  } finally {
-    setLoading(false);
-  }
-};
+  };
 
   return (
     <div className="bg-gray-50">
@@ -119,9 +142,9 @@ export default function FormulaireInscriptionPage() {
 
           <div className="text-center mt-4">
             {message && (
-            <p className={message.type === 'success' ? 'text-green-600 p-2 bg-green-600/20' : 'text-red-600 p-2 bg-red-600/20'}>
-            {message.text}
-            </p>
+              <p className={message.type === 'success' ? 'text-green-600 p-2 bg-green-600/20' : 'text-red-600 p-2 bg-red-600/20'}>
+                {message.text}
+              </p>
             )}
           </div>
           
@@ -259,6 +282,29 @@ export default function FormulaireInscriptionPage() {
               <option value="secondaire">Secondaire</option>
             </select>
           </div>
+
+          {/* Classe (affichée seulement si niveau choisi) */}
+          {formData.niveauScolaire && (
+            <div>
+              <h2 className="text-xl font-semibold mb-4 text-[#333333]">
+                Classe
+              </h2>
+              <select
+                name="classe"
+                required
+                value={formData.classe}
+                onChange={handleChange}
+                className="w-full h-12 rounded-md px-4 text-sm bg-gray-50 focus:border-[#0073B7] focus:ring-2 focus:ring-[#0073B7]/50 outline-none transition"
+              >
+                <option value="">Sélectionnez une classe</option>
+                {getClasseOptions().map((classe, index) => (
+                  <option key={index} value={classe}>
+                    {classe}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
 
           {/* Pièces jointes */}
           <div>
