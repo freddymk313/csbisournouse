@@ -50,7 +50,7 @@ const Hero = () => {
             </p>
 
             <div className="hero-buttons flex flex-col sm:flex-row gap-3 justify-center">
-              <Link to="/galerie" className="bg-[#0073B7] border border-[#0073B7] hover:bg-[#0073B7]/50 text-white px-6 py-3 md:text-base transition-colors duration-300">
+              <Link to="/galerie" className="bg-[#0073B7] border border-[#0073B7] hover:bg-[#0073B7]/90 text-white px-6 py-3 md:text-base transition-colors duration-300">
                 Découvrir notre école
               </Link>
               <Link to='/inscription' className="border border-white text-white hover:bg-white hover:text-[#0073B7] px-6 py-3 md:text-base transition-colors duration-300">
