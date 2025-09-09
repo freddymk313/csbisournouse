@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { BiBookOpen, BiCalculator, BiGlobe, BiMusic, BiPalette, BiTrophy, BiChevronRight, BiSearch } from 'react-icons/bi';
+import { BiBookOpen, BiCalculator, BiGlobe, BiMusic, BiPalette, BiTrophy } from 'react-icons/bi';
 import { FaMicroscope, FaUserSecret } from 'react-icons/fa';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const AcademicProgramsSection = () => {
   const [activeFilter, setActiveFilter] = useState('all');
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm ] = useState('');
   
   useEffect(() => {
     // Programs animations
