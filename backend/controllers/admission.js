@@ -53,7 +53,7 @@ exports.submitAdmission = async (req, res) => {
                 nationalite,
                 niveau_etude,
                 cheminFichier,
-                parseInt(classe)  // Conversion en entier
+                classe  // Conversion en entier
             ]
         );
 
@@ -77,7 +77,7 @@ exports.submitAdmission = async (req, res) => {
             message: 'Admission enregistrée avec succès',
             student_id: studentResult.insertId,
             parent_id: parentResult.insertId,
-            classe: parseInt(classe)
+            classe
         });
 
     } catch (error) {

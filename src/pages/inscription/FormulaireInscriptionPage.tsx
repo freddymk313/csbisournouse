@@ -73,7 +73,7 @@ export default function FormulaireInscriptionPage() {
         }
       }
 
-      const res = await fetch('http://localhost:3000/admission', {
+      const res = await fetch('http://localhost:3000/api/admission', {
         method: 'POST',
         body: data,
       });
