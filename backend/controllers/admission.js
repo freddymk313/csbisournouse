@@ -53,14 +53,14 @@ exports.submitAdmission = async (req, res) => {
                 nationalite,
                 niveau_etude,
                 cheminFichier,
-                classe  // Conversion en entier
+                parseInt(classe)  // Conversion en entier
             ]
         );
 
         // Enregistrement du parent
         const [parentResult] = await connection.query(
             `INSERT INTO parents 
-            (etudiant_id, nom_complet, contact, email) 
+            (student_id, nom_complet, contact, email) 
             VALUES (?, ?, ?, ?)`,
             [
                 studentResult.insertId,
@@ -77,7 +77,7 @@ exports.submitAdmission = async (req, res) => {
             message: 'Admission enregistrée avec succès',
             student_id: studentResult.insertId,
             parent_id: parentResult.insertId,
-            classe
+            classe: parseInt(classe)
         });
 
     } catch (error) {

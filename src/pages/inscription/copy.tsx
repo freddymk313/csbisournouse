@@ -15,7 +15,7 @@ export default function FormulaireInscriptionPage() {
     telephone: '',
     email: '',
     niveauScolaire: '',
-    classe: '',          // <-- sera un identifiant numérique (string pour le state)
+    classe: '',
     piecesJointes: null as FileList | null,
   });
   const [loading, setLoading] = useState(false);
@@ -65,7 +65,7 @@ export default function FormulaireInscriptionPage() {
       data.append('contact_parent', formData.telephone);
       data.append('email_parent', formData.email);
       data.append('niveau_etude', formData.niveauScolaire);
-      data.append('classe', formData.classe); // <-- valeur numérique
+      data.append('classe', formData.classe);
 
       if (formData.piecesJointes) {
         for (let i = 0; i < formData.piecesJointes.length; i++) {
@@ -95,7 +95,7 @@ export default function FormulaireInscriptionPage() {
         email: '',
         niveauScolaire: '',
         classe: '',
-        piecesJointes: null,
+        piecesJointes: null
       });
     } catch (error: any) {
       setMessage({ type: 'error', text: error.message });
@@ -104,32 +104,21 @@ export default function FormulaireInscriptionPage() {
     }
   };
 
-  // Options des classes avec value (int) + label (affiché)
+  // Options des classes selon le niveau
   const getClasseOptions = () => {
     switch (formData.niveauScolaire) {
       case 'maternelle':
-        return [
-          { value: 1, label: '1ère maternelle' },
-          { value: 2, label: '2ème maternelle' },
-          { value: 3, label: '3ème maternelle' },
-        ];
+        return ['1ère maternelle', '2ème maternelle', '3ème maternelle'];
       case 'primaire':
         return [
-          { value: 4, label: '1ère primaire' },
-          { value: 5, label: '2ème primaire' },
-          { value: 6, label: '3ème primaire' },
-          { value: 7, label: '4ème primaire' },
-          { value: 8, label: '5ème primaire' },
-          { value: 9, label: '6ème primaire' },
+          '1ère primaire', '2ème primaire', '3ème primaire',
+          '4ème primaire', '5ème primaire', '6ème primaire'
         ];
       case 'secondaire':
         return [
-          { value: 10, label: '7ème secondaire' },
-          { value: 11, label: '8ème secondaire' },
-          { value: 12, label: '1ère secondaire' },
-          { value: 13, label: '2ème secondaire' },
-          { value: 14, label: '3ème secondaire' },
-          { value: 15, label: '4ème secondaire' },
+          '7ème secondaire', '8ème secondaire',
+          '1ère secondaire', '2ème secondaire',
+          '3ème secondaire', '4ème secondaire'
         ];
       default:
         return [];
@@ -138,6 +127,7 @@ export default function FormulaireInscriptionPage() {
 
   return (
     <div className="bg-gray-50">
+      {/* Formulaire */}
       <section className="py-16 container mx-auto px-4">
         <form
           onSubmit={handleSubmit}
@@ -293,7 +283,7 @@ export default function FormulaireInscriptionPage() {
             </select>
           </div>
 
-          {/* Classe */}
+          {/* Classe (affichée seulement si niveau choisi) */}
           {formData.niveauScolaire && (
             <div>
               <h2 className="text-xl font-semibold mb-4 text-[#333333]">
@@ -307,41 +297,42 @@ export default function FormulaireInscriptionPage() {
                 className="w-full h-12 rounded-md px-4 text-sm bg-gray-50 focus:border-[#0073B7] focus:ring-2 focus:ring-[#0073B7]/50 outline-none transition"
               >
                 <option value="">Sélectionnez une classe</option>
-                {getClasseOptions().map((opt) => (
-                  <option key={opt.value} value={opt.value}>
-                    {opt.label}
+                {getClasseOptions().map((classe, index) => (
+                  <option key={index} value={classe}>
+                    {classe}
                   </option>
                 ))}
               </select>
             </div>
           )}
 
+          {/* Pièces jointes */}
           <div>
-                      <h2 className="text-xl font-semibold mb-4 text-[#333333]">
-                        Pièces jointes
-                      </h2>
-                      <p className="text-gray-500 mb-4 text-sm">
-                        Veuillez télécharger les documents requis (PDF, JPG ou PNG).
-                      </p>
-                      <input
-                        type="file"
-                        name="piecesJointes"
-                        multiple
-                        onChange={handleChange}
-                        className="w-full rounded-md px-4 py-3 text-sm bg-gray-50 focus:border-[#0073B7] focus:ring-2 focus:ring-[#0073B7]/50 outline-none transition"
-                      />
-                    </div>
-          
-                    {/* Bouton */}
-                    <div className="text-center">
-                      <button
-                        type="submit"
-                        className="w-full flex items-center justify-center bg-[#0073b7] hover:bg-[#005a8f] text-white py-4 group transition"
-                      >
-                        {loading ? 'Envoi...' : 'Envoyer la demande'}
-                        {!loading && <BsSend className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />}
-                      </button>
-                    </div>
+            <h2 className="text-xl font-semibold mb-4 text-[#333333]">
+              Pièces jointes
+            </h2>
+            <p className="text-gray-500 mb-4 text-sm">
+              Veuillez télécharger les documents requis (PDF, JPG ou PNG).
+            </p>
+            <input
+              type="file"
+              name="piecesJointes"
+              multiple
+              onChange={handleChange}
+              className="w-full rounded-md px-4 py-3 text-sm bg-gray-50 focus:border-[#0073B7] focus:ring-2 focus:ring-[#0073B7]/50 outline-none transition"
+            />
+          </div>
+
+          {/* Bouton */}
+          <div className="text-center">
+            <button
+              type="submit"
+              className="w-full flex items-center justify-center bg-[#0073b7] hover:bg-[#005a8f] text-white py-4 group transition"
+            >
+              {loading ? 'Envoi...' : 'Envoyer la demande'}
+              {!loading && <BsSend className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />}
+            </button>
+          </div>
         </form>
       </section>
     </div>
